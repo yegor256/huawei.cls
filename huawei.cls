@@ -39,9 +39,10 @@
 \RequirePackage[colorlinks,allcolors=blue!30!black,bookmarks=false,hypertexnames=true]{hyperref}
 \RequirePackage[absolute]{textpos}\TPGrid{16}{16}
 
+\newcommand\subtitle[1]{\def\thesubtitle{#1}}
 \newcommand\aid[1]{\def\theauthorid{#1}}
 \newcommand\nospell[1]{#1}
-\newcommand\headers[1]{{\small\scshape\color{gray}\texttt{#1}}}
+\newcommand\headers[1]{{\scriptsize\scshape\color{gray}\texttt{#1}}}
 \newcommand\tbd[1]{{\color{red}#1}}
 \newcommand\crumb[2]{\begin{minipage}{\columnwidth}\raggedright\textsc{#1}:\\#2\end{minipage}\vspace{3pt}}
 
@@ -54,17 +55,20 @@
   \def\arraystretch{1.5}%
 }
 
-\newcommand\PrintCharterFirstPage[1]{
-  \begin{textblock}{1}[0,0](0,0)
-    \tikz \node[fill=huawei-red,minimum width=\TPHorizModule,minimum height=16\TPVertModule] {};
-  \end{textblock}
+\newcommand\leftbar{%
+  \begin{textblock}{1}[0,0](0,0)%
+    \tikz \node[fill=huawei-red,minimum width=\TPHorizModule,minimum height=16\TPVertModule] {};%
+  \end{textblock}%
+}
 
+\newcommand\PrintCharterFirstPage[1]{
+  \leftbar{}
   \includegraphics[height=2in]{#1}
 
   \vspace*{0.5in}
 
-  {\Huge\textbf{\thetitle}} \\
-  Technology Project Charter
+  {\Huge\textbf{\thetitle{}}} \\
+  \thesubtitle{}
 
   \vspace{0.5in}
 
@@ -79,9 +83,7 @@
 }
 
 \AddEverypageHook{%
-  \begin{textblock}{1}[0,0](0,0)
-    \tikz \node[fill=huawei-red,minimum width=\TPHorizModule,minimum height=16\TPVertModule] {};
-  \end{textblock}
+  \leftbar{}
   \begin{textblock}{8}[0,0](1.2,0.2)%
     \begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-1, inner sep=0pt, outer sep=0pt]
       \begin{scope}[even odd rule,line width=0.800pt]
@@ -134,7 +136,7 @@
   organization for a fully connected,
   intelligent world.
 
-  \textbf{Copyright 2018 Huawei Technologies Co., Ltd.\\
+  \textbf{Copyright \copyright{} \the\year{} Huawei Technologies Co., Ltd.\\
   All Rights Reserved.}
 
   The information in this document may contain predictive

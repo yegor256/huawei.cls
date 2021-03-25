@@ -5,11 +5,14 @@ directory with LaTeX sources and mentioning in the preamble:
 \documentclass[landscape]{huawei}
 \author{Yegor Bugayenko} % First name, last name
 \aid{y00538675} % Internal ID of the author
-\title{Interesting document about something} % Title
+\title{An Interesting Document About Something} % Title
+\subtitle{To Whom It May Concern} % Subtitle
 \begin{document}
 Hello, world!
 \end{document}
 ```
+
+Find more examples in the [`/samples`](/tree/master/samples) directory.
 
 Class options (provided in square brackets after the `\documentclass`) are:
 
