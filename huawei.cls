@@ -32,6 +32,7 @@
 \RequirePackage[colorlinks,allcolors=blue!30!black,bookmarks=false,hypertexnames=true]{hyperref}
 \RequirePackage[absolute]{textpos}\TPGrid{16}{16}
 
+\newcommand\aid[1]{\def\theauthorid{#1}}
 \newcommand\nospell[1]{#1}
 \newcommand\headers[1]{{\small\scshape\color{gray}\texttt{#1}}}
 \newcommand\tbd[1]{{\color{red}#1}}
@@ -101,7 +102,7 @@
     \raggedleft\headers{Confidential}%
   \end{textblock}%
   \begin{textblock}{8}[0,1](1.2,15.8)%
-    \headers{\theauthor \\ Huawei Technologies Co., Ltd.}%
+    \headers{\theauthor, \theauthorid \\ Huawei Technologies Co., Ltd.}%
   \end{textblock}%
   \begin{textblock}{8}[1,1](15.8,15.8)%
     \raggedleft\headers{Page \#\thepage{} of \pageref*{LastPage}}%
