@@ -2,7 +2,7 @@ You can use this `huawei.cls` LaTeX style just by copying it to your
 directory with LaTeX sources and then using it in the document preamble:
 
 ```tex
-\documentclass{huawei}
+\documentclass[landscape]{huawei}
 \author{Yegor Bugayenko} % First name, last name
 \aid{y00538675} % Author's ID
 \title{Interesting document about something} % Title
@@ -10,6 +10,10 @@ directory with LaTeX sources and then using it in the document preamble:
 Hello, world!
 \end{document}
 ```
+
+Class options (provided in square brackets after `\documentclass`) are:
+
+  * `landscape` --- makes the document in landscape format.
 
 Inside the document body you can use these:
 
