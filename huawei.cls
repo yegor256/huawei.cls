@@ -1,7 +1,14 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{huawei}[25/3/2021 Huawei documents by Yegor Bugayenko]
+\newif\iflandscape
+\DeclareOption{landscape}{\landscapetrue}
+\ProcessOptions\relax
 \LoadClass[12pt]{article}
-\RequirePackage[paperwidth=16in, paperheight=9in, bindingoffset=0in, left=4in, right=2in, top=1.5in, bottom=1.5in]{geometry}
+\iflandscape
+  \RequirePackage[paperwidth=16in, paperheight=9in, left=4in, right=2in, top=1.5in, bottom=1.5in]{geometry}
+\else
+  \RequirePackage[a4paper, left=1.5in, right=1in, top=1.2in, bottom=1.2in]{geometry}
+\fi
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{CJKutf8}
 \RequirePackage{tabularx}
