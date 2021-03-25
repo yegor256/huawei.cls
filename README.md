@@ -13,14 +13,14 @@ Hello, world!
 
 Class options (provided in square brackets after `\documentclass`) are:
 
-  * `landscape` --- makes the document in landscape format.
+  * `landscape` — makes the document in landscape format.
 
 Inside the document body you can use these:
 
-  * `\PrintCharterFirstPage{front-image}` --- prints the first page of TETF/CSTT charter,
+  * `\PrintCharterFirstPage{front-image}` — prints the first page of TETF/CSTT charter,
     placing the image `front-image.pdf` on the front (the file should be present
     in the current dir.
 
-  * `\PrintCharterLastPage{}` --- prints the last page of TETF/CSTT charter.
+  * `\PrintCharterLastPage{}` — prints the last page of TETF/CSTT charter.
 
 If you need more, submit a ticket.
