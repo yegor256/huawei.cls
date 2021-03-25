@@ -1,8 +1,9 @@
-You can use this `huawei.cls` LaTeX style just by copying it to your
-directory with LaTeX sources and mentioning in the preamble:
+You can use this `huawei.cls` LaTeX style just by copying it to some local
+directory and then mentioning it in the preamble of all your documents 
+(on my laptop it's called `/code/huawei.cls`):
 
 ```tex
-\documentclass[landscape]{huawei}
+\documentclass[landscape]{/code/huawei}
 \author{Yegor Bugayenko} % First name, last name
 \aid{y00538675} % Internal ID of the author
 \title{An Interesting Document About Something} % Title
