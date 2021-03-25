@@ -12,7 +12,7 @@ Hello, world!
 \end{document}
 ```
 
-Find more examples in the [`/samples`](/tree/master/samples) directory.
+Find more examples in the [`/samples`](/samples) directory.
 
 Class options (provided in square brackets after the `\documentclass`) are:
 
