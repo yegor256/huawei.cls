@@ -1,4 +1,4 @@
-You can use this `huawei.cls` LaTeX style just by copying it to some local
+You can use this [`huawei.cls`](huawei.cls) LaTeX style just by copying it to some local
 directory and then mentioning it in the preamble of all your documents 
 (on my laptop it's called `/code/huawei.cls`):
 
