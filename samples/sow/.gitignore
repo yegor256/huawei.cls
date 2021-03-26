@@ -1,0 +1,16 @@
+.DS_Store
+target/
+_minted-article
+call-for-proposal.pdf
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+_minted-wp/
+*.fls
+*.log
+*.run.xml
+*.aux
+*.pyg
+*.out
+svg-inkscape/
