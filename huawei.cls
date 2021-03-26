@@ -1,19 +1,22 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{huawei}[25/3/2021 Huawei documents by Yegor Bugayenko]
+\ProvidesClass{../../huawei}[25/3/2021 Basic Huawei Documents]
 \newif\iflandscape
 \DeclareOption{landscape}{\landscapetrue}
 \ProcessOptions\relax
 \LoadClass[12pt]{article}
+\RequirePackage{geometry}
 \iflandscape
-  \RequirePackage[paperwidth=16in, paperheight=9in, left=4in, right=2in, top=1.5in, bottom=1.5in]{geometry}
+  \geometry{paperwidth=16in, paperheight=9in, left=4in, right=2in, top=1.5in, bottom=1.5in}
 \else
-  \RequirePackage[a4paper, left=1.5in, right=1in, top=1.2in, bottom=1.2in]{geometry}
+  \geometry{a4paper, left=1.5in, right=1in, top=1.2in, bottom=1.2in}
 \fi
+\RequirePackage[T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{CJKutf8}
 \RequirePackage{tabularx}
 \RequirePackage{multicol}
-\RequirePackage{charter}
+\RequirePackage[mmddyyyy,iso,hhmmss]{datetime}
+\RequirePackage[tt=false,type1=true]{libertine}
 \RequirePackage{paralist}
 \RequirePackage{makecell}
 \RequirePackage{graphicx}
@@ -111,10 +114,10 @@
     \raggedleft\headers{Confidential}%
   \end{textblock}%
   \begin{textblock}{8}[0,1](1.2,15.8)%
-    \headers{\theauthor, \theauthorid \\ Huawei Technologies Co., Ltd.}%
+    \headers{\theauthor, \theauthorid \\[2pt] Huawei Technologies Co., Ltd.}%
   \end{textblock}%
   \begin{textblock}{8}[1,1](15.8,15.8)%
-    \raggedleft\headers{Page \#\thepage{} of \pageref*{LastPage}}%
+    \raggedleft\headers{Page \#\thepage{} of \pageref*{LastPage} \\[2pt] \today{} \currenttime}%
   \end{textblock}%
 }
 

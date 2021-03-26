@@ -17,5 +17,5 @@ clean:
 	rm -rf .DS_Store *.aux *.bbl *.bcf *.blg *.fdb_latexmk *.fls *.log *.run.xml tetf-charter.pdf *.out
 	rm -rf _minted-tetf-charter
 
-%.pdf: %.tex *.tex
+%.pdf: %.tex *.tex ../../huawei.cls
 	latexmk -pdf $<

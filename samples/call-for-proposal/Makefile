@@ -17,5 +17,5 @@ clean:
 	rm -rf .DS_Store *.aux *.bbl *.bcf *.blg *.fdb_latexmk *.fls *.log *.run.xml call-for-proposal.pdf *.out
 	rm -rf _minted-call-for-proposal
 
-%.pdf: %.tex *.tex
+%.pdf: %.tex *.tex ../../huawei.cls
 	latexmk -pdf $<
