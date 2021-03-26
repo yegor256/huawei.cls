@@ -19,6 +19,7 @@
 \RequirePackage[tt=false,type1=true]{libertine}
 \RequirePackage{paralist}
 \RequirePackage{makecell}
+\RequirePackage[para]{footmisc}
 \RequirePackage{graphicx}
 \RequirePackage{array}
 \RequirePackage[abspath]{currfile}
@@ -48,10 +49,11 @@
   \endgroup\makeatother
 \RequirePackage[absolute]{textpos}\TPGrid{16}{16}
 
+% Our custom commands:
 \newcommand\subtitle[1]{\def\thesubtitle{#1}}
 \newcommand\aid[1]{\def\theauthorid{#1}}
 \newcommand\nospell[1]{#1}
-\newcommand\headers[1]{{\scriptsize\scshape\color{gray}\texttt{#1}}}
+\newcommand\headers[1]{{\small\scshape\color{gray}\texttt{#1}}}
 \newcommand\tbd[1]{{\color{red}#1}}
 \newcommand\crumb[2]{\begin{minipage}{\columnwidth}\raggedright\textsc{#1}:\\#2\end{minipage}\vspace{3pt}}
 
@@ -72,7 +74,12 @@
 
 \newcommand\PrintFirstPage[1]{
   \leftbar{}
-  \ifdefempty{#1}{}{\includegraphics[height=2in]{#1}}
+  \def\param{#1}%
+  \ifx\param\empty
+    % nothing
+  \else
+    \includegraphics[height=2in]{#1}
+  \fi
 
   \vspace*{0.5in}
 
