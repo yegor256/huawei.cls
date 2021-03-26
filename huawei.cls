@@ -131,7 +131,7 @@
   \newpage
   \vspace*{\fill}
   \begin{center}
-  {\Huge\textbf{Thank you!}}
+  {\Huge\color{huawei-red}\textbf{Thank you!}}
   \end{center}
   \vspace*{\fill}
 }
@@ -142,7 +142,7 @@
   \begin{center}
   \begin{minipage}{0.6\columnwidth}\raggedright
   \setlength{\parskip}{6pt}
-  {\Huge\textbf{Thank you!}}
+  {\Huge\color{huawei-red}\textbf{Thank you!}}
 
   \vspace{0.5in}
 
