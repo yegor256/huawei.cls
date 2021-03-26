@@ -29,6 +29,8 @@ Inside the document body you can use these commands:
 
   * `\PrintLastPage{}` — prints the last page of TETF/CSTT charter or similar landscape document.
 
+  * `\PrintThankYouPage{}` — prints the last page with a "Thank You" message in the center.
+
 If you need more formatting options, [submit an issue](https://github.com/cqfn/huawei-latex/issues), 
 I'll implement them.
 

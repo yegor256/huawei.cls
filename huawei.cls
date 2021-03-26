@@ -68,7 +68,7 @@
   \vspace*{0.5in}
 
   {\Huge\textbf{\thetitle{}}} \\
-  \thesubtitle{}
+  \textsc{\thesubtitle{}}
 
   \vspace{0.5in}
 
@@ -116,6 +116,15 @@
   \begin{textblock}{8}[1,1](15.8,15.8)%
     \raggedleft\headers{Page \#\thepage{} of \pageref*{LastPage} \\[2pt] \today{} \currenttime}%
   \end{textblock}%
+}
+
+\newcommand\PrintThankYouPage{
+  \newpage
+  \vspace*{\fill}
+  \begin{center}
+  {\Huge\textbf{Thank you!}}
+  \end{center}
+  \vspace*{\fill}
 }
 
 \newcommand\PrintLastPage{
