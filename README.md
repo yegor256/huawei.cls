@@ -23,11 +23,11 @@ Class options (provided in square brackets after the `\documentclass`) are:
 
 Inside the document body you can use these commands:
 
-  * `\PrintCharterFirstPage{front-image}` — prints the first page of TETF/CSTT charter,
+  * `\PrintFirstPage{front-image}` — prints the first page of TETF/CSTT charter or similar landscape documents,
     placing the image `front-image.pdf` on the front (the file should be present
     in the current dir.
 
-  * `\PrintCharterLastPage{}` — prints the last page of TETF/CSTT charter.
+  * `\PrintLastPage{}` — prints the last page of TETF/CSTT charter or similar landscape document.
 
 If you need more formatting options, [submit an issue](https://github.com/cqfn/huawei-latex/issues), 
 I'll implement them.

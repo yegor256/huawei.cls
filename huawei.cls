@@ -61,9 +61,9 @@
   \end{textblock}%
 }
 
-\newcommand\PrintCharterFirstPage[1]{
+\newcommand\PrintFirstPage[1]{
   \leftbar{}
-  \includegraphics[height=2in]{#1}
+  \ifdefempty{#1}{}{\includegraphics[height=2in]{#1}}
 
   \vspace*{0.5in}
 
@@ -118,7 +118,7 @@
   \end{textblock}%
 }
 
-\newcommand\PrintCharterLastPage{
+\newcommand\PrintLastPage{
   \newpage
   \vspace*{1in}
   \begin{center}
