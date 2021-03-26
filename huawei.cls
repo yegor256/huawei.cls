@@ -36,7 +36,16 @@
 \RequirePackage{fancyhdr}\pagestyle{empty}
 \RequirePackage{everypage}
 \RequirePackage{svg}
-\RequirePackage[colorlinks,allcolors=blue!30!black,bookmarks=false,hypertexnames=true]{hyperref}
+\RequirePackage[normalem]{ulem}
+\RequirePackage[hidelinks]{hyperref}
+  \makeatletter\begingroup
+    \catcode`\$=6 %
+    \catcode`\#=12 %
+    \gdef\href@split$1#$2#$3\\$4{%
+      \hyper@@link{$1}{$2}{\uline{$4}}%
+      \endgroup
+    }%
+  \endgroup\makeatother
 \RequirePackage[absolute]{textpos}\TPGrid{16}{16}
 
 \newcommand\subtitle[1]{\def\thesubtitle{#1}}
