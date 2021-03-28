@@ -20,6 +20,11 @@
 \RequirePackage{paralist}
 \RequirePackage{makecell}
 \RequirePackage[para]{footmisc}
+\RequirePackage{minted}
+  \setminted{breaklines}
+  \usemintedstyle{bw}
+  \renewcommand{\theFancyVerbLine}{\textcolor{gray}{\tiny\oldstylenums{\ttfamily\arabic{FancyVerbLine}}}}
+  \setminted{firstnumber=last,linenos,numbersep=2pt,framesep=6pt,framerule=1pt,rulecolor=gray,frame=leftline,escapeinside=||,mathescape,samepage}
 \RequirePackage{graphicx}
 \RequirePackage{array}
 \RequirePackage[abspath]{currfile}
@@ -29,14 +34,15 @@
 \RequirePackage{wrapfig}
 \RequirePackage{lastpage}
 \RequirePackage{setspace}
-  \setstretch{1.1}
+  \setstretch{1.08}
 \RequirePackage[table]{xcolor}
   \definecolor{huawei-red}{HTML}{CF0A2C}
   \definecolor{huawei-black}{HTML}{232527}
 \RequirePackage{tikz}
 \RequirePackage{tabularx}
 \RequirePackage{titling}
-\RequirePackage{fancyhdr}\pagestyle{empty}
+\RequirePackage{fancyhdr}
+  \pagestyle{empty}
 \RequirePackage{everypage}
 \RequirePackage{svg}
 \RequirePackage[normalem]{ulem}
@@ -50,6 +56,12 @@
     }%
   \endgroup\makeatother
 \RequirePackage[absolute]{textpos}\TPGrid{16}{16}
+
+\newcommand\LeftHuaweiBar{%
+  \begin{textblock}{1}[0,0](0,0)%
+    \tikz \node[fill=huawei-red,minimum width=\TPHorizModule,minimum height=16\TPVertModule] {};%
+  \end{textblock}%
+}
 
 % Our custom commands:
 \newcommand\subtitle[1]{\def\thesubtitle{#1}}
@@ -69,14 +81,8 @@
   \def\arraystretch{1.5}%
 }
 
-\newcommand\leftbar{%
-  \begin{textblock}{1}[0,0](0,0)%
-    \tikz \node[fill=huawei-red,minimum width=\TPHorizModule,minimum height=16\TPVertModule] {};%
-  \end{textblock}%
-}
-
 \newcommand\PrintFirstPage[1]{
-  \leftbar{}
+  \LeftHuaweiBar{}
   \def\param{#1}%
   \ifx\param\empty
     % nothing
@@ -102,7 +108,7 @@
 }
 
 \AddEverypageHook{%
-  \leftbar{}
+  \LeftHuaweiBar{}
   \begin{textblock}{8}[0,0](1.2,0.2)%
     \begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-1, inner sep=0pt, outer sep=0pt]
       \begin{scope}[even odd rule,line width=0.800pt]
