@@ -23,6 +23,8 @@
 \RequirePackage{graphicx}
 \RequirePackage{array}
 \RequirePackage[abspath]{currfile}
+\RequirePackage{enumitem}
+  \setlist{nosep}
 \RequirePackage{microtype}
 \RequirePackage{wrapfig}
 \RequirePackage{lastpage}
@@ -51,6 +53,7 @@
 
 % Our custom commands:
 \newcommand\subtitle[1]{\def\thesubtitle{#1}}
+\newcommand\security{Confidential}
 \newcommand\aid[1]{\def\theauthorid{#1}}
 \newcommand\nospell[1]{#1}
 \newcommand\headers[1]{{\small\scshape\color{gray}\texttt{#1}}}
@@ -124,7 +127,7 @@
     \end{tikzpicture}
   \end{textblock}%
   \begin{textblock}{8}[1,0](15.8,0.2)%
-    \raggedleft\headers{Confidential}%
+    \raggedleft\headers{\security}%
   \end{textblock}%
   \begin{textblock}{8}[0,1](1.2,15.8)%
     \headers{\theauthor, \theauthorid \\[2pt] Huawei Technologies Co., Ltd.}%
