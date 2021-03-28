@@ -58,7 +58,7 @@
 \newcommand\nospell[1]{#1}
 \newcommand\headers[1]{{\small\scshape\color{gray}\texttt{#1}}}
 \newcommand\tbd[1]{{\color{red}#1}}
-\newcommand\crumb[2]{\begin{minipage}{\columnwidth}\raggedright\textsc{#1}:\\#2\end{minipage}\vspace{3pt}}
+\newcommand\crumb[2]{\begin{minipage}{\columnwidth}\raggedright\textsc{#1}:\\#2\end{minipage}\vspace{4pt}}
 
 \AtBeginDocument{%
   \raggedbottom%
