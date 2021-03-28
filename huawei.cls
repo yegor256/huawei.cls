@@ -33,8 +33,14 @@
 \RequirePackage{microtype}
 \RequirePackage{wrapfig}
 \RequirePackage{lastpage}
+\RequirePackage{xfp} % for \setrelativestretch
 \RequirePackage{setspace}
   \setstretch{1.08}
+  \newcommand{\setrelativestretch}[1]{%
+    \begingroup\edef\x{\endgroup%
+      \noexpand\setstretch{\fpeval{(#1)*(\baselinestretch)}}%
+    }\x%
+  }
 \RequirePackage[table]{xcolor}
   \definecolor{huawei-red}{HTML}{CF0A2C}
   \definecolor{huawei-black}{HTML}{232527}
