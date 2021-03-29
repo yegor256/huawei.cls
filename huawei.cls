@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{../../huawei}[25/3/2021 Basic Huawei Documents]
+\ProvidesClass{/code/huawei-latex/huawei}[25/3/2021 Basic Huawei Documents]
 \newif\iflandscape
 \DeclareOption{landscape}{\landscapetrue}
 \ProcessOptions\relax
@@ -20,6 +20,8 @@
 \RequirePackage{paralist}
 \RequirePackage{makecell}
 \RequirePackage[para]{footmisc}
+  \setlength{\footnotemargin}{2pt}
+  \setlength{\footnotesep}{2pt}
 \RequirePackage{minted}
   \setminted{breaklines}
   \usemintedstyle{bw}
@@ -74,7 +76,7 @@
 \newcommand\security{Confidential}
 \newcommand\aid[1]{\def\theauthorid{#1}}
 \newcommand\nospell[1]{#1}
-\newcommand\headers[1]{{\small\scshape\color{gray}\texttt{#1}}}
+\newcommand\headers[1]{{\small\sffamily\color{gray}#1}}
 \newcommand\tbd[1]{{\color{red}#1}}
 \newcommand\crumb[2]{\begin{minipage}{\columnwidth}\raggedright\textsc{#1}:\\#2\end{minipage}\vspace{4pt}}
 
