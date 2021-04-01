@@ -1,6 +1,9 @@
 SUBDIRS := $(wildcard */.)
 
 all: $(SUBDIRS)
+
+clean: $(SUBDIRS)
+
 $(SUBDIRS):
 	$(MAKE) -C $@
 
