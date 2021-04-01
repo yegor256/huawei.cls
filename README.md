@@ -21,6 +21,8 @@ Class options (provided in square brackets after the `\documentclass`) are:
 
   * `landscape` — makes the document in landscape format.
 
+  * `anonymous` — removes the name of the author
+
 Inside the document body you can use these commands:
 
   * `\PrintFirstPage{front-image}` — prints the first page of TETF/CSTT charter or similar landscape documents,

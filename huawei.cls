@@ -2,6 +2,8 @@
 \ProvidesClass{/code/huawei-latex/huawei}[25/3/2021 Basic Huawei Documents]
 \newif\iflandscape
 \DeclareOption{landscape}{\landscapetrue}
+\newif\ifanonymous
+\DeclareOption{anonymous}{\anonymoustrue}
 \ProcessOptions\relax
 \LoadClass[12pt]{article}
 \RequirePackage{geometry}
@@ -144,7 +146,14 @@
     \raggedleft\headers{\security}%
   \end{textblock}%
   \begin{textblock}{8}[0,1](1.2,15.8)%
-    \headers{\theauthor, \theauthorid \\[2pt] Huawei Technologies Co., Ltd.}%
+    \headers{%
+      \ifanonymous%
+        % nothing here
+      \else%
+        \theauthor, \theauthorid \\[2pt]
+      \fi
+      Huawei Technologies Co., Ltd.
+    }%
   \end{textblock}%
   \begin{textblock}{8}[1,1](15.8,15.8)%
     \raggedleft\headers{Page \#\thepage{} of \pageref*{LastPage} \\[2pt] \today{} \currenttime}%
