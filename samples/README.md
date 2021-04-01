@@ -1,6 +1,6 @@
 Here are some samples:
 
-  * [tetf-charter/](tetf-charter) with a TETF/CSTT charter
+  * [charter/](charter) with a Technical Project Charter
 
   * [call-for-proposal/](call-for-proposal) with a Call for Proposal
 
