@@ -23,7 +23,7 @@ Class options (provided in square brackets after the `\documentclass`) are:
 
   * `anonymous` — removes the name of the author
 
-  * `nobrand` — don't mention the brand of Huawei (remove the logo too)
+  * `nobrand` — avoids mentioning the brand of Huawei (removes the logo too)
 
 Inside the document body you can use these commands:
 
