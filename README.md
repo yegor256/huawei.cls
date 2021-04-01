@@ -27,11 +27,11 @@ Class options (provided in square brackets after the `\documentclass`) are:
 
 Inside the document body you can use these commands:
 
-  * `\PrintFirstPage{front-image}` — prints the first page of TETF/CSTT charter or similar landscape documents,
+  * `\PrintFirstPage{front-image}` — prints the first page of a project charter or similar landscape documents,
     placing the image `front-image.pdf` on the front (the file should be present
     in the current dir.
 
-  * `\PrintLastPage{}` — prints the last page of TETF/CSTT charter or similar landscape document.
+  * `\PrintLastPage{}` — prints the last page of a project charter or similar landscape document.
 
   * `\PrintThankYouPage{}` — prints the last page with a "Thank You" message in the center.
 
