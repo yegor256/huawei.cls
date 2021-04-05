@@ -77,8 +77,8 @@
 
 % Our custom commands:
 \newcommand\subtitle[1]{\def\thesubtitle{#1}}
-\newcommand\security{Confidential}
-\newcommand\aid[1]{\def\theauthorid{#1}}
+\newcommand*\security{Confidential}
+\newcommand*\aid[1]{\def\theauthorid{#1}}
 \newcommand\nospell[1]{#1}
 \newcommand\headers[1]{{\small\sffamily\color{gray}#1}}
 \newcommand\tbd[1]{{\color{red}#1}}
