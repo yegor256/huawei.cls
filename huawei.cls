@@ -1,5 +1,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{/code/huawei-latex/huawei}[25/3/2021 Basic Huawei Documents]
+\newif\ifnosecurity
+\DeclareOption{nosecurity}{\nosecuritytrue}
 \newif\ifnobrand
 \DeclareOption{nobrand}{\nobrandtrue}
 \newif\iflandscape
@@ -149,7 +151,13 @@
     \end{textblock}%
   \fi%
   \begin{textblock}{8}[1,0](15.8,0.2)%
-    \raggedleft\headers{\security}%
+    \raggedleft\headers{%
+      \ifnosecurity%
+        % nothing here
+      \else%
+        \security
+      \fi%
+    }%
   \end{textblock}%
   \begin{textblock}{8}[0,1](1.2,15.8)%
     \headers{%

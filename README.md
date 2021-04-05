@@ -23,6 +23,8 @@ Class options (provided in square brackets after the `\documentclass`) are:
 
   * `nobrand` — avoids mentioning the brand of Huawei (removes the logo too)
 
+  * `nosecurity` — avoids mentioning the level of security
+
 Inside the document body you can use these commands:
 
   * `\PrintFirstPage{front-image}` — prints the first page of a project charter or similar landscape documents,
