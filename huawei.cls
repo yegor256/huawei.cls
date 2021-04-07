@@ -77,10 +77,13 @@
   \end{textblock}%
 }
 
-% Our custom commands:
-\newcommand\subtitle[1]{\def\thesubtitle{#1}}
-\newcommand*\security{Confidential}
-\newcommand*\aid[1]{\def\theauthorid{#1}}
+% Our custom commands to redefine:
+\newcommand*\thecompany{Huawei Technologies Co., Ltd.}
+\newcommand\thesubtitle{}
+\newcommand*\thesecurity{Confidential}
+\newcommand*\theid{00000000}
+
+% Custom commands
 \newcommand\nospell[1]{#1}
 \newcommand\headers[1]{{\small\sffamily\color{gray}#1}}
 \newcommand\tbd[1]{{\color{red}#1}}
@@ -114,7 +117,7 @@
   \theauthor\\
   Moscow Research Center (MRC)\\
   Russian Research Institute (RRI)\\
-  \textbf{Huawei Technologies Co., Ltd.}
+  \textbf{\thecompany}
 
   \begin{textblock}{16}[1,1](16,16)
     % Moscow picture goes here
@@ -164,12 +167,12 @@
       \ifanonymous%
         % nothing here
       \else%
-        \theauthor, \theauthorid \\[2pt]
+        \theauthor, \theid \\[2pt]
       \fi%
       \ifnobrand%
         % nothing here
       \else%
-        Huawei Technologies Co., Ltd.
+        \thecompany{}
       \fi%
     }%
   \end{textblock}%
@@ -186,6 +189,17 @@
   \end{center}
   \vspace*{\fill}
 }
+
+\newcommand\PrintDisclaimer{%
+  \vspace*{\fill}\setrelativestretch{0.55}{{\sffamily\scriptsize\color{gray!50!black}%
+  \textbf{Disclaimer}: The opinions expressed in this document are in good faith and
+  while every care has been taken in preparing it, \thecompany{}
+  makes no representations and gives no warranties of whatever
+  nature in respect of these documents, including but not limited to the
+  accuracy or completeness of any information, facts and/or opinions contained therein.
+  \thecompany{}, its subsidiaries, the directors, employees and agents
+  cannot be held liable for the use of and reliance of the opinions, estimates, forecasts and
+  findings in these documents.}}}
 
 \newcommand\PrintLastPage{
   \newpage
@@ -205,7 +219,7 @@
   organization for a fully connected,
   intelligent world.
 
-  \textbf{Copyright \copyright{} \the\year{} Huawei Technologies Co., Ltd.\\
+  \textbf{Copyright \copyright{} \the\year{} \thecompany{}\\
   All Rights Reserved.}
 
   The information in this document may contain predictive
@@ -215,7 +229,7 @@
   could cause actual results and developments to differ materially
   from those expressed or implied in the predictive statements.
   Therefore, such information is provided for reference purpose
-  only and constitutes neither an offer nor an acceptance. Huawei
+  only and constitutes neither an offer nor an acceptance. \thecompany{}
   may change the information at any time without notice.
   \end{minipage}
   \end{center}%
