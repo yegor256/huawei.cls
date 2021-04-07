@@ -35,6 +35,8 @@ Inside the document body you can use these commands:
 
   * `\PrintThankYouPage{}` — prints the last page with a "Thank You" message in the center.
 
+  * `\PrintDisclaimer{}` — prints a paragraph at the bottom of the page with a disclaimer.
+
 If you need more formatting options, [submit an issue](https://github.com/cqfn/huawei-latex/issues), 
 I'll implement them.
 
