@@ -158,7 +158,7 @@
       \ifnosecurity%
         % nothing here
       \else%
-        \security
+        \thesecurity
       \fi%
     }%
   \end{textblock}%
