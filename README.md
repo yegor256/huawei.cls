@@ -25,6 +25,10 @@ Class options (provided in square brackets after the `\documentclass`) are:
 
   * `nosecurity` — avoids mentioning the level of security
 
+  * `nodate` — don't show the date and time at the bottom of each page
+
+  * `nopaging` — avoids page numbers at the bottom of each page
+
 Inside the document body you can use these commands:
 
   * `\PrintFirstPage{front-image}` — prints the first page of a project charter or similar landscape documents,

@@ -4,6 +4,10 @@
 \DeclareOption{nosecurity}{\nosecuritytrue}
 \newif\ifnobrand
 \DeclareOption{nobrand}{\nobrandtrue}
+\newif\ifnodate
+\DeclareOption{nodate}{\nodatetrue}
+\newif\ifnopaging
+\DeclareOption{nopaging}{\nopagingtrue}
 \newif\iflandscape
 \DeclareOption{landscape}{\landscapetrue}
 \newif\ifanonymous
@@ -177,7 +181,23 @@
     }%
   \end{textblock}%
   \begin{textblock}{8}[1,1](15.8,15.8)%
-    \raggedleft\headers{Page \#\thepage{} of \pageref*{LastPage} \\[2pt] \today{} \currenttime}%
+    \raggedleft\headers{%
+      \ifnopaging%
+        % nothing here
+      \else%
+        Page \#\thepage{} of \pageref*{LastPage}
+        \ifnodate%
+          % nothing here
+        \else%
+          \\[2pt]
+        \fi%
+      \fi%
+      \ifnodate%
+        % nothing here
+      \else%
+        \today{} \currenttime
+      \fi%
+    }%
   \end{textblock}%
 }
 
