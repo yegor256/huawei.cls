@@ -218,11 +218,21 @@
 \newcommand\PrintDisclaimer{%
   \vspace*{\fill}\setrelativestretch{0.55}{{\sffamily\scriptsize\color{gray!50!black}%
   \textbf{Disclaimer}: The opinions expressed in this document are in good faith and
-  while every care has been taken in preparing it, \thecompany{}
+  while every care has been taken in preparing it,
+  \ifnobrand%
+    the author%
+  \else%
+    \thecompany{}%
+  \fi
   makes no representations and gives no warranties of whatever
   nature in respect of these documents, including but not limited to the
   accuracy or completeness of any information, facts and/or opinions contained therein.
-  \thecompany{}, its subsidiaries, the directors, employees and agents
+  \ifnobrand%
+    The author%
+  \else%
+    \thecompany{}%
+  \fi,
+  its subsidiaries, the directors, employees and agents
   cannot be held liable for the use of and reliance of the opinions, estimates, forecasts and
   findings in these documents.}}}
 
