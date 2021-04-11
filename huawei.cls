@@ -171,7 +171,12 @@
       \ifanonymous%
         % nothing here
       \else%
-        \theauthor, \theid \\[2pt]
+        \theauthor, \theid
+        \ifnobrand%
+          % nothing here
+        \else%
+          \\[2pt]
+        \fi%
       \fi%
       \ifnobrand%
         % nothing here
