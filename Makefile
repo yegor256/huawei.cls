@@ -27,8 +27,9 @@ huawei.pdf: huawei.tex huawei.cls $(SUBDIRS)
 	texsc $<
 	texqc --ignore 'You have requested document class' $<
 
-zip: clean huawei.pdf
-	zip -r huawei.zip * -x '*~' -x '*.tgz' -x '*.zip' -x 'samples/*'
+zip: huawei.pdf huawei.cls
+	rm -rf huawei.zip
+	zip -r huawei.zip * -x '*~' -x '*.tgz' -x '*.zip' -x 'samples/*' -x '_minted-*/*' -x '*.dvi' -x '*.aux' -x '*.fdb_latexmk' -x '*.fls' -x '*.log' -x '*.toc' -x '*.out' -x 'Makefile' -x 'aspell.en.pws'
 
 clean:
 	rm -rf .DS_Store *.aux *.bbl *.bcf *.blg *.fdb_latexmk *.fls *.log *.run.xml *.out
