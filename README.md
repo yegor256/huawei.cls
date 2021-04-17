@@ -18,8 +18,6 @@ Hello, world!
 
 Find more examples in the [`samples/`](/samples) directory.
 
-## How to Contribute
-
 If you need more formatting options, 
 [submit an issue](https://github.com/cqfn/huawei-latex/issues), 
 I'll implement them.
