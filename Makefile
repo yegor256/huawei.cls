@@ -24,6 +24,8 @@ all: samples huawei.pdf
 
 huawei.pdf: huawei.tex huawei.cls $(SUBDIRS)
 	latexmk -pdf $<
+	texsc $<
+	texqc --ignore 'You have requested document class' $<
 
 zip: clean huawei.pdf
 	zip -r huawei.zip * -x '*~' -x '*.tgz' -x '*.zip' -x 'samples/*'

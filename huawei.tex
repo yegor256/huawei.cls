@@ -1,7 +1,7 @@
 \documentclass[nobrand,nosecurity]{./huawei}
-\renewcommand*\thetitle{\LaTeX{} Class \texttt{huawei}}
+\renewcommand*\thetitle{\LaTeX{} Class \ff{huawei}}
 \renewcommand*\thesubtitle{User's Guide}
-\author{Yegor Bugayenko}
+\renewcommand*\theauthor{\nospell{Yegor Bugayenko}}
 \begin{document}
 \maketitle
 
@@ -100,11 +100,9 @@ such as its title or author's name, here is how:
 
 \begin{minted}{text}
 \documentclass{huawei}
-\renewcommand*\thesubtitle{Making Compression 15% Faster}
+\renewcommand*\thetitle{Making Compression 15% Faster}
 \renewcommand*\thesubtitle{Technical Report}
 \renewcommand*\theauthor{Yegor Bugayenko}
-\renewcommand*\theid{00112233}
-\renewcommand*\thesecurity{Internal Use Only}
 \begin{document}
 \maketitle
 Hello, world!
@@ -115,31 +113,70 @@ It's recommended to use \ff{\textbackslash{}renewcommand*} instead of
 \ff{\textbackslash{}renewcommand} in order to let \LaTeX catch you
 if by mistake a new line gets into the content.
 
+The following meta commands are defined:
+
+\ff{\textbackslash{}thetitle} is the main title of the document
+  to be used in the text and in the properties of the PDF document.
+
+\ff{\textbackslash{}thesubtitle} is the subtitle to be
+  printed under the title.
+
+\ff{\textbackslash{}theauthor} is the author of the document
+  in ``first-name last-name'' format.
+
+\ff{\textbackslash{}theid} is the internal ID of the author, if
+  it's applicable.
+
+\ff{\textbackslash{}thesecurity} is the level of security of
+  the document, which is usually printed at the top right
+  corner of it; usual values are ``Internal Use Only,''
+  ''Confidential,'' or ``Secret.''
+
+Default values of all these commands are empty. If you don't
+renew them in your document, nothing will be printed.
+
 \section{Custom Commands}
 
 There is a number of supplementary commands for better text formatting,
 which we introduced:
 
 \ff{\textbackslash{}ff\{text\}}
-  makes the text fixed-font with a nice border around
+  makes the text fixed-font with a nice border around.
+
+\ff{\textbackslash{}tbd\{text\}}
+  highlights the text, which is expected to be improved later
+  (tbd stands for ``To Be Determined''), like \tbd{this one}.
 
 Inside the document body you can use these commands:
 
 \ff{\textbackslash{}PrintFirstPage\{front-image\}}
   prints the first page of a project charter or similar landscape documents,
   placing the image \ff{front-image.pdf} on the front (the file should be present
-  in the current dir.
+  in the current dir. If you don't have the front image file, just leave
+  the first argument empty.
 
 \ff{\textbackslash{}PrintLastPage\{\}}
-  prints the last page of a project charter or similar landscape document.
+  prints the last page of a project charter or a similar landscape document.
 
 \ff{\textbackslash{}PrintThankYouPage\{\}}
   prints the last page with a "Thank You" message in the center.
 
 \ff{\textbackslash{}PrintDisclaimer\{\}}
-  prints a paragraph at the bottom of the page with a disclaimer.
+  prints a paragraph at the bottom of the page with a standard disclaimer.
 
 \section{Best Practices}
+
+You are free to design your documents any way you want. However,
+it would be convenient for yourself and for your readers, if you follow
+the convention we have for business and technical documents.
+The \ff{samples} directory contains a number of sample documents, which
+we suggest you to use as templates when you start making new documents.
+
+The rule of thumb is simple: try \emph{not} to format your documents.
+Instead, let the class designed by us do this work for you. Just type
+the content without changing the layout, adding colors, changing fonts,
+etc. The less you modify the look-and-feel, the better your documents
+will be perceived by your readers.
 
 \subsection{Two Columns}
 
