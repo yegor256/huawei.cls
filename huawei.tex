@@ -1,10 +1,63 @@
-\documentclass{./huawei}
-\title{Tutorial}
+\documentclass[nosecurity]{./huawei}
+\title{Tutorial for the \texttt{huawei} \LaTeX Class}
 \author{Yegor Bugayenko}
 \begin{document}
 
-\section*{Test}
+\section{Overview}
 
 Test here
+
+\section{Class Options}
+
+Class options, provided in square brackets after the
+\ff{\textbackslash{}documentclass}, are the following:
+
+\ff{landscape}
+  makes the document in landscape format, also changing the size
+  of the paper to 16x9 inches (the default page size is
+  \href{https://en.wikipedia.org/wiki/Paper_size}{A4}),
+  making it perfect for presentations.
+
+\ff{anonymous}
+  removes the name of the author
+
+\ff{nobrand}
+  avoids mentioning the brand of Huawei (removes the logo too)
+
+\ff{nosecurity}
+  avoids mentioning the level of security
+
+\ff{nodate}
+  don't show the date and time at the bottom of each page
+
+\ff{nopaging}
+  avoids page numbers at the bottom of each page
+
+\section{Commands}
+
+There is a number of supplementary commands for better text formatting,
+which we recommend using:
+
+\ff{\textbackslash{}ff\{text\}}
+  makes the text fixed-font with a nice border around
+
+\ff{\textbackslash{}href\{url\}\{text\}}
+  makes a hyper link to the URL
+
+Inside the document body you can use these commands:
+
+\ff{\textbackslash{}PrintFirstPage\{front-image\}}
+  prints the first page of a project charter or similar landscape documents,
+  placing the image \ff{front-image.pdf} on the front (the file should be present
+  in the current dir.
+
+\ff{\textbackslash{}PrintLastPage\{\}}
+  prints the last page of a project charter or similar landscape document.
+
+\ff{\textbackslash{}PrintThankYouPage\{\}}
+  prints the last page with a "Thank You" message in the center.
+
+\ff{\textbackslash{}PrintDisclaimer\{\}}
+  prints a paragraph at the bottom of the page with a disclaimer.
 
 \end{document}

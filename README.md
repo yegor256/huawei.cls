@@ -4,10 +4,8 @@ directory and then mentioning it in the preamble of all your documents
 
 ```tex
 \documentclass[landscape]{/code/huawei}
-\author{Yegor Bugayenko} % First name, last name
-\aid{y00538675} % Internal ID of the author
-\title{An Interesting Document About Something} % Title
-\subtitle{To Whom It May Concern} % Subtitle
+\author{Yegor Bugayenko}
+\title{An Interesting Document About Something}
 \begin{document}
 Hello, world!
 \end{document}
@@ -15,38 +13,14 @@ Hello, world!
 
 Find more examples in the [`samples/`](/samples) directory.
 
-Class options (provided in square brackets after the `\documentclass`) are:
-
-  * `landscape` — makes the document in landscape format.
-
-  * `anonymous` — removes the name of the author
-
-  * `nobrand` — avoids mentioning the brand of Huawei (removes the logo too)
-
-  * `nosecurity` — avoids mentioning the level of security
-
-  * `nodate` — don't show the date and time at the bottom of each page
-
-  * `nopaging` — avoids page numbers at the bottom of each page
-
-Inside the document body you can use these commands:
-
-  * `\PrintFirstPage{front-image}` — prints the first page of a project charter or similar landscape documents,
-    placing the image `front-image.pdf` on the front (the file should be present
-    in the current dir.
-
-  * `\PrintLastPage{}` — prints the last page of a project charter or similar landscape document.
-
-  * `\PrintThankYouPage{}` — prints the last page with a "Thank You" message in the center.
-
-  * `\PrintDisclaimer{}` — prints a paragraph at the bottom of the page with a disclaimer.
-
-If you need more formatting options, [submit an issue](https://github.com/cqfn/huawei-latex/issues), 
-I'll implement them.
-
 ## How to Contribute
 
-Make a fork, then create a branch, then run `make` in the root directory.
+If you need more formatting options, 
+[submit an issue](https://github.com/cqfn/huawei-latex/issues), 
+I'll implement them.
+
+If you want to contribute yourself, make a fork, then create a branch, 
+then run `make` in the root directory.
 It should compile everything without errors. If not, submit an issue and wait.
 Otherwise, make your changes and then run `make` again. If the build is
 still clean, submit a pull request.

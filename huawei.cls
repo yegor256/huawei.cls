@@ -114,6 +114,10 @@
 \newcommand\headers[1]{{\small\sffamily\color{gray}#1}}
 \newcommand\tbd[1]{{\color{red}#1}}
 \newcommand\crumb[2]{\begin{minipage}{\columnwidth}\raggedright\textsc{#1}:\\#2\end{minipage}\vspace{4pt}}
+\RequirePackage{tcolorbox}
+  \newtcbox{\codebox}{nobeforeafter,colframe=gray!80!white,colback=gray!5!white,boxrule=0.1pt,arc=1pt,
+  boxsep=1.2pt,left=0.5pt,right=0.5pt,top=0.2pt,bottom=0.2pt,tcbox raise base}
+\newcommand{\ff}[1]{\codebox{\vrule height 6pt depth 1pt width 0pt\texttt{#1}}}
 
 \AtBeginDocument{%
   \raggedbottom%
@@ -193,7 +197,12 @@
       \ifanonymous%
         % nothing here
       \else%
-        \theauthor, \theid
+        \theauthor%
+        \ifnosecurity%
+          % nothing here
+        \else,
+          \theid
+        \fi%
         \ifnobrand%
           % nothing here
         \else%

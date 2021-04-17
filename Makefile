@@ -37,7 +37,5 @@ clean:
 	rm -rf _minted*
 	cd samples; make clean; cd ..
 
-.PHONY: all $(SUBDIRS)
-
 $(SUBDIRS):
 	$(MAKE) -C $@
