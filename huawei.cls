@@ -108,6 +108,8 @@
 \newcommand\thetitle{Untitled}
 \newcommand*\thecompany{Huawei Technologies Co., Ltd.}
 \newcommand\thesubtitle{}
+\renewcommand\author[1]{\renewcommand\theauthor{#1}}
+\newcommand\theauthor{Unknown}
 \newcommand*\thesecurity{Confidential}
 \newcommand*\theid{}
 
