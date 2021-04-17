@@ -1,16 +1,81 @@
 \documentclass[nosecurity]{./huawei}
-\title{Tutorial for the \texttt{huawei} \LaTeX Class}
+\renewcommand*\thetitle{\LaTeX{} Class \texttt{huawei}}
+\renewcommand*\thesubtitle{User's Guide}
 \author{Yegor Bugayenko}
 \begin{document}
 
+\maketitle
+
 \section{Overview}
 
-Test here
+The class \ff{huawei} provided helps you design your work
+documents and presentations keeping the code short and the
+style elegant enough both for management and technical
+papers. To use the class you simply mention its name
+in the preamble:
 
-\section{Class Options}
+\begin{minted}{text}
+\documentclass{huawei}
+\begin{document}
+Hello, world!
+\end{document}
+\end{minted}
 
-Class options, provided in square brackets after the
-\ff{\textbackslash{}documentclass}, are the following:
+The document rendered from this \LaTeX code will look similar
+to the document you are reading now. We recommend you to use
+\ff{latexmk} to render compile your \ff{.tex} files to \ff{.pdf}.
+The simplest setup will require a few files staying next to your
+\ff{.tex} file, in the same directory (``story'' is the name
+of your project here):
+
+\begin{minted}{text}
+story\
+  .gitignore
+  story.tex
+  Makefile
+  .latexmkrc
+\end{minted}
+
+The content of your \ff{.latexmkrc} file would be this:
+
+\begin{minted}{text}
+$pdflatex = 'pdflatex %O --shell-escape %S';
+\end{minted}
+
+The recommended content of the \ff{Makefile} would be this:
+
+\begin{minted}{text}
+TEXS=$(wildcard *.tex)
+PDFS=$(TEXS:.tex=.pdf)
+all: $(PDFS)
+clean:
+  rm -rf *.aux *.bbl *.bcf *.blg *.fdb_latexmk *.fls *.log *.run.xml *.out
+  rm -rf $(PDFS)
+  rm -rf _minted*
+%.pdf: %.tex
+  latexmk -pdf $<
+\end{minted}
+
+This code should stay in \ff{.gitignore}:
+
+\begin{minted}{text}
+_minted-*
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.run.xml
+*.aux
+*.out
+\end{minted}
+
+\section{Layout Options}
+
+There are a few class options, provided in square brackets after the
+\ff{\textbackslash{}documentclass}, which can help you fine-tune
+the layout of your document:
 
 \ff{landscape}
   makes the document in landscape format, also changing the size
@@ -19,30 +84,55 @@ Class options, provided in square brackets after the
   making it perfect for presentations.
 
 \ff{anonymous}
-  removes the name of the author
+  removes the name of the author everywhere, including the bottom
+  of the page, where the author's name stays next to the name of the
+  company.
 
 \ff{nobrand}
-  avoids mentioning the brand of Huawei (removes the logo too)
+  avoid mentioning the brand of Huawei anywhere
+  in the document and removes the logo too.
 
 \ff{nosecurity}
-  avoids mentioning the level of security
+  avoids mentioning the level of security at the right top
+  corner of the document and also avoids showing the ID of the author
+  where it usually is visible.
 
 \ff{nodate}
-  don't show the date and time at the bottom of each page
+  don't show the date and time at the bottom of each page,
+  where they usually are rendered in ISO~8601 format.
 
 \ff{nopaging}
-  avoids page numbers at the bottom of each page
+  avoids page numbers at the bottom of each page.
 
-\section{Commands}
+\section{Preamble}
+
+In the preamble you can specify meta information about the document,
+such as its title or author's name, here is how:
+
+\begin{minted}{text}
+\documentclass{huawei}
+\renewcommand*\thesubtitle{Making Compression 15% Faster}
+\renewcommand*\thesubtitle{Technical Report}
+\renewcommand*\theauthor{Yegor Bugayenko}
+\renewcommand*\theid{00112233}
+\renewcommand*\thesecurity{Internal Use Only}
+\begin{document}
+\maketitle
+Hello, world!
+\end{document}
+\end{minted}
+
+It's recommended to use \ff{\textbackslash{}renewcommand*} instead of
+\ff{\textbackslash{}renewcommand} in order to let \LaTeX catch you
+if by mistake a new line gets into the content.
+
+\section{Custom Commands}
 
 There is a number of supplementary commands for better text formatting,
-which we recommend using:
+which we introduced:
 
 \ff{\textbackslash{}ff\{text\}}
   makes the text fixed-font with a nice border around
-
-\ff{\textbackslash{}href\{url\}\{text\}}
-  makes a hyper link to the URL
 
 Inside the document body you can use these commands:
 
@@ -59,5 +149,49 @@ Inside the document body you can use these commands:
 
 \ff{\textbackslash{}PrintDisclaimer\{\}}
   prints a paragraph at the bottom of the page with a disclaimer.
+
+\section{Best Practices}
+
+\subsection{Two Columns}
+
+In the landscape format it's recommended to use two columns, for better
+readability of the text. Here is how:
+
+\begin{minted}{text}
+\documentclass{huawei}
+\begin{document}
+\newpage
+\begin{multicols}{2}
+\section*{First}
+Here goes the first column content.
+\columnbreak
+\section*{Second}
+Here goes the second column content.
+\end{multicols}
+\end{document}
+\end{minted}
+
+A more complete example is in the\ff{samples/charter.tex}.
+
+\subsection{Crumbs}
+
+When you need to put many small information pieces into one page,
+we recommend you to use ``crumbs'':
+
+\begin{minted}{text}
+\documentclass{huawei}
+\begin{document}
+\newpage
+\section*{Project Details}
+\begin{multicols}{2}
+\raggedright
+\crumb{Budget}{\$100K}
+
+\crumb{Duration}{5 months}
+\end{multicols}
+\end{document}
+\end{minted}
+
+A more complete example is in the\ff{samples/charter.tex}.
 
 \end{document}

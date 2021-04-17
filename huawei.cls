@@ -104,10 +104,12 @@
 }
 
 % Our custom commands to redefine:
+\renewcommand\title[1]{\renewcommand\thetitle{#1}}
+\newcommand\thetitle{Untitled}
 \newcommand*\thecompany{Huawei Technologies Co., Ltd.}
 \newcommand\thesubtitle{}
 \newcommand*\thesecurity{Confidential}
-\newcommand*\theid{00000000}
+\newcommand*\theid{}
 
 % Custom commands
 \newcommand\nospell[1]{#1}
@@ -235,6 +237,15 @@
       \fi%
     }%
   \end{textblock}%
+}
+
+\renewcommand\maketitle{%
+\vspace*{18pt}
+{\bfseries{\Huge\thetitle}}\\[6pt]
+{\color{gray!50!black}\large\thesubtitle}\\[18pt]
+{\scshape\theauthor}\\
+{\theid}
+\vspace{2em}
 }
 
 \newcommand\PrintThankYouPage{

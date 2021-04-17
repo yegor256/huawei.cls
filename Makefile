@@ -20,9 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-SUBDIRS := $(wildcard */.)
-
-all: $(SUBDIRS) huawei.pdf
+all: samples huawei.pdf
 
 huawei.pdf: huawei.tex huawei.cls $(SUBDIRS)
 	latexmk -pdf $<
@@ -37,5 +35,5 @@ clean:
 	rm -rf _minted*
 	cd samples; make clean; cd ..
 
-$(SUBDIRS):
-	$(MAKE) -C $@
+samples: samples/*.tex
+	cd samples; make; cd ..
