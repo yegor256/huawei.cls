@@ -20,7 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-all: samples huawei.pdf
+all: make-samples huawei.pdf
 
 huawei.pdf: huawei.tex huawei.cls $(SUBDIRS)
 	latexmk -pdf $<
@@ -37,5 +37,5 @@ clean:
 	rm -rf _minted*
 	cd samples; make clean; cd ..
 
-samples: samples/*.tex
+make-samples: samples/*.tex
 	cd samples; make; cd ..

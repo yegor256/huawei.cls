@@ -140,22 +140,8 @@
   \else
     \includegraphics[height=2in]{#1}
   \fi
-
   \vspace*{0.5in}
-
-  {\Huge\textbf{\thetitle{}}} \\
-  \textsc{\thesubtitle{}}
-
-  \vspace{0.5in}
-
-  \theauthor\\
-  Moscow Research Center (MRC)\\
-  Russian Research Institute (RRI)\\
-  \textbf{\thecompany}
-
-  \begin{textblock}{16}[1,1](16,16)
-    % Moscow picture goes here
-  \end{textblock}
+  \maketitle
 }
 
 \AddEverypageHook{%
@@ -243,10 +229,18 @@
 
 \renewcommand\maketitle{%
 \vspace*{18pt}
-{\bfseries{\Huge\thetitle}}\\[6pt]
-{\color{gray!50!black}\large\thesubtitle}\\[18pt]
-{\scshape\theauthor}\\
-{\theid}
+{\bfseries{\Huge\thetitle}}
+\\[6pt]
+\ifx\thesubtitle\empty\else%
+  {\color{gray!50!black}\large\thesubtitle}
+\fi
+\\[18pt]
+\ifx\theauthor\empty\else%
+  {\scshape\theauthor}\\
+\fi
+\ifx\theauthor\empty\else%
+  {\theid}
+\fi
 \vspace{2em}
 }
 
