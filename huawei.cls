@@ -21,7 +21,7 @@
 % SOFTWARE.
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{huawei}[25/3/2021 Basic Huawei Documents]
+\ProvidesClass{huawei}[17/4/2021 0.1.0 Template for Huawei documents]
 \newif\ifnosecurity
 \DeclareOption{nosecurity}{\nosecuritytrue}
 \newif\ifnobrand
