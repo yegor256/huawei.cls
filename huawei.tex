@@ -1,4 +1,4 @@
-\documentclass[nosecurity]{./huawei}
+\documentclass[nobrand,nosecurity]{./huawei}
 \renewcommand*\thetitle{\LaTeX{} Class \texttt{huawei}}
 \renewcommand*\thesubtitle{User's Guide}
 \author{Yegor Bugayenko}
@@ -21,39 +21,25 @@ Hello, world!
 \end{document}
 \end{minted}
 
-The document rendered from this \LaTeX code will look similar
+The document rendered from this \LaTeX{} code will look similar
 to the document you are reading now. We recommend you to use
-\ff{latexmk} to render compile your \ff{.tex} files to \ff{.pdf}.
+\ff{latexmk} to compile your \ff{.tex} files to \ff{.pdf}.
 The simplest setup will require a few files staying next to your
 \ff{.tex} file, in the same directory (``story'' is the name
 of your project here):
 
 \begin{minted}{text}
 story\
-  .gitignore
-  story.tex
-  Makefile
   .latexmkrc
+  .gitignore
+  Makefile
+  story.tex
 \end{minted}
 
 The content of your \ff{.latexmkrc} file would be this:
 
 \begin{minted}{text}
 $pdflatex = 'pdflatex %O --shell-escape %S';
-\end{minted}
-
-The recommended content of the \ff{Makefile} would be this:
-
-\begin{minted}{text}
-TEXS=$(wildcard *.tex)
-PDFS=$(TEXS:.tex=.pdf)
-all: $(PDFS)
-clean:
-  rm -rf *.aux *.bbl *.bcf *.blg *.fdb_latexmk *.fls *.log *.run.xml *.out
-  rm -rf $(PDFS)
-  rm -rf _minted*
-%.pdf: %.tex
-  latexmk -pdf $<
 \end{minted}
 
 This code should stay in \ff{.gitignore}:
@@ -69,6 +55,20 @@ _minted-*
 *.run.xml
 *.aux
 *.out
+\end{minted}
+
+The recommended content of the \ff{Makefile} would be this:
+
+\begin{minted}{text}
+TEXS=$(wildcard *.tex)
+PDFS=$(TEXS:.tex=.pdf)
+all: $(PDFS)
+clean:
+  rm -rf *.aux *.bbl *.bcf *.blg *.fdb_latexmk *.fls *.log *.run.xml *.out
+  rm -rf $(PDFS)
+  rm -rf _minted*
+%.pdf: %.tex
+  latexmk -pdf $<
 \end{minted}
 
 \section{Layout Options}
