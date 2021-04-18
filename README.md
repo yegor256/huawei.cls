@@ -3,7 +3,8 @@ This package is created in order to help some people working
 with Huawei or inside Huawei to render some documents in LaTeX format.
 You are welcome to use it at your own risk.
 
-[Install it](https://en.wikibooks.org/wiki/LaTeX/Installing_Extra_Packages) 
+First, [install it](https://en.wikibooks.org/wiki/LaTeX/Installing_Extra_Packages)
+from [CTAN](https://ctan.org/pkg/huawei) 
 and then use in the preamble:
 
 ```tex
