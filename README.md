@@ -3,12 +3,11 @@ This package is created in order to help some people working
 with Huawei or inside Huawei to render some documents in LaTeX format.
 You are welcome to use it at your own risk.
 
-You can use this [`huawei.cls`](huawei.cls) LaTeX style just by copying it to some local
-directory and then mentioning it in the preamble of all your documents 
-(on my laptop it's called `/code/huawei.cls`):
+[Install it](https://en.wikibooks.org/wiki/LaTeX/Installing_Extra_Packages) 
+and then use in the preamble:
 
 ```tex
-\documentclass[landscape]{/code/huawei}
+\documentclass[landscape]{huawei}
 \author{Yegor Bugayenko}
 \title{An Interesting Document About Something}
 \begin{document}
