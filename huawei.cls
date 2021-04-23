@@ -132,18 +132,6 @@
   \def\arraystretch{1.5}%
 }
 
-\newcommand\PrintFirstPage[1]{
-  \LeftHuaweiBar{}
-  \def\param{#1}%
-  \ifx\param\empty
-    % nothing
-  \else
-    \includegraphics[height=2in]{#1}
-  \fi
-  \vspace*{0.5in}
-  \maketitle
-}
-
 \AddEverypageHook{%
   \LeftHuaweiBar{}
   \ifnobrand%
@@ -228,20 +216,20 @@
 }
 
 \renewcommand\maketitle{%
-\vspace*{18pt}
-{\bfseries{\Huge\thetitle}}
-\\[6pt]
-\ifx\thesubtitle\empty\else%
-  {\color{gray!50!black}\large\thesubtitle}
-\fi
-\\[18pt]
-\ifx\theauthor\empty\else%
-  {\scshape\theauthor}\\
-\fi
-\ifx\theauthor\empty\else%
-  {\theid}
-\fi
-\vspace{2em}
+  \vspace*{18pt}
+  {\bfseries{\Huge\thetitle}}
+  \\[6pt]
+  \ifx\thesubtitle\empty\else%
+    {\color{gray!50!black}\large\thesubtitle}
+  \fi
+  \\[18pt]
+  \ifx\theauthor\empty\else%
+    {\scshape\theauthor}\\
+  \fi
+  \ifx\theauthor\empty\else%
+    {\theid}
+  \fi
+  \vspace{2em}
 }
 
 \newcommand\PrintThankYouPage{
@@ -273,6 +261,18 @@
   its subsidiaries, the directors, employees and agents
   cannot be held liable for the use of and reliance of the opinions, estimates, forecasts and
   findings in these documents.}}}
+
+\newcommand\PrintFirstPage[1]{
+  \LeftHuaweiBar{}
+  \def\param{#1}%
+  \ifx\param\empty
+    % nothing
+  \else
+    \includegraphics[height=2in]{#1}
+  \fi
+  \vspace*{0.5in}
+  \maketitle
+}
 
 \newcommand\PrintLastPage{
   \newpage

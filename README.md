@@ -1,3 +1,5 @@
+[![make](https://github.com/yegor256/huawei.cls/actions/workflows/make.yml/badge.svg)](https://github.com/yegor256/huawei.cls/actions/workflows/make.yml)
+
 Disclaimer: This is **NOT** a product of Huawei Technologies Co., Ltd.
 This package is created in order to help some people working
 with Huawei or inside Huawei to render some documents in LaTeX format.
