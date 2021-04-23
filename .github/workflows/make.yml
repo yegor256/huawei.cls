@@ -6,7 +6,7 @@ on:
     branches: [ master ]
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: rultor-image
     steps:
       - uses: actions/checkout@v2
       - name: Run a multi-line script
