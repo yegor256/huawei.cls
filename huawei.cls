@@ -115,7 +115,7 @@
 
 % Custom commands
 \newcommand\nospell[1]{#1}
-\newcommand\headers[1]{{\small\sffamily\color{gray}#1}}
+\newcommand\headers[1]{\setrelativestretch{0.8}{\small\sffamily\color{gray}#1}}
 \newcommand\tbd[1]{{\color{red}#1}}
 \newcommand\crumb[2]{\begin{minipage}{\columnwidth}\raggedright\textsc{#1}:\\#2\end{minipage}\vspace{4pt}}
 \RequirePackage{tcolorbox}
@@ -184,7 +184,7 @@
         \ifnobrand%
           % nothing here
         \else%
-          \\[2pt]
+          \newline
         \fi%
       \fi%
       \ifnobrand%
@@ -199,11 +199,11 @@
       \ifnopaging%
         % nothing here
       \else%
-        Page \#\thepage{} of \pageref*{LastPage}
+        Page \#\thepage{} of \pageref*{LastPage}%
         \ifnodate%
           % nothing here
         \else%
-          \\[2pt]
+          \\
         \fi%
       \fi%
       \ifnodate%
