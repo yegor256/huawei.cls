@@ -160,9 +160,7 @@
   \fancyfoot[L]{
     \LeftHuaweiBar{}
     \ifnum\value{page}=1\else%
-      \ifnobrand%
-        % nothing here
-      \else%
+      \ifnobrand\else%
         \begin{textblock}{8}[0,0](1.2,0.2)%
           \HuaweiLogo{}%
         \end{textblock}%
@@ -170,9 +168,7 @@
     \fi%
     \begin{textblock}{8}[1,0](15.8,0.2)%
       \raggedleft\headers{%
-        \ifnosecurity%
-          % nothing here
-        \else%
+        \ifnosecurity\else%
           \thesecurity
         \fi%
       }%
@@ -180,24 +176,16 @@
     \begin{textblock}{8}[0,1](1.2,15.8)%
       \ifnum\value{page}=1\else%
         \headers{%
-          \ifanonymous%
-            % nothing here
-          \else%
+          \ifanonymous\else%
             \theauthor%
-            \ifnosecurity%
-              % nothing here
-            \else,
+            \ifnosecurity\else,
               \theid
             \fi%
-            \ifnobrand%
-              % nothing here
-            \else%
+            \ifnobrand\else%
               \newline
             \fi%
           \fi%
-          \ifnobrand%
-            % nothing here
-          \else%
+          \ifnobrand\else%
             \thecompany{}
           \fi%
         }%
@@ -206,20 +194,14 @@
     \begin{textblock}{8}[1,1](15.8,15.8)%
       \raggedleft\headers{%
         \ifnum\value{page}=1\else%
-          \ifnopaging%
-            % nothing here
-          \else%
+          \ifnopaging\else%
             Page \#\thepage{} of \pageref*{LastPage}%
-            \ifnodate%
-              % nothing here
-            \else%
+            \ifnodate\else%
               \\
             \fi%
           \fi%
         \fi%
-        \ifnodate%
-          % nothing here
-        \else%
+        \ifnodate\else%
           \today{} \currenttime
         \fi%
       }%
@@ -234,6 +216,8 @@
     {\color{gray!50!black}\large\thesubtitle}
   \fi
   \\[18pt]
+  \ifanonymous\else%
+  \fi
   \ifx\theauthor\empty\else%
     {\scshape\theauthor}\\
   \fi
@@ -276,9 +260,7 @@
 \newcommand\PrintFirstPage[1]{
   \LeftHuaweiBar{}
   \def\param{#1}%
-  \ifx\param\empty
-    % nothing
-  \else
+  \ifx\param\empty\else
     \includegraphics[height=2in]{#1}
   \fi
   \vspace*{0.5in}
