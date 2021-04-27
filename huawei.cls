@@ -281,12 +281,15 @@
   把数字世界带入每个人、每个家庭、 每个组织，构建万物互联的智能世界。
   \end{CJK}
 
-  Bring digital to every person, home and
-  organization for a fully connected,
-  intelligent world.
+  Bring digital to every person, home and organization
+  \newline
+  for a fully connected, intelligent world.
 
-  \textbf{Copyright \copyright{} \the\year{} \thecompany{}\\
-  All Rights Reserved.}
+  \textbf{%
+    Copyright \copyright{} \the\year{} \thecompany{}
+    \newline
+    All Rights Reserved.%
+  }
 
   The information in this document may contain predictive
   statements including, without limitation, statements regarding
