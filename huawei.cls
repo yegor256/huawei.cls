@@ -217,13 +217,14 @@
   \fi
   \\[18pt]
   \ifanonymous\else%
+    \thecompany\newline
   \fi
   \ifx\theauthor\empty\else%
-    {\scshape\theauthor}\\
-  \fi
-  \ifx\theauthor\empty\else%
-    {\theid}
-  \fi
+    {\scshape\theauthor}%
+  \fi%
+  \ifx\theauthor\empty\else
+    \;/ {\theid}
+  \fi\newline
   \vspace{2em}
 }
 
@@ -278,7 +279,7 @@
   \vspace{0.5in}
 
   \begin{CJK}{UTF8}{gbsn}
-  把数字世界带入每个人、每个家庭、 每个组织，构建万物互联的智能世界。
+  把数字世界带入每个人、每个家庭、 每个组织、构建万物互联的智能世界。
   \end{CJK}
 
   Bring digital to every person, home and organization
