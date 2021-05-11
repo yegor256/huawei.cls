@@ -75,6 +75,7 @@
       \noexpand\setstretch{\fpeval{(#1)*(\baselinestretch)}}%
     }\x%
   }
+\RequirePackage[maxnames=1,minnames=1,natbib=true,style=ieee,doi=false,url=false,isbn=false,isbn=false]{biblatex}
 \RequirePackage[table]{xcolor}
   \definecolor{huawei-red}{HTML}{CF0A2C}
   \definecolor{huawei-black}{HTML}{232527}
@@ -303,6 +304,18 @@
   may change the information at any time without notice.
   \end{minipage}
   \end{center}%
+}
+
+\newcommand\PrintBibliography{
+  \setlength\bibitemsep{0pt}
+  \AtNextBibliography{\small}
+  \newpage
+  \raggedright
+  \iflandscape
+    \begin{multicols}{3}\setrelativestretch{1.0}{\printbibliography}\end{multicols}
+  \else
+    \begin{multicols}{2}\setrelativestretch{1.0}{\printbibliography}\end{multicols}
+  \fi
 }
 
 \endinput
