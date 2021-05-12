@@ -224,7 +224,9 @@
     {\scshape\theauthor}%
   \fi%
   \ifx\theauthor\empty\else
-    \;/ {\theid}
+    \ifx\theid\empty\else
+      \;/ {\theid}
+    \fi
   \fi\newline
   \vspace{2em}
 }
