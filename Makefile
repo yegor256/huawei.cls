@@ -20,21 +20,41 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-all: make-samples huawei.pdf
+.ONESHELL:
 
-huawei.pdf: huawei.tex huawei.cls $(SUBDIRS)
+all: make-samples huawei.pdf zip
+
+huawei.pdf: huawei.tex huawei.cls
 	latexmk -pdf $<
 	texsc $<
 	texqc --ignore 'You have requested document class' $<
 
 zip: huawei.pdf huawei.cls
-	rm -rf huawei.zip
-	zip -r huawei.zip * -x '*~' -x '*.tgz' -x '*.zip' -x 'samples/*' -x '_minted-*/*' -x '*.dvi' -x '*.aux' -x '*.fdb_latexmk' -x '*.fls' -x '*.log' -x '*.toc' -x '*.out' -x 'Makefile' -x 'aspell.en.pws'
+	rm -rf package
+	mkdir package
+	cd package
+	cp ../README.md .
+	version=$$(cat ../VERSION.txt)
+	echo "Version is: $${version}"
+	date=$$(date +%d/%m/%Y)
+	echo "Date is: $${date}"
+	cp ../huawei.cls .
+	gsed -i "s|0\.0\.0|$${version}|" huawei.cls
+	gsed -i "s|00\.00\.0000|$${date}|" huawei.cls
+	cp ../huawei.tex .
+	gsed -i "s|0\.0\.0|$${version}|" huawei.tex
+	gsed -i "s|00\.00\.0000|$${date}|" huawei.tex
+	cp ../.latexmkrc .
+	latexmk -pdf huawei.tex
+	rm .latexmkrc
+	rm -rf _minted-* *.aux *.bbl *.bcf *.blg *.fdb_latexmk *.fls *.log *.run.xml *.out
+	zip huawei.zip *
+	cp huawei.zip ..
 
 clean:
 	rm -rf .DS_Store *.aux *.bbl *.bcf *.blg *.fdb_latexmk *.fls *.log *.run.xml *.out
 	rm -rf *.pdf
-	rm -rf huawei.zip
+	rm -rf package
 	rm -rf _minted*
 	cd samples; make clean; cd ..
 
