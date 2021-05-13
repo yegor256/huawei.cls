@@ -48,7 +48,9 @@ zip: huawei.pdf huawei.cls
 	latexmk -pdf huawei.tex
 	rm .latexmkrc
 	rm -rf _minted-* *.aux *.bbl *.bcf *.blg *.fdb_latexmk *.fls *.log *.run.xml *.out
-	zip huawei.zip *
+	mkdir huawei
+	mv * huawei
+	zip -r huawei.zip *
 	cp huawei.zip ..
 
 clean:
