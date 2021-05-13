@@ -50,6 +50,8 @@ zip: huawei.pdf huawei.cls
 	rm -rf _minted-* *.aux *.bbl *.bcf *.blg *.fdb_latexmk *.fls *.log *.run.xml *.out
 	mkdir huawei
 	mv * huawei
+	mkdir huawei/samples
+	cp ../samples/*.tex huawei/samples
 	zip -r huawei.zip *
 	cp huawei.zip ..
 
