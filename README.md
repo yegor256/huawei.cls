@@ -21,7 +21,7 @@ Hello, world!
 Find more examples in the [`samples/`](/samples) directory.
 
 If you need more formatting options, 
-[submit an issue](https://github.com/cqfn/huawei.cls/issues), 
+[submit an issue](https://github.com/yegor256/huawei.cls/issues), 
 I'll implement them.
 
 If you want to contribute yourself, make a fork, then create a branch, 
