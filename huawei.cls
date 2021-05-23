@@ -22,6 +22,7 @@
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{huawei}[00.00.0000 0.0.0 Template for Huawei documents]
+
 \newif\ifnosecurity
 \DeclareOption{nosecurity}{\nosecuritytrue}
 \newif\ifnobrand
@@ -35,7 +36,9 @@
 \newif\ifanonymous
 \DeclareOption{anonymous}{\anonymoustrue}
 \ProcessOptions\relax
+
 \LoadClass[12pt]{article}
+
 \RequirePackage{geometry}
 \iflandscape
   \geometry{paperwidth=16in, paperheight=9in, left=4in, right=2in, top=1.5in, bottom=1.5in}
