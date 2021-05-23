@@ -314,9 +314,9 @@
   \newpage
   \raggedright
   \iflandscape
-    \begin{multicols}{3}\setrelativestretch{1.0}{\printbibliography}\end{multicols}
+    \begin{multicols}{3}\raggedcolumns\setrelativestretch{1.0}{\printbibliography}\end{multicols}
   \else
-    \begin{multicols}{2}\setrelativestretch{1.0}{\printbibliography}\end{multicols}
+    \begin{multicols}{2}\raggedcolumns\setrelativestretch{1.0}{\printbibliography}\end{multicols}
   \fi
 }
 

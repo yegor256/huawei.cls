@@ -20,34 +20,17 @@
 % OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 % SOFTWARE.
 
-\documentclass[nobrand,nosecurity,anonymous,nopaging]{../huawei}
-\renewcommand*\thetitle{Test Call for Proposal}
-\renewcommand*\theauthor{Yegor Bugayenko}
-\addbibresource{main.bib}
-\begin{document}
+@book{lamport1994latex,
+  title={\LaTeX{}: a Document Preparation System: User's Guide and Reference Manual},
+  author={Lamport, Leslie},
+  year={1994},
+  publisher={Addison-Wesley}
+}
 
-\maketitle
-
-In this document you don't see the logo, because we use \ff{nobrand}
-option of the class:
-
-\begin{minted}{text}
-\documentclass[nobrand]{huawei}
-\begin{document}
-The rest of the document...
-\end{document}
-\end{minted}
-
-By the way, we use \TeX{} created by~\citet{knuth1984texbook}
-and \LaTeX{} created by~\citet{lamport1994latex}. The citations
-provided at the bottom of the document are printed via
-\ff{\textbackslash{}PrintBibliography}.
-
-The text in small font at the bottom of the page is printed by
-the \ff{\textbackslash{}PrintDisclaimer} command.
-
-\PrintDisclaimer
-
-\PrintBibliography
-
-\end{document}
+@book{knuth1984texbook,
+  title={The \TeX{}book},
+  author={Knuth, Donald Ervin and Bibby, Duane},
+  volume={15},
+  year={1984},
+  publisher={Addison-Wesley}
+}
