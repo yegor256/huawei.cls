@@ -14,9 +14,12 @@ and then use in the preamble:
 \renewcommand*\theauthor{Yegor Bugayenko}
 \renewcommand*\thetitle{An Interesting Document About Something}
 \begin{document}
+\maketitle
 Hello, world!
 \end{document}
 ```
+
+Read the detailed documentation [in PDF](http://mirrors.ctan.org/macros/latex/contrib/huawei/huawei.pdf).
 
 Find more examples in the [`samples/`](/samples) directory.
 
