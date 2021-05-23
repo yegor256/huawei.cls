@@ -11,8 +11,8 @@ and then use in the preamble:
 
 ```tex
 \documentclass[landscape]{huawei}
-\author{Yegor Bugayenko}
-\title{An Interesting Document About Something}
+\renewcommand*\theauthor{Yegor Bugayenko}
+\renewcommand*\thetitle{An Interesting Document About Something}
 \begin{document}
 Hello, world!
 \end{document}
