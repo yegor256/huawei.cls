@@ -3,8 +3,8 @@ target/
 _minted-*
 *.zip
 *.toc
-*.pdf
 *.bbl
+huawei.pdf
 *.bcf
 *.blg
 *.fdb_latexmk

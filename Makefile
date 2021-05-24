@@ -52,15 +52,13 @@ zip: huawei.pdf huawei.cls
 	mv * huawei
 	mkdir huawei/samples
 	cp ../samples/*.tex huawei/samples
+	mkdir huawei/images
+	cp ../images/* huawei/images
 	zip -r huawei.zip *
 	cp huawei.zip ..
 
 clean:
-	rm -rf .DS_Store *.aux *.bbl *.bcf *.blg *.fdb_latexmk *.fls *.log *.run.xml *.out
-	rm -rf *.pdf
-	rm -rf package
-	rm -rf _minted*
-	cd samples; make clean; cd ..
+	git clean -dfX
 
 make-samples: samples/*.tex
 	cd samples; make; cd ..

@@ -29,6 +29,8 @@
 \DeclareOption{nobrand}{\nobrandtrue}
 \newif\ifnodate
 \DeclareOption{nodate}{\nodatetrue}
+\newif\ifnocover
+\DeclareOption{nocover}{\nocovertrue}
 \newif\ifnopaging
 \DeclareOption{nopaging}{\nopagingtrue}
 \newif\iflandscape
@@ -272,6 +274,11 @@
   \fi
   \vspace*{0.5in}
   \maketitle
+  \iflandscape\ifnocover\else
+    \begin{textblock}{14}[1,1](14,14)
+      \raggedleft\includegraphics[height=3.6in]{images/cover.pdf}
+    \end{textblock}
+  \fi\fi
 }
 
 \newcommand\PrintLastPage{
