@@ -271,6 +271,7 @@
   \def\param{#1}%
   \ifx\param\empty\else
     \includegraphics[height=2in]{#1}
+    \newline
   \fi
   \vspace*{0.5in}
   \maketitle
