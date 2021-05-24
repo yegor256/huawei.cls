@@ -6,9 +6,7 @@ on:
     branches: [ master ]
 jobs:
   build:
-    runs-on: rultor-image
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Run a multi-line script
-        run: |
-          make
+      - uses: yegor256/latex-make-action@0.1.0
