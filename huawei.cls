@@ -276,7 +276,7 @@
   \maketitle
   \iflandscape\ifnocover\else
     \begin{textblock}{14}[1,1](14,14)
-      \raggedleft\includegraphics[height=3.6in]{images/cover.pdf}
+      \raggedleft\includegraphics[height=3.6in]{images/huawei-cover.pdf}
     \end{textblock}
   \fi\fi
 }
