@@ -36,7 +36,7 @@ zip: huawei.pdf huawei.cls
 	cp ../README.md .
 	version=$$(cat ../VERSION.txt)
 	echo "Version is: $${version}"
-	date=$$(date +%d/%m/%Y)
+	date=$$(date +%Y/%m/%d)
 	echo "Date is: $${date}"
 	cp ../huawei.cls .
 	gsed -i "s|0\.0\.0|$${version}|" huawei.cls
