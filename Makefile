@@ -38,7 +38,6 @@ zip: huawei.pdf huawei.cls
 	mkdir huawei
 	cd huawei
 	cp ../../README.md .
-	cat huawei.cls | grep RequirePackage | gsed -e "s/.*{\(.\+\)}.*/hard \1/" > DEPENDS.txt
 	version=$$(cat ../../VERSION.txt)
 	echo "Version is: $${version}"
 	date=$$(date +%Y/%m/%d)
@@ -57,6 +56,7 @@ zip: huawei.pdf huawei.cls
 	cp ../../samples/*.tex samples
 	mkdir images
 	cp ../../images/* images
+	cat huawei.cls | grep RequirePackage | gsed -e "s/.*{\(.\+\)}.*/hard \1/" > DEPENDS.txt
 	zip -r huawei.zip *
 	cp huawei.zip ../..
 	cd ../..
