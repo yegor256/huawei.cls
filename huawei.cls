@@ -99,7 +99,8 @@
       \endgroup
     }%
   \endgroup\makeatother
-\RequirePackage[absolute]{textpos}\TPGrid{16}{16}
+\RequirePackage[absolute]{textpos}
+  \TPGrid{16}{16}
 
 % Our custom commands to redefine:
 \renewcommand\title[1]{\renewcommand\thetitle{#1}}
