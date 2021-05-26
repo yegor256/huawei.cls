@@ -52,7 +52,8 @@
 \RequirePackage{CJKutf8}
 \RequirePackage{tabularx}
 \RequirePackage{multicol}
-\RequirePackage[mmddyyyy,iso,hhmmss]{datetime}
+\RequirePackage[mmddyyyy,iso]{datetime}
+  \newtimeformat{daytime}{\twodigit{\THEHOUR}:\twodigit{\THEMINUTE}}
 \RequirePackage[tt=false,type1=true]{libertine}
 \RequirePackage{paralist}
 \RequirePackage{makecell}
@@ -208,7 +209,7 @@
           \fi%
         \fi%
         \ifnodate\else%
-          \today{} \currenttime
+          \today{} \settimeformat{daytime}\currenttime{}%
         \fi%
       }%
     \end{textblock}%

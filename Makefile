@@ -61,4 +61,6 @@ clean:
 	git clean -dfX
 
 make-samples: samples/*.tex
-	cd samples; make; cd ..
+	cd samples
+	make
+	cd ..
