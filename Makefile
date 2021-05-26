@@ -20,6 +20,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+.SHELLFLAGS = -e -x -c
+
 .ONESHELL:
 
 all: make-samples huawei.pdf zip
@@ -33,29 +35,30 @@ zip: huawei.pdf huawei.cls
 	rm -rf package
 	mkdir package
 	cd package
-	cp ../README.md .
-	version=$$(cat ../VERSION.txt)
+	mkdir huawei
+	cd huawei
+	cp ../../README.md .
+	version=$$(cat ../../VERSION.txt)
 	echo "Version is: $${version}"
 	date=$$(date +%Y/%m/%d)
 	echo "Date is: $${date}"
-	cp ../huawei.cls .
+	cp ../../huawei.cls .
 	gsed -i "s|0\.0\.0|$${version}|" huawei.cls
 	gsed -i "s|00\.00\.0000|$${date}|" huawei.cls
-	cp ../huawei.tex .
+	cp ../../huawei.tex .
 	gsed -i "s|0\.0\.0|$${version}|" huawei.tex
 	gsed -i "s|00\.00\.0000|$${date}|" huawei.tex
-	cp ../.latexmkrc .
+	cp ../../.latexmkrc .
 	latexmk -pdf huawei.tex
 	rm .latexmkrc
 	rm -rf _minted-* *.aux *.bbl *.bcf *.blg *.fdb_latexmk *.fls *.log *.run.xml *.out
-	mkdir huawei
-	mv * huawei
-	mkdir huawei/samples
-	cp ../samples/*.tex huawei/samples
-	mkdir huawei/images
-	cp ../images/* huawei/images
+	mkdir samples
+	cp ../../samples/*.tex samples
+	mkdir images
+	cp ../../images/* images
 	zip -r huawei.zip *
-	cp huawei.zip ..
+	cp huawei.zip ../..
+	cd ../..
 
 clean:
 	git clean -dfX
