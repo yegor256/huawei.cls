@@ -248,4 +248,27 @@ we recommend you to use ``crumbs'':
 
 A more complete example is in the \ff{samples/huawei-charter.tex}.
 
+\subsection{Code Blocks}
+
+When you need to show some source code, we recommend to use
+\ff{minted} environment, for example:
+
+\begin{minted}{text}
+\begin{minted}{tex}
+void foo() {
+  return "Hello, world!";
+}
+$|\textbackslash{}|$end{minted}
+\end{minted}
+
+This is what you will see:
+
+\begin{minted}{text}
+void foo() {
+  return "Hello, world!";
+}
+\end{minted}
+
+
+
 \end{document}

@@ -60,7 +60,7 @@
 \RequirePackage[para]{footmisc}
   \setlength{\footnotemargin}{2pt}
   \setlength{\footnotesep}{2pt}
-\RequirePackage{minted}
+\RequirePackage[draft=true]{minted}
   \setminted{breaklines}
   \usemintedstyle{bw}
   \renewcommand{\theFancyVerbLine}{\textcolor{gray}{\tiny\oldstylenums{\ttfamily\arabic{FancyVerbLine}}}}
