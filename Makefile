@@ -57,9 +57,10 @@ zip: huawei.pdf huawei.cls
 	mkdir images
 	cp ../../images/* images
 	cat huawei.cls | grep RequirePackage | gsed -e "s/.*{\(.\+\)}.*/hard \1/" > DEPENDS.txt
+	cd ..
 	zip -r huawei.zip *
-	cp huawei.zip ../..
-	cd ../..
+	cp huawei.zip ..
+	cd ..
 
 clean:
 	git clean -dfX
