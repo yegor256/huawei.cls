@@ -54,6 +54,7 @@ zip: huawei.pdf huawei.cls
 	rm -rf _minted-* *.aux *.bbl *.bcf *.blg *.fdb_latexmk *.fls *.log *.run.xml *.out
 	mkdir samples
 	cp ../../samples/*.tex samples
+	cp ../../samples/*.bib samples
 	mkdir images
 	cp ../../images/* images
 	cat huawei.cls | grep RequirePackage | gsed -e "s/.*{\(.\+\)}.*/hard \1/" > DEPENDS.txt
