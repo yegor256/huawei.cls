@@ -65,6 +65,7 @@ zip: huawei.pdf huawei.cls
 
 clean:
 	git clean -dfX
+	cd samples && make clean && cd ..
 
 make-samples: samples/*.tex
 	cd samples
