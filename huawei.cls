@@ -225,7 +225,9 @@
   \fi
   \\[18pt]
   \ifanonymous\else%
-    \thecompany\newline
+    \ifx\thecompany\empty\else%
+      \thecompany\newline
+    \fi
   \fi
   \ifx\theauthor\empty\else%
     {\scshape\theauthor}%
@@ -315,7 +317,12 @@
   could cause actual results and developments to differ materially
   from those expressed or implied in the predictive statements.
   Therefore, such information is provided for reference purpose
-  only and constitutes neither an offer nor an acceptance. \thecompany{}
+  only and constitutes neither an offer nor an acceptance.
+  \ifnobrand%
+    The author%
+  \else%
+    \thecompany{}%
+  \fi
   may change the information at any time without notice.
   \end{minipage}
   \end{center}%
