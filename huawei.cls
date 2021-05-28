@@ -51,6 +51,7 @@
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{CJKutf8}
 \RequirePackage{tabularx}
+\RequirePackage{ragged2e}
 \RequirePackage{multicol}
 \RequirePackage[mmddyyyy,iso]{datetime}
   \newtimeformat{daytime}{\twodigit{\THEHOUR}:\twodigit{\THEMINUTE}}
@@ -250,7 +251,7 @@
 }
 
 \newcommand\PrintDisclaimer{%
-  \vspace*{\fill}\setrelativestretch{0.55}{{\sffamily\scriptsize\color{gray!50!black}%
+  \justify\vspace*{\fill}\setrelativestretch{0.55}{{\sffamily\scriptsize\color{gray!50!black}%
   \textbf{Disclaimer}: The opinions expressed in this document are in good faith and
   while every care has been taken in preparing it,
   \ifnobrand%
