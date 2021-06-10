@@ -51,6 +51,7 @@
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{CJKutf8}
 \RequirePackage{tabularx}
+\RequirePackage{multicol}
 \RequirePackage{ragged2e}
 \RequirePackage{multicol}
 \RequirePackage[mmddyyyy,iso]{datetime}
