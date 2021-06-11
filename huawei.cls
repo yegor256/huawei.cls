@@ -62,11 +62,6 @@
 \RequirePackage[para]{footmisc}
   \setlength{\footnotemargin}{2pt}
   \setlength{\footnotesep}{2pt}
-\RequirePackage[draft=true]{minted}
-  \setminted{breaklines}
-  \usemintedstyle{bw}
-  \renewcommand{\theFancyVerbLine}{\textcolor{gray}{\tiny\oldstylenums{\ttfamily\arabic{FancyVerbLine}}}}
-  \setminted{firstnumber=last,linenos,numbersep=2pt,framesep=6pt,framerule=1pt,rulecolor=gray,frame=leftline,escapeinside=||,mathescape,samepage}
 \RequirePackage{graphicx}
 \RequirePackage{array}
 \RequirePackage[abspath]{currfile}
@@ -91,16 +86,6 @@
 \RequirePackage{tabularx}
 \RequirePackage{titling}
 \RequirePackage{svg}
-\RequirePackage[normalem]{ulem}
-\RequirePackage[hidelinks]{hyperref}
-  \makeatletter\begingroup
-    \catcode`\$=6 %
-    \catcode`\#=12 %
-    \gdef\href@split$1#$2#$3\\$4{%
-      \hyper@@link{$1}{$2}{\uline{$4}}%
-      \endgroup
-    }%
-  \endgroup\makeatother
 \RequirePackage[absolute]{textpos}
   \TPGrid{16}{16}
 
@@ -119,10 +104,6 @@
 \newcommand\headers[1]{\setrelativestretch{0.8}{\small\sffamily\color{gray}#1}}
 \newcommand\tbd[1]{{\color{red}#1}}
 \newcommand\crumb[2]{\begin{minipage}{\columnwidth}\raggedright\textsc{#1}:\\#2\end{minipage}\vspace{4pt}}
-\RequirePackage{tcolorbox}
-  \newtcbox{\codebox}{nobeforeafter,colframe=gray!80!white,colback=gray!5!white,boxrule=0.1pt,arc=1pt,
-  boxsep=1.2pt,left=0.5pt,right=0.5pt,top=0.2pt,bottom=0.2pt,tcbox raise base}
-\newcommand{\ff}[1]{\codebox{\vrule height 6pt depth 1pt width 0pt\texttt{#1}}}
 
 \AtBeginDocument{%
   \raggedbottom%
