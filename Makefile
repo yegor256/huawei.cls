@@ -27,7 +27,6 @@
 all: make-samples huawei.pdf zip
 
 huawei.pdf: huawei.tex huawei.cls
-	texliveonfly $<
 	latexmk -pdf $<
 	texsc $<
 	texqc --ignore 'You have requested document class' $<
