@@ -107,10 +107,10 @@
 
 \AtBeginDocument{%
   \raggedbottom%
-  \setlength{\topskip}{0mm}%
-  \setlength{\parindent}{0pt}%
-  \setlength{\parskip}{6pt}%
-  \setlength{\columnsep}{32pt}%
+  \setlength\topskip{0mm}%
+  \setlength\parindent{0pt}%
+  \setlength\parskip{6pt}%
+  \setlength\columnsep{32pt}%
   \def\arraystretch{1.5}%
 }
 
