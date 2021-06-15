@@ -21,7 +21,7 @@
 % SOFTWARE.
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{huawei}[00.00.0000 0.0.0 Template for Huawei documents]
+\ProvidesClass{huawei}[00.00.0000 0.0.0 Template for Huawei Documents]
 
 \newif\ifnosecurity
 \DeclareOption{nosecurity}{\nosecuritytrue}
@@ -120,7 +120,7 @@
   \end{textblock}%
 }
 
-\newcommand\HuaweiLogo{
+\newcommand\PrintHuaweiLogo{
   \begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-1, inner sep=0pt, outer sep=0pt]
     \begin{scope}[even odd rule,line width=0.800pt]
       \begin{scope}[shift={(0,-0.00024)}]
@@ -153,7 +153,7 @@
     \ifnum\value{page}=1\else%
       \ifnobrand\else%
         \begin{textblock}{8}[0,0](1.2,0.2)%
-          \HuaweiLogo{}%
+          \PrintHuaweiLogo{}%
         \end{textblock}%
       \fi%
     \fi%
