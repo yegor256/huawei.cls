@@ -48,6 +48,7 @@ zip: huawei.pdf huawei.cls
 	cp ../../huawei.tex .
 	gsed -i "s|0\.0\.0|$${version}|" huawei.tex
 	gsed -i "s|00\.00\.0000|$${date}|" huawei.tex
+	cp ../../cover-picture.pdf .
 	cp ../../.latexmkrc .
 	latexmk -pdf huawei.tex
 	rm .latexmkrc
@@ -55,8 +56,6 @@ zip: huawei.pdf huawei.cls
 	mkdir samples
 	cp ../../samples/*.tex samples
 	cp ../../samples/*.bib samples
-	mkdir images
-	cp ../../images/* images
 	cat huawei.cls | grep RequirePackage | gsed -e "s/.*{\(.\+\)}.*/hard \1/" > DEPENDS.txt
 	cd ..
 	zip -r huawei.zip *
