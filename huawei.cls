@@ -207,17 +207,25 @@
     {\color{gray!50!black}\large\thesubtitle}
   \fi
   \\[18pt]
-  \ifanonymous\else%
-    \ifx\thecompany\empty\else%
-      \thecompany\newline
+  \ifnobrand\else%
+    \ifanonymous\else%
+      \ifx\thecompany\empty\else%
+        \thecompany\newline
+      \fi
     \fi
   \fi
   \ifx\theauthor\empty\else%
-    {\scshape\theauthor}%
+    {\scshape\ifanonymous
+      Anonymous Authors
+    \else%
+      \theauthor
+    \fi}%
   \fi%
   \ifx\theauthor\empty\else
-    \ifx\theid\empty\else
-      \;/ {\theid}
+    \ifnobrand\else%
+      \ifx\theid\empty\else
+        \;/ {\theid}
+      \fi
     \fi
   \fi\newline
   \vspace{2em}
