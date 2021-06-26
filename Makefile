@@ -48,7 +48,7 @@ zip: huawei.pdf huawei.cls
 	cp ../../huawei.tex .
 	gsed -i "s|0\.0\.0|$${version}|" huawei.tex
 	gsed -i "s|00\.00\.0000|$${date}|" huawei.tex
-	cp ../../cover-picture.pdf .
+	cp ../../huawei-cover-picture.pdf .
 	cp ../../.latexmkrc .
 	latexmk -pdf huawei.tex
 	rm .latexmkrc
