@@ -221,10 +221,12 @@
       \theauthor
     \fi}%
   \fi%
-  \ifx\theauthor\empty\else
-    \ifnobrand\else%
-      \ifx\theid\empty\else
-        \;/ {\theid}
+  \ifanonymous\else%
+    \ifx\theauthor\empty\else
+      \ifnobrand\else%
+        \ifx\theid\empty\else
+          \;/ {\theid}
+        \fi
       \fi
     \fi
   \fi\newline
