@@ -25,6 +25,8 @@
 
 \newif\ifnosecurity
 \DeclareOption{nosecurity}{\nosecuritytrue}
+\newif\ifauthordraft
+\DeclareOption{authordraft}{\authordrafttrue}
 \newif\ifnobrand
 \DeclareOption{nobrand}{\nobrandtrue}
 \newif\ifnodate
@@ -149,7 +151,13 @@
   \renewcommand{\headrulewidth}{0pt}
   \fancyhf{}
   \fancyfoot[L]{
-    \LeftHuaweiBar{}
+    \ifauthordraft%
+      \begin{textblock}{14}[0.5,0.5](8,8)%
+        \tikz \node[minimum width=14\TPHorizModule] {%
+          \fontsize{64}{64}\selectfont\sffamily\scshape\color{gray!20}\rotatebox{30}{it is a draft}
+        };%
+      \end{textblock}%
+    \else\fi%
     \ifnum\value{page}=1\else%
       \ifnobrand\else%
         \begin{textblock}{8}[0,0](1.2,0.2)%
