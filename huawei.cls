@@ -151,6 +151,7 @@
   \renewcommand{\headrulewidth}{0pt}
   \fancyhf{}
   \fancyfoot[L]{
+    \LeftHuaweiBar{}
     \ifauthordraft%
       \begin{textblock}{14}[0.5,0.5](8,8)%
         \tikz \node[minimum width=14\TPHorizModule] {%
