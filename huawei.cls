@@ -80,7 +80,7 @@
       \noexpand\setstretch{\fpeval{(#1)*(\baselinestretch)}}%
     }\x%
   }
-\RequirePackage[maxnames=1,minnames=1,natbib=true,style=ieee,doi=false,url=false,isbn=false,isbn=false]{biblatex}
+\RequirePackage[maxnames=1,minnames=1,natbib=true,bibstyle=ieee,doi=false,url=false,isbn=false,isbn=false]{biblatex}
 \RequirePackage[table]{xcolor}
   \definecolor{huawei-red}{HTML}{CF0A2C}
   \definecolor{huawei-black}{HTML}{232527}
