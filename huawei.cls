@@ -80,7 +80,7 @@
       \noexpand\setstretch{\fpeval{(#1)*(\baselinestretch)}}%
     }\x%
   }
-\RequirePackage[maxnames=1,minnames=1,natbib=true,bibstyle=ieee,doi=false,url=false,isbn=false,isbn=false]{biblatex}
+\RequirePackage[maxnames=1,minnames=1,natbib=true,citestyle=numeric,bibstyle=numeric,doi=false,url=false,isbn=false,isbn=false]{biblatex}
 \RequirePackage[table]{xcolor}
   \definecolor{huawei-red}{HTML}{CF0A2C}
   \definecolor{huawei-black}{HTML}{232527}
@@ -211,8 +211,8 @@
 \renewcommand\maketitle{%
   \vspace*{18pt}
   {\bfseries{\Huge\thetitle}}
-  \\[6pt]
   \ifx\thesubtitle\empty\else%
+    \\[6pt]
     {\color{gray!50!black}\large\thesubtitle}
   \fi
   \\[18pt]
@@ -238,7 +238,7 @@
         \fi
       \fi
     \fi
-  \fi\newline
+  \fi
   \vspace{2em}
 }
 
