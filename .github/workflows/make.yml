@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install Python dependencies
         run: |
-          sudo apt-get install python-pygments python3-pygments
+          sudo apt-get install python3-pygments
           pip3 install pygments
           pygmentize -V
       - uses: yegor256/latexmk-action@0.1.16
