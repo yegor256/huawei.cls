@@ -234,7 +234,7 @@
     \ifx\theauthor\empty\else
       \ifnobrand\else%
         \ifx\theid\empty\else
-          \;/ {\theid}
+          $\;$/ {\theid}
         \fi
       \fi
     \fi
