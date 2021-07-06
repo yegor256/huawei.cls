@@ -1,4 +1,4 @@
-[![make](https://github.com/yegor256/huawei.cls/actions/workflows/make.yml/badge.svg)](https://github.com/yegor256/huawei.cls/actions/workflows/make.yml)
+[![make](https://github.com/yegor256/huawei.cls/actions/workflows/latexmk.yml/badge.svg)](https://github.com/yegor256/huawei.cls/actions/workflows/latexmk.yml)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/yegor256/huawei.cls/blob/master/LICENSE.txt)
 
 Disclaimer: This is **NOT** a product of Huawei Technologies Co., Ltd.
