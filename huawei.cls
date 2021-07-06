@@ -73,14 +73,8 @@
 \RequirePackage{microtype}
 \RequirePackage{wrapfig}
 \RequirePackage{lastpage}
-\RequirePackage{xfp} % for \setrelativestretch
 \RequirePackage{setspace}
   \setstretch{1.08}
-  \newcommand{\setrelativestretch}[1]{%
-    \begingroup\edef\x{\endgroup%
-      \noexpand\setstretch{\fpeval{(#1)*(\baselinestretch)}}%
-    }\x%
-  }
 \RequirePackage[maxnames=1,minnames=1,natbib=true,citestyle=numeric,bibstyle=numeric,doi=false,url=false,isbn=false,isbn=false]{biblatex}
 \RequirePackage[table]{xcolor}
   \definecolor{huawei-red}{HTML}{CF0A2C}
@@ -104,7 +98,7 @@
 
 % Custom commands
 \newcommand\nospell[1]{#1}
-\newcommand\headers[1]{\setrelativestretch{0.8}{\small\sffamily\color{gray}#1}}
+\newcommand\headers[1]{\setstretch{0.8}{\small\sffamily\color{gray}#1\par}}
 \newcommand\tbd[1]{{\color{red}#1}}
 \newcommand\crumb[2]{\begin{minipage}{\columnwidth}\raggedright\textsc{#1}:\\#2\end{minipage}\vspace{4pt}}
 
@@ -253,7 +247,10 @@
 }
 
 \newcommand\PrintDisclaimer{%
-  \justify\vspace*{\fill}\setrelativestretch{0.55}{{\sffamily\scriptsize\color{gray!50!black}%
+  \justify\vspace*{\fill}%
+  \begingroup%
+  \setstretch{0.55}%
+  \sffamily\scriptsize\color{gray!50!black}%
   \textbf{Disclaimer}: The opinions expressed in this document are in good faith and
   while every care has been taken in preparing it,
   \ifnobrand%
@@ -271,7 +268,10 @@
   \fi,
   its subsidiaries, the directors, employees and agents
   cannot be held liable for the use of and reliance of the opinions, estimates, forecasts and
-  findings in these documents.}}}
+  findings in these documents.
+  \par
+  \endgroup%
+}
 
 \newcommand\PrintFirstPage[1]{
   \iflandscape\else
@@ -343,9 +343,9 @@
   \newpage
   \raggedright
   \iflandscape
-    \begin{multicols}{3}\setrelativestretch{1.1}{\printbibliography}\end{multicols}
+    \begin{multicols}{3}\setstretch{0.95}\printbibliography\end{multicols}
   \else
-    \begin{multicols}{2}\setrelativestretch{1.1}{\printbibliography}\end{multicols}
+    \begin{multicols}{2}\setstretch{0.95}\printbibliography\end{multicols}
   \fi
 }
 
