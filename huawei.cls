@@ -66,7 +66,7 @@
   \setlength{\footnotesep}{2pt}
 \RequirePackage{graphicx}
 \RequirePackage{array}
-\RequirePackage{hyperref} % to enable \pageref* command
+\RequirePackage[hidelinks]{hyperref} % to enable \pageref* command
 \RequirePackage[abspath]{currfile}
 \RequirePackage{enumitem}
   \setlist{nosep}
