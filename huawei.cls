@@ -66,6 +66,7 @@
   \setlength{\footnotesep}{2pt}
 \RequirePackage{graphicx}
 \RequirePackage{array}
+\RequirePackage{hyperref} % to enable \pageref* command
 \RequirePackage[abspath]{currfile}
 \RequirePackage{enumitem}
   \setlist{nosep}
@@ -273,6 +274,9 @@
   findings in these documents.}}}
 
 \newcommand\PrintFirstPage[1]{
+  \iflandscape\else
+    \PackageError{huawei}{It's allowed to use PrintFirstPage only in landscape mode}{Read huawei.pdf for more information}
+  \fi
   \LeftHuaweiBar{}
   \def\param{#1}%
   \ifx\param\empty\else
@@ -281,14 +285,17 @@
   \fi
   \vspace*{0.5in}
   \maketitle
-  \iflandscape\ifnocover\else
+  \ifnocover\else
     \begin{textblock}{14}[1,1](14,14)
       \raggedleft\includegraphics[height=3.6in]{huawei-cover-picture.pdf}
     \end{textblock}
-  \fi\fi
+  \fi
 }
 
 \newcommand\PrintLastPage{
+  \iflandscape\else
+    \PackageError{huawei}{It's allowed to use PrintLastPage only in landscape mode}{Read huawei.pdf for more information}
+  \fi
   \newpage
   \vspace*{1in}
   \begin{center}
@@ -336,9 +343,9 @@
   \newpage
   \raggedright
   \iflandscape
-    \begin{multicols}{3}\setrelativestretch{1.0}{\printbibliography}\end{multicols}
+    \begin{multicols}{3}\setrelativestretch{1.08}{\printbibliography}\end{multicols}
   \else
-    \begin{multicols}{2}\setrelativestretch{1.0}{\printbibliography}\end{multicols}
+    \begin{multicols}{2}\setrelativestretch{1.08}{\printbibliography}\end{multicols}
   \fi
 }
 
