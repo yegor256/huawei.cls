@@ -338,7 +338,7 @@
 }
 
 \newcommand\PrintBibliography{
-  \setlength\bibitemsep{0pt}
+  \setlength\bibitemsep{3pt}
   \AtNextBibliography{\small}
   \newpage
   \raggedright
