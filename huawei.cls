@@ -99,7 +99,6 @@
 % Custom commands
 \newcommand\nospell[1]{#1}
 \newcommand\headers[1]{\setstretch{0.8}{\small\sffamily\color{gray}#1\par}}
-\newcommand\tbd[1]{{\color{red}#1}}
 \newcommand\crumb[2]{\begin{minipage}{\columnwidth}\raggedright\textsc{#1}:\\#2\end{minipage}\vspace{4pt}}
 
 \AtBeginDocument{%
