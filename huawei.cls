@@ -23,10 +23,10 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{huawei}[00.00.0000 0.0.0 Template for Huawei Documents]
 
-\newif\iflarge
-\DeclareOption{large}{\largetrue}
-\newif\ifLarge
-\DeclareOption{Large}{\Largetrue}
+\newif\ifXL
+\DeclareOption{XL}{\XLtrue}
+\newif\ifXXL
+\DeclareOption{XXL}{\XXLtrue}
 \newif\ifnosecurity
 \DeclareOption{nosecurity}{\nosecuritytrue}
 \newif\ifauthordraft
@@ -106,14 +106,14 @@
 \newcommand\crumb[2]{\begin{minipage}{\columnwidth}\raggedright\textsc{#1}:\\#2\end{minipage}\vspace{4pt}}
 
 \usepackage{titlesec}
-  \iflarge
+  \ifXL
     \titleformat*{\section}{\LARGE\bfseries}
     \titleformat*{\subsection}{\Large\bfseries}
     \titleformat*{\subsubsection}{\large\bfseries}
     \titleformat*{\paragraph}{\large\bfseries}
     \titleformat*{\subparagraph}{\large\bfseries}
   \fi
-  \ifLarge
+  \ifXXL
     \titleformat*{\section}{\huge\bfseries}
     \titleformat*{\subsection}{\LARGE\bfseries}
     \titleformat*{\subsubsection}{\Large\bfseries}
@@ -128,8 +128,8 @@
   \setlength\parskip{6pt}%
   \setlength\columnsep{32pt}%
   \def\arraystretch{1.5}%
-  \iflarge\large\fi
-  \ifLarge\Large\fi
+  \ifXL\large\fi
+  \ifXXL\Large\fi
 }
 
 \newcommand\LeftHuaweiBar{%
