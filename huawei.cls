@@ -105,6 +105,22 @@
 \newcommand\headers[1]{\setstretch{0.8}{\small\sffamily\color{gray}#1\par}}
 \newcommand\crumb[2]{\begin{minipage}{\columnwidth}\raggedright\textsc{#1}:\\#2\end{minipage}\vspace{4pt}}
 
+\usepackage{titlesec}
+  \iflarge
+    \titleformat*{\section}{\LARGE\bfseries}
+    \titleformat*{\subsection}{\Large\bfseries}
+    \titleformat*{\subsubsection}{\large\bfseries}
+    \titleformat*{\paragraph}{\large\bfseries}
+    \titleformat*{\subparagraph}{\large\bfseries}
+  \fi
+  \ifLarge
+    \titleformat*{\section}{\huge\bfseries}
+    \titleformat*{\subsection}{\LARGE\bfseries}
+    \titleformat*{\subsubsection}{\Large\bfseries}
+    \titleformat*{\paragraph}{\large\bfseries}
+    \titleformat*{\subparagraph}{\large\bfseries}
+  \fi
+
 \AtBeginDocument{%
   \raggedbottom%
   \setlength\topskip{0mm}%
