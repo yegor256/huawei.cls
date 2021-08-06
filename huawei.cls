@@ -23,6 +23,10 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{huawei}[00.00.0000 0.0.0 Template for Huawei Documents]
 
+\newif\iflarge
+\DeclareOption{large}{\largetrue}
+\newif\ifLarge
+\DeclareOption{Large}{\Largetrue}
 \newif\ifnosecurity
 \DeclareOption{nosecurity}{\nosecuritytrue}
 \newif\ifauthordraft
@@ -108,6 +112,8 @@
   \setlength\parskip{6pt}%
   \setlength\columnsep{32pt}%
   \def\arraystretch{1.5}%
+  \iflarge\large\fi
+  \ifLarge\Large\fi
 }
 
 \newcommand\LeftHuaweiBar{%
@@ -240,7 +246,8 @@
   \newpage
   \vspace*{\fill}
   \begin{center}
-  {\Huge\color{huawei-red}\textbf{Thank you!}}
+    \normalsize
+    {\Huge\color{huawei-red}\textbf{Thank you!}}
   \end{center}
   \vspace*{\fill}
 }
@@ -298,41 +305,42 @@
   \newpage
   \vspace*{1in}
   \begin{center}
-  \begin{minipage}{0.6\columnwidth}\raggedright
-  \setlength{\parskip}{6pt}
-  {\Huge\color{huawei-red}\textbf{Thank you!}}
+    \begin{minipage}{0.6\columnwidth}\raggedright
+      \normalsize
+      \setlength{\parskip}{6pt}
+      {\Huge\color{huawei-red}\textbf{Thank you!}}
 
-  \vspace{0.5in}
+      \vspace{0.5in}
 
-  \begin{CJK}{UTF8}{gbsn}
-  把数字世界带入每个人、每个家庭、 每个组织、构建万物互联的智能世界。
-  \end{CJK}
+      \begin{CJK}{UTF8}{gbsn}
+      把数字世界带入每个人、每个家庭、 每个组织、构建万物互联的智能世界。
+      \end{CJK}
 
-  Bring digital to every person, home and organization
-  \newline
-  for a fully connected, intelligent world.
+      Bring digital to every person, home and organization
+      \newline
+      for a fully connected, intelligent world.
 
-  \textbf{%
-    Copyright \copyright{} \the\year{} \thecompany{}
-    \newline
-    All Rights Reserved.%
-  }
+      \textbf{%
+        Copyright \copyright{} \the\year{} \thecompany{}
+        \newline
+        All Rights Reserved.%
+      }
 
-  The information in this document may contain predictive
-  statements including, without limitation, statements regarding
-  the future financial and operating results, future product
-  portfolio, new technology, etc. There are a number of factors that
-  could cause actual results and developments to differ materially
-  from those expressed or implied in the predictive statements.
-  Therefore, such information is provided for reference purpose
-  only and constitutes neither an offer nor an acceptance.
-  \ifnobrand%
-    The author%
-  \else%
-    \thecompany{}%
-  \fi
-  may change the information at any time without notice.
-  \end{minipage}
+      The information in this document may contain predictive
+      statements including, without limitation, statements regarding
+      the future financial and operating results, future product
+      portfolio, new technology, etc. There are a number of factors that
+      could cause actual results and developments to differ materially
+      from those expressed or implied in the predictive statements.
+      Therefore, such information is provided for reference purpose
+      only and constitutes neither an offer nor an acceptance.
+      \ifnobrand%
+        The author%
+      \else%
+        \thecompany{}%
+      \fi
+      may change the information at any time without notice.
+    \end{minipage}
   \end{center}%
 }
 
