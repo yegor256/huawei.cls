@@ -59,7 +59,6 @@ of your project here):
 story\
   .latexmkrc
   .gitignore
-  Makefile
   story.tex
 \end{minted}
 
@@ -73,16 +72,6 @@ Make sure the \ff{.gitignore} file lists all the files generated
 by \ff{pdflatex} during the compilation. You don't need to commit
 them to your repository, since they are temporary and will
 be generated again when you compile your document.
-
-The recommended content of the \ff{Makefile} would be this:
-
-\begin{minted}{text}
-TEXS=$(wildcard *.tex)
-PDFS=$(TEXS:.tex=.pdf)
-all: $(PDFS)
-%.pdf: %.tex
-  latexmk -pdf $<
-\end{minted}
 
 In order to compile the document, just say \ff{make} on the command line.
 
@@ -139,7 +128,7 @@ such as its title or author's name, here is how:
 
 \begin{minted}{text}
 \documentclass{huawei}
-\renewcommand*\thetitle{Making Compression 15% Faster}
+\renewcommand*\thetitle{Making Compression 15\% Faster}
 \renewcommand*\thesubtitle{Technical Report}
 \renewcommand*\theauthor{Yegor Bugayenko}
 \begin{document}
@@ -248,26 +237,5 @@ we recommend you to use ``crumbs'':
 \end{minted}
 
 A more complete example is in the \ff{samples/huawei-charter.tex}.
-
-\subsection{Code Blocks}
-
-When you need to show some source code, we recommend to use
-\ff{minted} environment, for example:
-
-\begin{minted}{text}
-\begin{minted}{text}
-void foo() {
-  return "Hello, world!";
-}
-\ end{minted}
-\end{minted}
-
-This is what you will see:
-
-\begin{minted}{text}
-void foo() {
-  return "Hello, world!";
-}
-\end{minted}
 
 \end{document}
