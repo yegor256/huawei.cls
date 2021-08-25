@@ -194,8 +194,8 @@
         \headers{%
           \ifanonymous\else%
             \theauthor%
-            \ifnosecurity\else,
-              \theid
+            \ifnosecurity\else%
+              \ifx\theid\empty\else,\theid\fi
             \fi%
             \ifnobrand\else%
               \newline
