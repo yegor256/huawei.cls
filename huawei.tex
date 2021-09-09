@@ -115,12 +115,6 @@ the layout of your document:
 \ff{authordraft}
   prints a big ``It's a draft'' message across each page.
 
-\ff{XL}
-  makes the font of the entire document a bit larger.
-
-\ff{XXL}
-  makes the font of the entire document much larger.
-
 \section{Preamble}
 
 In the preamble you can specify meta information about the document,
@@ -229,9 +223,9 @@ we recommend you to use ``crumbs'':
 \section*{Project Details}
 \begin{multicols}{2}
 \raggedright
-\crumb{Budget}{\$100K}
+\PrintCrumb{Budget}{\$100K}
 
-\crumb{Duration}{5 months}
+\PrintCrumb{Duration}{5 months}
 \end{multicols}
 \end{document}
 \end{minted}

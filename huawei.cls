@@ -23,10 +23,6 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{huawei}[00.00.0000 0.0.0 Template for Huawei Documents]
 
-\newif\ifXL
-\DeclareOption{XL}{\XLtrue}
-\newif\ifXXL
-\DeclareOption{XXL}{\XXLtrue}
 \newif\ifnosecurity
 \DeclareOption{nosecurity}{\nosecuritytrue}
 \newif\ifauthordraft
@@ -104,26 +100,13 @@
 \newcommand*\thesecurity{Confidential}
 \newcommand*\theid{}
 
-% Custom commands
 \newcommand\nospell[1]{#1}
-\newcommand\headers[1]{\setstretch{0.8}{\small\sffamily\color{gray}#1\par}}
-\newcommand\crumb[2]{\begin{minipage}{\columnwidth}\raggedright\textsc{#1}:\\#2\end{minipage}\vspace{4pt}}
 
-\usepackage{titlesec}
-  \ifXL
-    \titleformat*{\section}{\LARGE\bfseries}
-    \titleformat*{\subsection}{\Large\bfseries}
-    \titleformat*{\subsubsection}{\large\bfseries}
-    \titleformat*{\paragraph}{\large\bfseries}
-    \titleformat*{\subparagraph}{\large\bfseries}
-  \fi
-  \ifXXL
-    \titleformat*{\section}{\huge\bfseries}
-    \titleformat*{\subsection}{\LARGE\bfseries}
-    \titleformat*{\subsubsection}{\Large\bfseries}
-    \titleformat*{\paragraph}{\large\bfseries}
-    \titleformat*{\subparagraph}{\large\bfseries}
-  \fi
+\newcommand\HuaweiHeader[1]{{%
+  \setstretch{0.8}%
+  \fontsize{11pt}{11pt}\selectfont%
+  \sffamily\color{gray}#1\par%
+}}
 
 \AtBeginDocument{%
   \raggedbottom%
@@ -132,8 +115,6 @@
   \setlength\parskip{6pt}%
   \setlength\columnsep{32pt}%
   \def\arraystretch{1.5}%
-  \ifXL\large\fi
-  \ifXXL\Large\fi
 }
 
 \newcommand\LeftHuaweiBar{%
@@ -187,7 +168,7 @@
       \fi%
     \fi%
     \begin{textblock}{8}[1,0](15.8,0.2)%
-      \raggedleft\headers{%
+      \raggedleft\HuaweiHeader{%
         \ifnosecurity\else%
           \thesecurity
         \fi%
@@ -195,7 +176,7 @@
     \end{textblock}%
     \begin{textblock}{8}[0,1](1.2,15.8)%
       \ifnum\value{page}=1\else%
-        \headers{%
+        \HuaweiHeader{%
           \ifanonymous\else%
             \theauthor%
             \ifnosecurity\else%
@@ -212,7 +193,7 @@
       \fi%
     \end{textblock}%
     \begin{textblock}{8}[1,1](15.8,15.8)%
-      \raggedleft\headers{%
+      \raggedleft\HuaweiHeader{%
         \ifnum\value{page}=1\else%
           \ifnopaging\else%
             Page \#\thepage{} of \pageref*{LastPage}%
@@ -260,6 +241,12 @@
     \fi
   \fi
   \vspace{2em}
+}
+
+\newcommand\PrintCrumb[2]{%
+  \begin{minipage}{\columnwidth}%
+    \raggedright\textsc{#1}:\\#2%
+  \end{minipage}\vspace{4pt}%
 }
 
 \newcommand\PrintThankYouPage{
