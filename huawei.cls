@@ -104,7 +104,7 @@
 
 \newcommand\HuaweiHeader[1]{{%
   \setstretch{0.8}%
-  \fontsize{11pt}{11pt}\selectfont%
+  \fontsize{11pt}{13pt}\selectfont%
   \sffamily\color{gray}#1\par%
 }}
 
