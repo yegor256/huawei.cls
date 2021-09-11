@@ -23,6 +23,8 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{huawei}[00.00.0000 0.0.0 Template for Huawei Documents]
 
+\LoadClass[12pt]{article}
+
 \newif\ifnosecurity
 \DeclareOption{nosecurity}{\nosecuritytrue}
 \newif\ifauthordraft
@@ -40,8 +42,6 @@
 \newif\ifanonymous
 \DeclareOption{anonymous}{\anonymoustrue}
 \ProcessOptions\relax
-
-\LoadClass[12pt]{article}
 
 \RequirePackage{geometry}
 \iflandscape
@@ -90,40 +90,19 @@
 \RequirePackage[absolute]{textpos}
   \TPGrid{16}{16}
 
-% Our custom commands to redefine:
-\renewcommand\title[1]{\renewcommand\thetitle{#1}}
-\newcommand\thetitle{Untitled}
-\newcommand*\thecompany{Huawei Technologies Co., Ltd.}
-\newcommand\thesubtitle{}
-\renewcommand\author[1]{\renewcommand\theauthor{#1}}
-\newcommand\theauthor{Unknown}
-\newcommand*\thesecurity{Confidential}
-\newcommand*\theid{}
-
-\newcommand\nospell[1]{#1}
-
-\newcommand\HuaweiHeader[1]{{%
+\makeatletter\newcommand\huawei@header[1]{{%
   \setstretch{0.8}%
   \fontsize{11pt}{13pt}\selectfont%
   \sffamily\color{gray}#1\par%
-}}
+}}\makeatother
 
-\AtBeginDocument{%
-  \raggedbottom%
-  \setlength\topskip{0mm}%
-  \setlength\parindent{0pt}%
-  \setlength\parskip{6pt}%
-  \setlength\columnsep{32pt}%
-  \def\arraystretch{1.5}%
-}
-
-\newcommand\LeftHuaweiBar{%
+\makeatletter\newcommand\huawei@bar{%
   \begin{textblock}{1}[0,0](0,0)%
     \tikz \node[fill=red,minimum width=\TPHorizModule,minimum height=16\TPVertModule] {};%
   \end{textblock}%
-}
+}\makeatother
 
-\newcommand\PrintHuaweiLogo{
+\makeatletter\newcommand\huawei@logo{
   \begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-1, inner sep=0pt, outer sep=0pt]
     \begin{scope}[even odd rule,line width=0.800pt]
       \begin{scope}[shift={(0,-0.00024)}]
@@ -145,14 +124,14 @@
       \end{scope}%
     \end{scope}%
   \end{tikzpicture}%
-}
+}\makeatother
 
 \RequirePackage{fancyhdr}
   \pagestyle{fancy}
   \renewcommand{\headrulewidth}{0pt}
   \fancyhf{}
-  \fancyfoot[L]{
-    \LeftHuaweiBar{}
+  \makeatletter\fancyfoot[L]{
+    \huawei@bar
     \ifauthordraft%
       \begin{textblock}{14}[0.5,0.5](8,8)%
         \tikz \node[minimum width=14\TPHorizModule] {%
@@ -163,12 +142,12 @@
     \ifnum\value{page}=1\else%
       \ifnobrand\else%
         \begin{textblock}{8}[0,0](1.2,0.2)%
-          \PrintHuaweiLogo{}%
+          \huawei@logo%
         \end{textblock}%
       \fi%
     \fi%
     \begin{textblock}{8}[1,0](15.8,0.2)%
-      \raggedleft\HuaweiHeader{%
+      \raggedleft\huawei@header{%
         \ifnosecurity\else%
           \thesecurity
         \fi%
@@ -176,7 +155,7 @@
     \end{textblock}%
     \begin{textblock}{8}[0,1](1.2,15.8)%
       \ifnum\value{page}=1\else%
-        \HuaweiHeader{%
+        \huawei@header{%
           \ifanonymous\else%
             \theauthor%
             \ifnosecurity\else%
@@ -193,7 +172,7 @@
       \fi%
     \end{textblock}%
     \begin{textblock}{8}[1,1](15.8,15.8)%
-      \raggedleft\HuaweiHeader{%
+      \raggedleft\huawei@header{%
         \ifnum\value{page}=1\else%
           \ifnopaging\else%
             Page \#\thepage{} of \pageref*{LastPage}%
@@ -207,7 +186,7 @@
         \fi%
       }%
     \end{textblock}%
-  }
+  }\makeatother
 
 \renewcommand\maketitle{%
   \vspace*{18pt}
@@ -286,11 +265,11 @@
   \endgroup%
 }
 
-\newcommand\PrintFirstPage[1]{
+\makeatletter\newcommand\PrintFirstPage[1]{
   \iflandscape\else
     \PackageError{huawei}{It's allowed to use PrintFirstPage only in landscape mode}{Read huawei.pdf for more information}
   \fi
-  \LeftHuaweiBar{}
+  \huawei@bar
   \def\param{#1}%
   \ifx\param\empty\else
     \includegraphics[height=2in]{#1}
@@ -303,7 +282,7 @@
       \raggedleft\includegraphics[height=3.6in]{huawei-cover-picture.pdf}
     \end{textblock}
   \fi
-}
+}\makeatother
 
 \newcommand\PrintLastPage{
   \iflandscape\else
@@ -362,5 +341,25 @@
     \begin{multicols}{2}\setstretch{0.95}\printbibliography\end{multicols}
   \fi
 }
+
+\AtBeginDocument{%
+  \raggedbottom%
+  \setlength\topskip{0mm}%
+  \setlength\parindent{0pt}%
+  \setlength\parskip{6pt}%
+  \setlength\columnsep{32pt}%
+  \def\arraystretch{1.5}%
+}
+
+\renewcommand\title[1]{\renewcommand\thetitle{#1}}
+\newcommand\thetitle{\textbackslash{}thetitle}
+\newcommand*\thecompany{Huawei Technologies Co., Ltd.}
+\newcommand\thesubtitle{}
+\renewcommand\author[1]{\renewcommand\theauthor{#1}}
+\newcommand\theauthor{\textbackslash{}theauthor}
+\newcommand*\thesecurity{Confidential}
+\newcommand*\theid{}
+
+\ifcsname nospell\endcsname\else\newcommand\nospell[1]{#1}\fi
 
 \endinput
