@@ -190,6 +190,11 @@
     \end{textblock}%
   }\makeatother
 
+\RequirePackage{changepage}
+\renewenvironment{abstract}
+  {\begin{adjustwidth}{0pt}{1in}{\scshape Abstract:}\newline\small}
+  {\end{adjustwidth}}
+
 \makeatletter\renewcommand\maketitle{%
   \vspace*{18pt}
   {\bfseries{\Huge\thetitle}}
