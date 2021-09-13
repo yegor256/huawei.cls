@@ -25,30 +25,32 @@
 
 \LoadClass[12pt]{article}
 
-\newif\ifnosecurity
-\DeclareOption{nosecurity}{\nosecuritytrue}
-\newif\ifauthordraft
-\DeclareOption{authordraft}{\authordrafttrue}
-\newif\ifnobrand
-\DeclareOption{nobrand}{\nobrandtrue}
-\newif\ifnodate
-\DeclareOption{nodate}{\nodatetrue}
-\newif\ifnocover
-\DeclareOption{nocover}{\nocovertrue}
-\newif\ifnopaging
-\DeclareOption{nopaging}{\nopagingtrue}
-\newif\iflandscape
-\DeclareOption{landscape}{\landscapetrue}
-\newif\ifanonymous
-\DeclareOption{anonymous}{\anonymoustrue}
+\makeatletter
+\newif\ifhuawei@nosecurity
+\DeclareOption{nosecurity}{\huawei@nosecuritytrue}
+\newif\ifhuawei@authordraft
+\DeclareOption{authordraft}{\huawei@authordrafttrue}
+\newif\ifhuawei@nobrand
+\DeclareOption{nobrand}{\huawei@nobrandtrue}
+\newif\ifhuawei@nodate
+\DeclareOption{nodate}{\huawei@nodatetrue}
+\newif\ifhuawei@nocover
+\DeclareOption{nocover}{\huawei@nocovertrue}
+\newif\ifhuawei@nopaging
+\DeclareOption{nopaging}{\huawei@nopagingtrue}
+\newif\ifhuawei@landscape
+\DeclareOption{landscape}{\huawei@landscapetrue}
+\newif\ifhuawei@anonymous
+\DeclareOption{anonymous}{\huawei@anonymoustrue}
 \ProcessOptions\relax
+\makeatother
 
 \RequirePackage{geometry}
-\iflandscape
+\makeatletter\ifhuawei@landscape
   \geometry{paperwidth=16in, paperheight=9in, left=4in, right=2in, top=1.5in, bottom=1.5in}
 \else
   \geometry{a4paper, left=1.5in, right=1in, top=1.2in, bottom=1.2in}
-\fi
+\fi\makeatother
 \RequirePackage[T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{CJKutf8}
@@ -132,7 +134,7 @@
   \fancyhf{}
   \makeatletter\fancyfoot[L]{
     \huawei@bar
-    \ifauthordraft%
+    \ifhuawei@authordraft%
       \begin{textblock}{14}[0.5,0.5](8,8)%
         \tikz \node[minimum width=14\TPHorizModule] {%
           \fontsize{64}{64}\selectfont\sffamily\scshape\color{gray!20}\rotatebox{30}{it is a draft}
@@ -140,7 +142,7 @@
       \end{textblock}%
     \else\fi%
     \ifnum\value{page}=1\else%
-      \ifnobrand\else%
+      \ifhuawei@nobrand\else%
         \begin{textblock}{8}[0,0](1.2,0.2)%
           \huawei@logo%
         \end{textblock}%
@@ -148,7 +150,7 @@
     \fi%
     \begin{textblock}{8}[1,0](15.8,0.2)%
       \raggedleft\huawei@header{%
-        \ifnosecurity\else%
+        \ifhuawei@nosecurity\else%
           \thesecurity
         \fi%
       }%
@@ -156,16 +158,16 @@
     \begin{textblock}{8}[0,1](1.2,15.8)%
       \ifnum\value{page}=1\else%
         \huawei@header{%
-          \ifanonymous\else%
+          \ifhuawei@anonymous\else%
             \theauthor%
-            \ifnosecurity\else%
+            \ifhuawei@nosecurity\else%
               \ifx\theid\empty\else,\theid\fi
             \fi%
-            \ifnobrand\else%
+            \ifhuawei@nobrand\else%
               \newline
             \fi%
           \fi%
-          \ifnobrand\else%
+          \ifhuawei@nobrand\else%
             \thecompany{}
           \fi%
         }%
@@ -174,21 +176,21 @@
     \begin{textblock}{8}[1,1](15.8,15.8)%
       \raggedleft\huawei@header{%
         \ifnum\value{page}=1\else%
-          \ifnopaging\else%
+          \ifhuawei@nopaging\else%
             Page \#\thepage{} of \pageref*{LastPage}%
-            \ifnodate\else%
+            \ifhuawei@nodate\else%
               \\
             \fi%
           \fi%
         \fi%
-        \ifnodate\else%
+        \ifhuawei@nodate\else%
           \today{} \settimeformat{daytime}\currenttime{}%
         \fi%
       }%
     \end{textblock}%
   }\makeatother
 
-\renewcommand\maketitle{%
+\makeatletter\renewcommand\maketitle{%
   \vspace*{18pt}
   {\bfseries{\Huge\thetitle}}
   \ifx\thesubtitle\empty\else%
@@ -196,23 +198,23 @@
     {\color{gray!50!black}\large\thesubtitle}
   \fi
   \\[18pt]
-  \ifnobrand\else%
-    \ifanonymous\else%
+  \ifhuawei@nobrand\else%
+    \ifhuawei@anonymous\else%
       \ifx\thecompany\empty\else%
         \thecompany\newline
       \fi
     \fi
   \fi
   \ifx\theauthor\empty\else%
-    {\scshape\ifanonymous
+    {\scshape\ifhuawei@anonymous
       Anonymous Authors
     \else%
       \theauthor
     \fi}%
   \fi%
-  \ifanonymous\else%
+  \ifhuawei@anonymous\else%
     \ifx\theauthor\empty\else
-      \ifnobrand\else%
+      \ifhuawei@nobrand\else%
         \ifx\theid\empty\else
           $\;$/ {\theid}
         \fi
@@ -220,7 +222,7 @@
     \fi
   \fi
   \vspace{2em}
-}
+}\makeatother
 
 \newcommand\PrintCrumb[2]{%
   \begin{minipage}{\columnwidth}%
@@ -238,14 +240,14 @@
   \vspace*{\fill}
 }
 
-\newcommand\PrintDisclaimer{%
+\makeatletter\newcommand\PrintDisclaimer{%
   \justify\vspace*{\fill}%
   \begingroup%
   \setstretch{0.55}%
   \sffamily\scriptsize\color{gray!50!black}%
   \textbf{Disclaimer}: The opinions expressed in this document are in good faith and
   while every care has been taken in preparing it,
-  \ifnobrand%
+  \ifhuawei@nobrand%
     the author%
   \else%
     \thecompany{}%
@@ -253,7 +255,7 @@
   makes no representations and gives no warranties of whatever
   nature in respect of these documents, including but not limited to the
   accuracy or completeness of any information, facts and/or opinions contained therein.
-  \ifnobrand%
+  \ifhuawei@nobrand%
     The author%
   \else%
     \thecompany{}%
@@ -263,10 +265,10 @@
   findings in these documents.
   \par
   \endgroup%
-}
+}\makeatother
 
 \makeatletter\newcommand\PrintFirstPage[1]{
-  \iflandscape\else
+  \ifhuawei@landscape\else
     \PackageError{huawei}{It's allowed to use PrintFirstPage only in landscape mode}{Read huawei.pdf for more information}
   \fi
   \huawei@bar
@@ -277,15 +279,15 @@
   \fi
   \vspace*{0.5in}
   \maketitle
-  \ifnocover\else
+  \ifhuawei@nocover\else
     \begin{textblock}{14}[1,1](14,14)
       \raggedleft\includegraphics[height=3.6in]{huawei-cover-picture.pdf}
     \end{textblock}
   \fi
 }\makeatother
 
-\newcommand\PrintLastPage{
-  \iflandscape\else
+\makeatletter\newcommand\PrintLastPage{
+  \ifhuawei@landscape\else
     \PackageError{huawei}{It's allowed to use PrintLastPage only in landscape mode}{Read huawei.pdf for more information}
   \fi
   \newpage
@@ -320,7 +322,7 @@
       from those expressed or implied in the predictive statements.
       Therefore, such information is provided for reference purpose
       only and constitutes neither an offer nor an acceptance.
-      \ifnobrand%
+      \ifhuawei@nobrand%
         The author%
       \else%
         \thecompany{}%
@@ -328,19 +330,19 @@
       may change the information at any time without notice.
     \end{minipage}
   \end{center}%
-}
+}\makeatother
 
-\newcommand\PrintBibliography{
+\makeatletter\newcommand\PrintBibliography{
   \setlength\bibitemsep{3pt}
   \AtNextBibliography{\small}
   \newpage
   \raggedright
-  \iflandscape
+  \ifhuawei@landscape
     \begin{multicols}{3}\setstretch{0.95}\printbibliography\end{multicols}
   \else
     \begin{multicols}{2}\setstretch{0.95}\printbibliography\end{multicols}
   \fi
-}
+}\makeatother
 
 \AtBeginDocument{%
   \raggedbottom%
