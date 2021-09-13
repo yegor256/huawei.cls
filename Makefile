@@ -59,7 +59,7 @@ zip: huawei.pdf huawei.cls
 	cat huawei.cls | grep RequirePackage | gsed -e "s/.*{\(.\+\)}.*/hard \1/" > DEPENDS.txt
 	cd ..
 	zip -r huawei.zip *
-	cp huawei.zip ..
+	cp huawei.zip ../huawei-$${version}.zip
 	cd ..
 
 clean:
