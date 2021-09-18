@@ -89,6 +89,7 @@
   \definecolor{yellow}{HTML}{F2DC5D}
   \definecolor{blue}{HTML}{2274A5}
   \definecolor{green}{HTML}{499167}
+  \definecolor{orange}{HTML}{F06543}
 \RequirePackage{tikz}
 \RequirePackage{tabularx}
 \RequirePackage{titling}
