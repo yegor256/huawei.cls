@@ -28,6 +28,8 @@
 \makeatletter
 \newif\ifhuawei@dark
 \DeclareOption{dark}{\huawei@darktrue}
+\newif\ifhuawei@slides
+\DeclareOption{slides}{\huawei@slidestrue}
 \newif\ifhuawei@nosecurity
 \DeclareOption{nosecurity}{\huawei@nosecuritytrue}
 \newif\ifhuawei@authordraft
@@ -95,8 +97,13 @@
   \TPGrid{16}{16}
 
 \makeatletter\newcommand\huawei@header[1]{{%
-  \setstretch{0.8}%
-  \fontsize{11pt}{13pt}\selectfont%
+  \ifhuawei@slides%
+    \setstretch{0.8}%
+    \fontsize{19pt}{24pt}\selectfont%
+  \else%
+    \setstretch{0.8}%
+    \fontsize{11pt}{13pt}\selectfont%
+  \fi%
   \sffamily\color{gray}#1\par%
 }}\makeatother
 
@@ -109,7 +116,8 @@
 \makeatletter\newcommand\huawei@logo{
   \def\BLACK{\ifhuawei@dark white\else black\fi}
   \def\BLANK{\ifhuawei@dark black\else white\fi}
-  \begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-1, inner sep=0pt, outer sep=0pt]
+  \def\SCALE{\ifhuawei@slides 1.8\else 1\fi}
+  \begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-\SCALE, xscale=\SCALE, inner sep=0pt, outer sep=0pt]
     \begin{scope}[even odd rule,line width=0.800pt]
       \begin{scope}[shift={(0,-0.00024)}]
         \path[fill=\BLACK] (10.9375,30.2240) -- (10.9375,33.6097) .. controls (10.9375,34.5713) and (10.4603,35.0845) .. (9.5932,35.0845) .. controls (8.7212,35.0845) and (8.2411,34.5565) .. (8.2411,33.5686) -- (8.2411,30.2278) -- (7.0415,30.2278) -- (7.0415,33.6097) .. controls (7.0415,35.2737) and (7.9658,36.2272) .. (9.5774,36.2272) .. controls (11.2041,36.2272) and (12.1371,35.2554) .. (12.1371,33.5609) -- (12.1371,30.2240) -- (10.9375,30.2240) -- cycle;
@@ -145,6 +153,8 @@
         };%
       \end{textblock}%
     \else\fi%
+  }\makeatother
+  \makeatletter\fancyhead[L]{
     \ifnum\value{page}=1\else%
       \ifhuawei@nobrand\else%
         \begin{textblock}{8}[0,0](1.2,0.2)%
@@ -152,6 +162,8 @@
         \end{textblock}%
       \fi%
     \fi%
+  }\makeatother
+  \makeatletter\fancyhead[R]{
     \begin{textblock}{8}[1,0](15.8,0.2)%
       \raggedleft\huawei@header{%
         \ifhuawei@nosecurity\else%
@@ -159,6 +171,8 @@
         \fi%
       }%
     \end{textblock}%
+  }\makeatother
+  \makeatletter\fancyfoot[R]{
     \begin{textblock}{8}[0,1](1.2,15.8)%
       \ifnum\value{page}=1\else%
         \huawei@header{%
