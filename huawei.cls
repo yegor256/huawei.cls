@@ -180,7 +180,7 @@
           \ifhuawei@anonymous\else%
             \theauthor%
             \ifhuawei@nosecurity\else%
-              \ifx\theid\empty\else,\theid\fi
+              \ifx\theid\empty\else, \theid\fi
             \fi%
             \ifhuawei@nobrand\else%
               \newline
