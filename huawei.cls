@@ -55,10 +55,16 @@
 \else
   \geometry{a4paper, left=1.5in, right=1in, top=1.2in, bottom=1.2in}
 \fi\makeatother
+
+\makeatletter\ifhuawei@slides
+  \usepackage[fontsize=24pt]{fontsize}
+\fi\makeatother
+
 \RequirePackage[T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{CJKutf8}
 \RequirePackage{tabularx}
+\RequirePackage{anyfontsize}
 \RequirePackage{multicol}
 \RequirePackage{ragged2e}
 \RequirePackage{multicol}
@@ -176,7 +182,7 @@
   \makeatletter\fancyfoot[R]{
     \begin{textblock}{8}[0,1](1.2,15.8)%
       \ifnum\value{page}=1\else%
-        \huawei@header{%
+        \huawei@header{\raggedright%
           \ifhuawei@anonymous\else%
             \theauthor%
             \ifhuawei@nosecurity\else%
