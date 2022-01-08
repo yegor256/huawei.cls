@@ -20,17 +20,14 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-.SHELLFLAGS = -e -x -c
-
-.ONESHELL:
-
 TEXS=$(wildcard *.tex)
 PDFS=$(TEXS:.tex=.pdf)
 
 all: $(PDFS)
 
+%.pdf: %.tex
+	latexmk -pdf "$<"
+
 clean:
 	git clean -dfX
 
-%.pdf: %.tex ../huawei.cls
-	latexmk -pdf $<
