@@ -28,9 +28,9 @@ NAME=huawei
 all: make-samples $(NAME).pdf zip
 
 copyright:
-	find . -name '*.tex' -o -name '*.sty' -o -name 'Makefile' | xargs -n1 grep -r "(c) 2021-$$(date +%Y) "
+	find . -name '*.tex' -o -name '*.cls' -o -name 'Makefile' | xargs -n1 grep -r "(c) 2021-$$(date +%Y) "
 
-test: tests/*.tex $(NAME).sty
+test: tests/*.tex $(NAME).cls
 	if [ -d tests ]; then
 		cd tests && make && cd ..
 	fi
