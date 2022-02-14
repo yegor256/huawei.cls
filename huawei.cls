@@ -32,6 +32,8 @@
 \DeclareOption{slides}{\huawei@slidestrue}
 \newif\ifhuawei@nosecurity
 \DeclareOption{nosecurity}{\huawei@nosecuritytrue}
+\newif\ifhuawei@noCJK
+\DeclareOption{noCJK}{\huawei@noCJKtrue}
 \newif\ifhuawei@authordraft
 \DeclareOption{authordraft}{\huawei@authordrafttrue}
 \newif\ifhuawei@nobrand
@@ -62,7 +64,9 @@
 
 \RequirePackage[T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
-\RequirePackage{CJKutf8}
+\makeatletter\ifhuawei@noCJK\else
+  \RequirePackage{CJKutf8}
+\fi\makeatother
 \RequirePackage{tabularx}
 \RequirePackage{anyfontsize}
 \RequirePackage{multicol}
@@ -330,9 +334,11 @@
 
       \vspace{0.5in}
 
-      \begin{CJK}{UTF8}{gbsn}
-      把数字世界带入每个人、每个家庭、 每个组织、构建万物互联的智能世界。
-      \end{CJK}
+      \ifhuawei@noCJK\else
+        \begin{CJK}{UTF8}{gbsn}
+        把数字世界带入每个人、每个家庭、 每个组织、构建万物互联的智能世界。
+        \end{CJK}
+      \fi
 
       Bring digital to every person, home and organization
       \newline
