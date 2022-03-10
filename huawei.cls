@@ -76,6 +76,7 @@
   \newtimeformat{daytime}{\twodigit{\THEHOUR}:\twodigit{\THEMINUTE}}
 \RequirePackage[tt=false,type1=true]{libertine}
 \RequirePackage{paralist}
+  \setdefaultenum{a)}{a)}{a)}{a)}
 \RequirePackage{makecell}
 \RequirePackage[para]{footmisc}
   \setlength{\footnotemargin}{2pt}
