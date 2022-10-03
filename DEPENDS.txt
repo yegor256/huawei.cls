@@ -26,3 +26,4 @@ hard changepage
 hard pagecolor
 hard fmtcount
 hard filehook
+hard scrbase
