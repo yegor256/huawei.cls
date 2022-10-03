@@ -27,3 +27,4 @@ hard pagecolor
 hard fmtcount
 hard filehook
 hard scrbase
+hard trimspaces
