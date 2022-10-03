@@ -31,3 +31,4 @@ hard trimspaces
 hard catchfile
 hard transparent
 hard fontsize
+hard ffcode
