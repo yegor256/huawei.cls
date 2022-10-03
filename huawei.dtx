@@ -447,7 +447,8 @@ Here goes the second column content.
 
 % Then, we define branded colors:
 %    \begin{macrocode}
-\RequirePackage[table]{xcolor}
+\PassOptionsToPackage{table}{xcolor}
+\RequirePackage{xcolor}
 \definecolor{red}{HTML}{CF0A2C}
 \definecolor{black}{HTML}{232527}
 \definecolor{gray}{HTML}{878C8F}
