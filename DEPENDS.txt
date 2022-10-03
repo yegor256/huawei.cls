@@ -25,3 +25,4 @@ hard fancyhdr
 hard changepage
 hard pagecolor
 hard fmtcount
+hard filehook
