@@ -57,7 +57,6 @@
 \usepackage[tt=false, type1=true]{libertine}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage{CJKutf8}
 \usepackage{href-ul}
 \PageIndex
 \EnableCrossrefs
@@ -162,11 +161,6 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 % \begin{macro}{nocover}
 %   avoid printing the cover images on the first page by the
 %   |\PrintTitlePage| command.
-% \end{macro}
-
-% \begin{macro}{noCJK}
-%   avoid the inclusion of
-%   |CJK| package which enables Chinese fonts.
 % \end{macro}
 
 % \begin{macro}{anonymous}
@@ -366,8 +360,6 @@ Here goes the second column content.
 \DeclareOption{slides}{\huawei@slidestrue}
 \newif\ifhuawei@nosecurity
 \DeclareOption{nosecurity}{\huawei@nosecuritytrue}
-\newif\ifhuawei@noCJK
-\DeclareOption{noCJK}{\huawei@noCJKtrue}
 \newif\ifhuawei@authordraft
 \DeclareOption{authordraft}{\huawei@authordrafttrue}
 \newif\ifhuawei@nobrand
@@ -409,9 +401,6 @@ Here goes the second column content.
 %    \begin{macrocode}
 \RequirePackage[T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
-\makeatletter\ifhuawei@noCJK\else
-  \RequirePackage{CJKutf8}
-\fi\makeatother
 \RequirePackage{tabularx}
 \RequirePackage{anyfontsize}
 \RequirePackage{multicol}
