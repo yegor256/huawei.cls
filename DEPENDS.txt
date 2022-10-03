@@ -29,3 +29,4 @@ hard filehook
 hard scrbase
 hard trimspaces
 hard catchfile
+hard transparent
