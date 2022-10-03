@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
+      - run: sudo apt-get -y install inkscape
       - uses: teatimeguest/setup-texlive-action@v2.4.1
         with:
           package-file: DEPENDS.txt
