@@ -4,6 +4,8 @@ on:
     branches: master
   pull_request:
     branches: master
+env:
+  TERM: unknown
 jobs:
   l3build:
     runs-on: ubuntu-20.04
@@ -15,5 +17,4 @@ jobs:
         with:
           package-file: DEPENDS.txt
           packages: scheme-basic xetex libertine l3build
-      - run: export TERM=unknown
       - run: l3build check -q --show-log-on-error
