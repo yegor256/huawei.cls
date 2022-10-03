@@ -1,0 +1,10 @@
+\input{regression-test.tex}
+\documentclass[landscape,noCJK]{huawei}
+\documentclass{huawei}
+\begin{document}
+\START
+
+Hello, world!
+\PrintLastPage
+
+\END

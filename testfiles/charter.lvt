@@ -1,0 +1,45 @@
+\input{regression-test.tex}
+\documentclass[landscape,nocover,XL,dark,slides]{huawei}
+\addbibresource{huawei-main.bib}
+\begin{document}
+\START
+
+\PrintFirstPage{}
+
+\newpage
+\section*{Project Details}
+\begin{multicols}{2}
+\raggedright
+\PrintCrumb{Author and Project Manager}{\theauthor / \theid}
+
+\PrintCrumb{Project Name}{Making Compression 15\% Faster}
+
+\PrintCrumb{Technical Adviser}{Jeff Lebowski, 00112233}
+
+\PrintCrumb{Cooperation Manager}{Walter Sobchak, 00889977}
+
+\PrintCrumb{Budget}{\$99,999}
+
+\PrintCrumb{Duration}{8 months}
+
+\PrintCrumb{Export Control}{No}
+
+\PrintCrumb{AI Technology Involved}{No}
+
+\PrintCrumb{Hardware Supply}{No}
+
+\end{multicols}
+
+\newpage
+\begin{multicols}{2}
+\section*{Objectives}
+The main objective of the project is to win the war
+against poverty in the world.
+\columnbreak
+\section*{Novelty}
+The idea of this project is very new and breakthrough.
+\end{multicols}
+
+\PrintLastPage
+
+\END

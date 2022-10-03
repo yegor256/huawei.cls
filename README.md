@@ -1,4 +1,5 @@
-[![make](https://github.com/yegor256/huawei.cls/actions/workflows/latexmk.yml/badge.svg)](https://github.com/yegor256/huawei.cls/actions/workflows/latexmk.yml)
+[![make](https://github.com/yegor256/huawei.cls/actions/workflows/l3build.yml/badge.svg)](https://github.com/yegor256/huawei.cls/actions/workflows/l3build.yml)
+[![CTAN](https://img.shields.io/ctan/v/huawei)](https://ctan.org/pkg/huawei)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/yegor256/huawei.cls/blob/master/LICENSE.txt)
 
 Disclaimer: This is **NOT** a product of Huawei Technologies Co., Ltd.
@@ -21,8 +22,6 @@ Hello, world!
 ```
 
 Read the detailed documentation [in PDF](http://mirrors.ctan.org/macros/latex/contrib/huawei/huawei.pdf).
-
-Find more examples in the [`samples/`](/samples) directory.
 
 If you need more formatting options, 
 [submit an issue](https://github.com/yegor256/huawei.cls/issues), 

@@ -1,0 +1,8 @@
+\input{regression-test.tex}
+\documentclass{huawei}
+\begin{document}
+\START
+
+Hello, world!
+
+\END

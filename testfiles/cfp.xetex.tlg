@@ -1,0 +1,371 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/sc' will be
+(Font)              scaled to size 12.0pt on input line ....
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 10.95pt on input line ....
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
+(Font)              scaled to size 12.0pt on input line ....
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
+(Font)              scaled to size 24.88pt on input line ....
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 14.4pt on input line ....
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line ....
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+LaTeX Warning: Citation 'knuth1984texbook' on page 1 undefined on input line ....
+(../mt-cmr.cfg
+File: mt-cmr.cfg ....-..-.. v... microtype config. file: Computer Modern Roman (RS)
+)
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line ....
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line ....
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line ....
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 8.0pt on input line ....
+LaTeX Warning: Citation 'lamport1994latex' on page 1 undefined on input line ....
+Overfull \hbox (45.91905pt too wide) in paragraph at lines 19--23
+[]\T1/LinuxLibertineT-TLF/m/n/12 By the way, we use T[]X cre-ated by [] and L[]T[]X cre-ated by [].
+\hbox(8.56499+2.79599)x416.83289, glue set - 1.0
+.\hbox(0.0+0.0)x0.0
+.\T1/LinuxLibertineT-TLF/m/n/12 B
+.\T1/LinuxLibertineT-TLF/m/n/12 y
+.\glue 3.0 plus 1.5 minus 0.99959
+.\T1/LinuxLibertineT-TLF/m/n/12 t
+.\T1/LinuxLibertineT-TLF/m/n/12 h
+.\T1/LinuxLibertineT-TLF/m/n/12 e
+.\glue 3.0 plus 1.5 minus 0.99959
+.\T1/LinuxLibertineT-TLF/m/n/12 w
+.\T1/LinuxLibertineT-TLF/m/n/12 a
+.\T1/LinuxLibertineT-TLF/m/n/12 y
+.\kern-0.70801
+.\T1/LinuxLibertineT-TLF/m/n/12 ,
+.\glue 3.0 plus 1.875 minus 0.79967
+.\T1/LinuxLibertineT-TLF/m/n/12 w
+.\kern-0.09601
+.\T1/LinuxLibertineT-TLF/m/n/12 e
+.\glue 3.0 plus 1.5 minus 0.99959
+.\T1/LinuxLibertineT-TLF/m/n/12 u
+.\T1/LinuxLibertineT-TLF/m/n/12 s
+.\T1/LinuxLibertineT-TLF/m/n/12 e
+.\glue 3.0 plus 1.5 minus 0.99959
+.\T1/LinuxLibertineT-TLF/m/n/12 T
+.\kern -2.00043
+.\hbox(7.872+0.02998)x6.68399, shifted 2.57399
+..\T1/LinuxLibertineT-TLF/m/n/12 E
+.\kern -1.5
+.\T1/LinuxLibertineT-TLF/m/n/12 X
+.\glue 3.0 plus 1.5 minus 0.99959
+.\T1/LinuxLibertineT-TLF/m/n/12 c
+.\T1/LinuxLibertineT-TLF/m/n/12 r
+.\kern-0.09601
+.\T1/LinuxLibertineT-TLF/m/n/12 e
+.\discretionary
+..\T1/LinuxLibertineT-TLF/m/n/12 -
+.\T1/LinuxLibertineT-TLF/m/n/12 a
+.\T1/LinuxLibertineT-TLF/m/n/12 t
+.\T1/LinuxLibertineT-TLF/m/n/12 e
+.\kern0.084
+.\T1/LinuxLibertineT-TLF/m/n/12 d
+.\glue 3.0 plus 1.5 minus 0.99959
+.\T1/LinuxLibertineT-TLF/m/n/12 b
+.\T1/LinuxLibertineT-TLF/m/n/12 y
+.\penalty 10000
+.\glue 3.0 plus 1.5 minus 0.99959
+.\hbox(8.56499+0.168)x102.41989
+..\T1/LinuxLibertineT-TLF/b/n/12 k
+..\T1/LinuxLibertineT-TLF/b/n/12 n
+..\T1/LinuxLibertineT-TLF/b/n/12 u
+..\T1/LinuxLibertineT-TLF/b/n/12 t
+..\T1/LinuxLibertineT-TLF/b/n/12 h
+..\T1/LinuxLibertineT-TLF/b/n/12 1
+..\T1/LinuxLibertineT-TLF/b/n/12 9
+..\T1/LinuxLibertineT-TLF/b/n/12 8
+..\T1/LinuxLibertineT-TLF/b/n/12 4
+..\T1/LinuxLibertineT-TLF/b/n/12 t
+..\T1/LinuxLibertineT-TLF/b/n/12 e
+..\kern-0.084
+..\T1/LinuxLibertineT-TLF/b/n/12 x
+..\T1/LinuxLibertineT-TLF/b/n/12 b
+..\kern0.12
+..\T1/LinuxLibertineT-TLF/b/n/12 o
+..\kern0.084
+..\T1/LinuxLibertineT-TLF/b/n/12 o
+..\T1/LinuxLibertineT-TLF/b/n/12 k
+.\glue 3.0 plus 1.5 minus 0.99959
+.\T1/LinuxLibertineT-TLF/m/n/12 a
+.\T1/LinuxLibertineT-TLF/m/n/12 n
+.\T1/LinuxLibertineT-TLF/m/n/12 d
+.\glue 3.0 plus 1.5 minus 0.99959
+.\T1/LinuxLibertineT-TLF/m/n/12 L
+.\kern -4.32
+.\vbox(7.872+0.0)x5.56, glue set 2.604fil
+..\hbox(5.248+0.01999)x5.56
+...\T1/LinuxLibertineT-TLF/m/n/8 A
+..\glue 0.0 plus 1.0fil minus 1.0fil
+.\kern -1.79993
+.\T1/LinuxLibertineT-TLF/m/n/12 T
+.\kern -2.00043
+.\hbox(7.872+0.02998)x6.68399, shifted 2.57399
+..\T1/LinuxLibertineT-TLF/m/n/12 E
+.\kern -1.5
+.\T1/LinuxLibertineT-TLF/m/n/12 X
+.\glue 3.0 plus 1.5 minus 0.99959
+.\T1/LinuxLibertineT-TLF/m/n/12 c
+.\T1/LinuxLibertineT-TLF/m/n/12 r
+.\kern-0.09601
+.\T1/LinuxLibertineT-TLF/m/n/12 e
+.\discretionary
+..\T1/LinuxLibertineT-TLF/m/n/12 -
+.\T1/LinuxLibertineT-TLF/m/n/12 a
+.\T1/LinuxLibertineT-TLF/m/n/12 t
+.\T1/LinuxLibertineT-TLF/m/n/12 e
+.\kern0.084
+.\T1/LinuxLibertineT-TLF/m/n/12 d
+.\glue 3.0 plus 1.5 minus 0.99959
+.\T1/LinuxLibertineT-TLF/m/n/12 b
+.\T1/LinuxLibertineT-TLF/m/n/12 y
+.\penalty 10000
+.\glue 3.0 plus 1.5 minus 0.99959
+.\hbox(8.56499+2.79599)x95.38791
+..\T1/LinuxLibertineT-TLF/b/n/12 l
+..\T1/LinuxLibertineT-TLF/b/n/12 a
+..\T1/LinuxLibertineT-TLF/b/n/12 m
+..\T1/LinuxLibertineT-TLF/b/n/12 p
+..\kern0.084
+..\T1/LinuxLibertineT-TLF/b/n/12 o
+..\T1/LinuxLibertineT-TLF/b/n/12 r
+..\T1/LinuxLibertineT-TLF/b/n/12 t
+..\T1/LinuxLibertineT-TLF/b/n/12 1
+..\T1/LinuxLibertineT-TLF/b/n/12 9
+..\T1/LinuxLibertineT-TLF/b/n/12 9
+..\T1/LinuxLibertineT-TLF/b/n/12 4
+..\T1/LinuxLibertineT-TLF/b/n/12 l
+..\T1/LinuxLibertineT-TLF/b/n/12 a
+..\T1/LinuxLibertineT-TLF/b/n/12 t
+..\T1/LinuxLibertineT-TLF/b/n/12 e
+..\kern-0.084
+..\T1/LinuxLibertineT-TLF/b/n/12 x
+.\T1/LinuxLibertineT-TLF/m/n/12 .
+.\kern-1.848 (right margin)
+.\glue(\rightskip) 0.0
+Overfull \hbox (26.63766pt too wide) in paragraph at lines 19--23
+\T1/LinuxLibertineT-TLF/m/n/12 The ci-ta-tions pro-vided at the bot-tom of the doc-u-ment are printed via []. 
+\hbox(9.75247+4.16666)x416.83289, glue set - 1.0
+.\kern-0.36 (left margin)
+.\T1/LinuxLibertineT-TLF/m/n/12 T
+.\T1/LinuxLibertineT-TLF/m/n/12 h
+.\T1/LinuxLibertineT-TLF/m/n/12 e
+.\glue 3.0 plus 1.5 minus 0.99959
+.\T1/LinuxLibertineT-TLF/m/n/12 c
+.\T1/LinuxLibertineT-TLF/m/n/12 i
+.\discretionary
+..\T1/LinuxLibertineT-TLF/m/n/12 -
+.\T1/LinuxLibertineT-TLF/m/n/12 t
+.\T1/LinuxLibertineT-TLF/m/n/12 a
+.\discretionary
+..\T1/LinuxLibertineT-TLF/m/n/12 -
+.\T1/LinuxLibertineT-TLF/m/n/12 t
+.\T1/LinuxLibertineT-TLF/m/n/12 i
+.\T1/LinuxLibertineT-TLF/m/n/12 o
+.\T1/LinuxLibertineT-TLF/m/n/12 n
+.\T1/LinuxLibertineT-TLF/m/n/12 s
+.\glue 3.0 plus 1.5 minus 0.99959
+.\T1/LinuxLibertineT-TLF/m/n/12 p
+.\T1/LinuxLibertineT-TLF/m/n/12 r
+.\kern-0.09601
+.\discretionary replacing 2
+..\T1/LinuxLibertineT-TLF/m/n/12 o
+..\T1/LinuxLibertineT-TLF/m/n/12 -
+.\T1/LinuxLibertineT-TLF/m/n/12 o
+.\kern-0.084
+.\T1/LinuxLibertineT-TLF/m/n/12 v
+.\T1/LinuxLibertineT-TLF/m/n/12 i
+.\T1/LinuxLibertineT-TLF/m/n/12 d
+.\T1/LinuxLibertineT-TLF/m/n/12 e
+.\kern0.084
+.\T1/LinuxLibertineT-TLF/m/n/12 d
+.\glue 3.0 plus 1.5 minus 0.99959
+.\T1/LinuxLibertineT-TLF/m/n/12 a
+.\T1/LinuxLibertineT-TLF/m/n/12 t
+.\glue 3.0 plus 1.5 minus 0.99959
+.\T1/LinuxLibertineT-TLF/m/n/12 t
+.\T1/LinuxLibertineT-TLF/m/n/12 h
+.\T1/LinuxLibertineT-TLF/m/n/12 e
+.\glue 3.0 plus 1.5 minus 0.99959
+.\T1/LinuxLibertineT-TLF/m/n/12 b
+.\kern0.12
+.\T1/LinuxLibertineT-TLF/m/n/12 o
+.\T1/LinuxLibertineT-TLF/m/n/12 t
+.\discretionary
+..\T1/LinuxLibertineT-TLF/m/n/12 -
+.\T1/LinuxLibertineT-TLF/m/n/12 t
+.\T1/LinuxLibertineT-TLF/m/n/12 o
+.\T1/LinuxLibertineT-TLF/m/n/12 m
+.\glue 3.0 plus 1.5 minus 0.99959
+.\T1/LinuxLibertineT-TLF/m/n/12 o
+.\T1/LinuxLibertineT-TLF/m/n/12 f
+.\glue 3.0 plus 1.5 minus 0.99959
+.\T1/LinuxLibertineT-TLF/m/n/12 t
+.\T1/LinuxLibertineT-TLF/m/n/12 h
+.\T1/LinuxLibertineT-TLF/m/n/12 e
+.\glue 3.0 plus 1.5 minus 0.99959
+.\T1/LinuxLibertineT-TLF/m/n/12 d
+.\T1/LinuxLibertineT-TLF/m/n/12 o
+.\kern0.084
+.\T1/LinuxLibertineT-TLF/m/n/12 c
+.\discretionary
+..\T1/LinuxLibertineT-TLF/m/n/12 -
+.\T1/LinuxLibertineT-TLF/m/n/12 u
+.\discretionary
+..\T1/LinuxLibertineT-TLF/m/n/12 -
+.\T1/LinuxLibertineT-TLF/m/n/12 m
+.\T1/LinuxLibertineT-TLF/m/n/12 e
+.\T1/LinuxLibertineT-TLF/m/n/12 n
+.\T1/LinuxLibertineT-TLF/m/n/12 t
+.\glue 3.0 plus 1.5 minus 0.99959
+.\T1/LinuxLibertineT-TLF/m/n/12 a
+.\T1/LinuxLibertineT-TLF/m/n/12 r
+.\kern-0.09601
+.\T1/LinuxLibertineT-TLF/m/n/12 e
+.\glue 3.0 plus 1.5 minus 0.99959
+.\T1/LinuxLibertineT-TLF/m/n/12 p
+.\T1/LinuxLibertineT-TLF/m/n/12 r
+.\T1/LinuxLibertineT-TLF/m/n/12 i
+.\T1/LinuxLibertineT-TLF/m/n/12 n
+.\T1/LinuxLibertineT-TLF/m/n/12 t
+.\T1/LinuxLibertineT-TLF/m/n/12 e
+.\kern0.084
+.\T1/LinuxLibertineT-TLF/m/n/12 d
+.\glue 3.0 plus 1.5 minus 0.99959
+.\T1/LinuxLibertineT-TLF/m/n/12 v
+.\T1/LinuxLibertineT-TLF/m/n/12 i
+.\T1/LinuxLibertineT-TLF/m/n/12 a
+.\glue 3.0 plus 1.5 minus 0.99959
+.\hbox(13.91913+0.0)x114.75006, shifted 4.16666
+..\glue 0.0
+..\hbox(0.0+0.0)x0.0
+...\special{pdf:bcontent}
+...\special{pdf:code q }
+...\special{pdf:code 0 G }
+...\special{pdf:code 0 g }
+...\special{pdf:code 0.3985 w }
+...\hbox(0.0+0.0)x0.0
+....\special{pdf:code q }
+....\special{pdf:code 0.62352 0.63922 0.64862 rg }
+....\special{pdf:code /pgf@ca1.0 gs }
+....\special{pdf:code 0.0 1.0959 m }
+....\special{pdf:code 0.0 12.7714 l }
+....\special{pdf:code 0.0 13.37663 0.49065 13.8673 1.0959 13.8673 c }
+....\special{pdf:code 113.22691 13.8673 l }
+....\special{pdf:code 113.83217 13.8673 114.32281 13.37663 114.32281 12.7714 c }
+....\special{pdf:code 114.32281 1.0959 l }
+....\special{pdf:code 114.32281 0.49065 113.83217 0.0 113.22691 0.0 c }
+....\special{pdf:code 1.0959 0.0 l }
+....\special{pdf:code 0.49065 0.0 0.0 0.49065 0.0 1.0959 c }
+....\special{pdf:code h }
+....\special{pdf:code f }
+....\special{pdf:code Q }
+....\special{pdf:code q }
+....\special{pdf:code 0.97647 0.97745 0.97804 rg }
+....\special{pdf:code /pgf@ca1.0 gs }
+....\special{pdf:code 0.09962 1.0959 m }
+....\special{pdf:code 0.09962 12.7714 l }
+....\special{pdf:code 0.09962 13.32162 0.54567 13.76767 1.0959 13.76767 c }
+....\special{pdf:code 113.22691 13.76767 l }
+....\special{pdf:code 113.77715 13.76767 114.22319 13.32162 114.22319 12.7714 c }
+....\special{pdf:code 114.22319 1.0959 l }
+....\special{pdf:code 114.22319 0.54567 113.77715 0.09962 113.22691 0.09962 c }
+....\special{pdf:code 1.0959 0.09962 l }
+....\special{pdf:code 0.54567 0.09962 0.09962 0.54567 0.09962 1.0959 c }
+....\special{pdf:code h }
+....\special{pdf:code f }
+....\special{pdf:code Q }
+....\special{pdf:code q }
+....\special{pdf:code /pgf@ca1.0 gs }
+....\special{pdf:code q }
+....\special{pdf:code q -1 0 0 -1 0 0 cm q}
+....\special{pdf: econtent}
+....\special{pdf: bcontent}
+....\special{pdf:code -1 0 0 -1 0 0 cm}
+....\special{pdf:code q}
+....\special{pdf: econtent}
+....\special{pdf:code 0 J [] 0 d}
+....\special{pdf:bcolor [1]}
+....\special{pdf:bcolor [0]}
+....\special{pdf:btrans matrix 1.0 0.0 0.0 1.0 1.79329 4.15114}
+....\hbox(0.0+0.0)x0.0
+.....\hbox(8.25247+2.66666)x111.15005
+......\special{color push rgb 0.13725 0.14511 0.15294}
+......\hbox(8.25247+2.66666)x111.15005
+.......\special{color push rgb 0.13725 0.14511 0.15294}
+.......\rule(6.0+1.0)x0.0
+.......\T1/lmtt/m/n/12 \
+.......\T1/lmtt/m/n/12 P
+.......\T1/lmtt/m/n/12 r
+.......\T1/lmtt/m/n/12 i
+.......\T1/lmtt/m/n/12 n
+.......\T1/lmtt/m/n/12 t
+.......\T1/lmtt/m/n/12 B
+.......\T1/lmtt/m/n/12 i
+.......\T1/lmtt/m/n/12 b
+.......\T1/lmtt/m/n/12 l
+.......\T1/lmtt/m/n/12 i
+.......\T1/lmtt/m/n/12 o
+.......\T1/lmtt/m/n/12 g
+.......\T1/lmtt/m/n/12 r
+.......\T1/lmtt/m/n/12 a
+.......\T1/lmtt/m/n/12 p
+.......\T1/lmtt/m/n/12 h
+.......\T1/lmtt/m/n/12 y
+.......\kern 0.0
+.......\special{color pop}
+......\special{color pop}
+....\special{pdf:etrans}
+....\special{pdf:ecolor}
+....\special{pdf:ecolor}
+....\special{pdf: bcontent}
+....\special{pdf:code Q Q Q}
+....\special{pdf:code Q }
+....\glue 0.0
+....\special{pdf:code Q }
+....\glue 0.0 plus 1.0fil minus 1.0fil
+...\special{pdf:code n }
+...\special{pdf:code Q }
+...\special{pdf:econtent}
+...\glue 0.0 plus 1.0fil minus 1.0fil
+.\T1/LinuxLibertineT-TLF/m/n/12 .
+.\penalty 10000
+.\kern-1.848 (right margin)
+.\glue(\parfillskip) 0.0 plus 1.0fil
+.\glue(\rightskip) 0.0
+LaTeX Font Info:    Trying to load font information for T1+LinuxBiolinumT-TLF on input line ....
+(../T1LinuxBiolinumT-TLF.fdFile: T1LinuxBiolinumT-TLF.fd ....-..-.. (autoinst) Font definitions for T1/LinuxBiolinumT-TLF.
+)
+LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
+(Font)              scaled to size 12.0pt on input line ....
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `LinuxBiolinumT-TLF' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
+(Font)              scaled to size 8.0pt on input line ....
+LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/n' will be
+(Font)              scaled to size 8.0pt on input line ....
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 11.0pt on input line ....
+LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
+(Font)              scaled to size 11.0pt on input line ....
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 64.0pt on input line ....
+LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
+(Font)              scaled to size 64.0pt on input line ....
+LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/sc' will be
+(Font)              scaled to size 64.0pt on input line ....
+[1
+]
+LaTeX Warning: Empty bibliography on input line ....

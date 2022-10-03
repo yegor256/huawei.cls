@@ -1,0 +1,31 @@
+\input{regression-test.tex}
+\documentclass[nobrand,nosecurity,nopaging,authordraft]{huawei}
+\addbibresource{huawei-main.bib}
+\usepackage{ffcode}
+\renewcommand*\thetitle{Test Call for Proposal}
+\renewcommand*\theauthor{Yegor Bugayenko}
+\begin{document}
+\START
+
+\begin{abstract}This is just a demo document, to show how
+this package works and formats simple business documents. This
+block of text is the abstract.\end{abstract}
+
+\maketitle
+
+In this document you don't see the logo, because we use \ff{nobrand}
+option of the class:
+
+By the way, we use \TeX{} created by~\citet{knuth1984texbook}
+and \LaTeX{} created by~\citet{lamport1994latex}. The citations
+provided at the bottom of the document are printed via
+\ff{\char`\\PrintBibliography}.
+
+The text in small font at the bottom of the page is printed by
+the \ff{\char`\\PrintDisclaimer} command.
+
+\PrintDisclaimer
+
+\PrintBibliography
+
+\END

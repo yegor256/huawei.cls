@@ -1,6 +1,9 @@
 .DS_Store
 target/
 _minted-*
+build/
+*.tex
+*.cls
 *.zip
 *.toc
 *.bbl
