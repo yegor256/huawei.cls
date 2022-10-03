@@ -28,3 +28,4 @@ hard fmtcount
 hard filehook
 hard scrbase
 hard trimspaces
+hard catchfile
