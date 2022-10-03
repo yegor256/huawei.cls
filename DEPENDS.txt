@@ -32,3 +32,4 @@ hard catchfile
 hard transparent
 hard fontsize
 hard ffcode
+hard environ
