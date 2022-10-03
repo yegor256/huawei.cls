@@ -15,4 +15,5 @@ jobs:
         with:
           package-file: DEPENDS.txt
           packages: scheme-basic xetex libertine l3build
+      - run: export TERM=unknown
       - run: l3build check -q --show-log-on-error
