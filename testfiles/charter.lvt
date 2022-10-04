@@ -1,6 +1,6 @@
 \input{regression-test.tex}
 \documentclass[landscape,nocover,XL,dark,slides]{huawei}
-\addbibresource{huawei-main.bib}
+\addbibresource{test.bib}
 \begin{document}
 \START
 

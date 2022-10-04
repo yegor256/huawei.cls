@@ -1,6 +1,6 @@
 \input{regression-test.tex}
 \documentclass[nobrand,nosecurity,nopaging,authordraft]{huawei}
-\addbibresource{huawei-main.bib}
+\addbibresource{test.bib}
 \usepackage{ffcode}
 \renewcommand*\thetitle{Test Call for Proposal}
 \renewcommand*\theauthor{Yegor Bugayenko}
