@@ -14,14 +14,14 @@ uploadconfig = {
   note = "Bug fixes",
   announcement = "",
   ctanPath = "/macros/latex/contrib/huawei",
-  bugtracker = "https://github.com/yegor256/huawei/issues",
-  home = "https://github.com/yegor256/huawei",
+  bugtracker = "https://github.com/yegor256/huawei.cls/issues",
+  home = "https://github.com/yegor256/huawei.cls",
   description = "This unofficial package provides a class for creating documents for people working with Huawei Technologies Co., Ltd.",
-  development = "https://github.com/yegor256/huawei",
+  development = "",
   license = "mit",
   summary = "Template for Huawei documents",
-  repository = "https://github.com/yegor256/huawei",
-  support = "https://github.com/yegor256/huawei",
+  repository = "",
+  support = "",
   topic = { "class", "misc-paper" }
 }
 
