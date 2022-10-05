@@ -5,7 +5,6 @@
 \renewcommand*\thetitle{Test Call for Proposal}
 \renewcommand*\theauthor{Yegor Bugayenko}
 \begin{document}
-\START
 
 \begin{abstract}This is just a demo document, to show how
 this package works and formats simple business documents. This

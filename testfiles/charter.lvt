@@ -2,7 +2,6 @@
 \documentclass[landscape,nocover,XL,dark,slides]{huawei}
 \addbibresource{test.bib}
 \begin{document}
-\START
 
 \PrintFirstPage{}
 
