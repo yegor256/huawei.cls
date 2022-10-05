@@ -26,10 +26,8 @@ uploadconfig = {
 }
 
 function update_tag (file , content , tagname , tagdate)
-  if string.match(file, "%.dtx$") then
-    return string
-      .gsub(content, "0%.0%.0", tagname)
-      .gsub(content, "0000%-00%-00", os.date("%Y-%m-%d"))
-  end
-  return content
+  return string.gsub(
+    string.gsub(content, "0%.0%.0", tagname),
+    "0000%-00%-00", os.date("%d.%m.%Y")
+  )
 end
