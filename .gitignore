@@ -2,6 +2,8 @@
 target/
 _minted-*
 build/
+*.glo
+*.idx
 *.tex
 *.cls
 *.zip

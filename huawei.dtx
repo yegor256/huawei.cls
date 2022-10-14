@@ -141,57 +141,47 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 % |\documentclass|, which can help you fine-tune
 % the layout of your document:
 
-% \begin{macro}{landscape}
+% \DescribeMacro{landscape}
 %   makes the document in landscape format, also changing the size
 %   of the paper to 16x9 inches (the default page size is
 %   \href{https://en.wikipedia.org/wiki/Paper_size}{A4}),
 %   making it perfect for presentations.
-% \end{macro}
 
-% \begin{macro}{dark}
+% \DescribeMacro{dark}
 % Turns on a dark layout, where the page color is black and the text
 % is white.
-% \end{macro}
 
-% \begin{macro}{slides}
+% \DescribeMacro{slides}
 %   makes all headers a bit larger, assuming that the document
 %   is in the landscape mode and being presented as a slide deck.
-% \end{macro}
 
-% \begin{macro}{nocover}
+% \DescribeMacro{nocover}
 %   avoid printing the cover images on the first page by the
 %   |\PrintTitlePage| command.
-% \end{macro}
 
-% \begin{macro}{anonymous}
+% \DescribeMacro{anonymous}
 %   removes the name of the author everywhere, including the bottom
 %   of the page, where the author's name stays next to the name of the
 %   company.
-% \end{macro}
 
-% \begin{macro}{nobrand}
+% \DescribeMacro{nobrand}
 %   avoid mentioning the brand of Huawei anywhere
 %   in the document and removes the logo too.
-% \end{macro}
 
-% \begin{macro}{nosecurity}
+% \DescribeMacro{nosecurity}
 %   avoids mentioning the level of security at the right top
 %   corner of the document and also avoids showing the ID of the author
 %   where it usually is visible.
-% \end{macro}
 
-% \begin{macro}{nodate}
+% \DescribeMacro{nodate}
 %   don't show the date and time at the bottom of each page,
 %   where they usually are rendered in ISO~8601 format.
-% \end{macro}
 
-% \begin{macro}{nopaging}
+% \DescribeMacro{nopaging}
 %   avoids page numbers at the bottom of each page.
-% \end{macro}
 
-% \begin{macro}{authordraft}
+% \DescribeMacro{authordraft}
 %   prints a big ``It's a draft'' message across each page.
-% \end{macro}
 
 % \section{Preamble}
 
@@ -221,32 +211,27 @@ Hello, world!
 
 % The following meta commands are defined:
 
-% \begin{macro}{\thetitle}
+% \DescribeMacro{\thetitle}
 % |\thetitle| is the main title of the document
 %   to be used in the text and in the properties of the PDF document.
-% \end{macro}
 
-% \begin{macro}{\thesubtitle}
+% \DescribeMacro{\thesubtitle}
 % |\thesubtitle| is the subtitle to be
 %   printed under the title.
-% \end{macro}
 
-% \begin{macro}{\theauthor}
+% \DescribeMacro{\theauthor}
 % |\theauthor| is the author of the document
 %   in ``first-name last-name'' format.
-% \end{macro}
 
-% \begin{macro}{\theid}
+% \DescribeMacro{\theid}
 % |\theid| is the internal ID of the author, if
 %   it's applicable.
-% \end{macro}
 
-% \begin{macro}{\thesecurity}
+% \DescribeMacro{\thesecurity}
 % It is the level of security of
 %   the document, which is usually printed at the top right
 %   corner of it; usual values are ``Internal,''
 %   ''Confidential,'' or ``Secret.''
-% \end{macro}
 
 % Default values of all these commands are empty. If you don't
 % renew them in your document, nothing will be printed.
@@ -255,28 +240,24 @@ Hello, world!
 
 % Inside the document body you can use these commands:
 
-% \begin{macro}{\PrintFirstPage}
+% \DescribeMacro{\PrintFirstPage}
 % |\PrintFirstPage|
 %   prints the first page of a project charter or a similar landscape documents,
 %   placing the image |front-image.pdf| on the front (the file should be present
 %   in the current dir. If you don't have the front image file, just leave
 %   the first argument empty.
-% \end{macro}
 
-% \begin{macro}{\PrintLastPage}
+% \DescribeMacro{\PrintLastPage}
 % |\PrintLastPage|
 %   prints the last page of a project charter or a similar landscape document.
-% \end{macro}
 
-% \begin{macro}{\PrintThankYouPage}
+% \DescribeMacro{\PrintThankYouPage}
 % |\PrintThankYouPage|
 %   prints the last page with a "Thank You" message in the center.
-% \end{macro}
 
-% \begin{macro}{\PrintDisclaimer}
+% \DescribeMacro{\PrintDisclaimer}
 % |\PrintDisclaimer|
 %   prints a paragraph at the bottom of the page with a standard disclaimer.
-% \end{macro}
 
 % \section{Best Practices}
 
@@ -410,7 +391,6 @@ Here goes the second column content.
   \newtimeformat{daytime}{\twodigit{\THEHOUR}:\twodigit{\THEMINUTE}}
 \RequirePackage[tt=false,type1=true]{libertine}
 \RequirePackage{paralist}
-  \setdefaultenum{a)}{a)}{a)}{a)}
 \RequirePackage{makecell}
 \RequirePackage[para]{footmisc}
   \setlength{\footnotemargin}{2pt}
