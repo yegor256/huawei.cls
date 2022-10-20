@@ -3,6 +3,8 @@ typesetopts = "--interaction=batchmode --shell-escape"
 checkopts = "--interaction=batchmode --shell-escape"
 tagfiles = {"build.lua", "huawei.dtx"}
 typesetexe  = "pdflatex"
+docfiles = {"huawei-cover-picture.pdf"}
+cleanfiles = {"build", "_docshots", "*.run.xml", "*.log", "*.bcf", "*.glo", "*.fls", "*.idx", "*.out", "*.fdb_latexmk", "*.aux", "*.sty", "*.zip"}
 
 uploadconfig = {
   pkg = "huawei",
