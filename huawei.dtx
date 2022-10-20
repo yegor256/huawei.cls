@@ -57,6 +57,7 @@
 \usepackage[tt=false, type1=true]{libertine}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage[dtx,margin=0]{docshots}
 \usepackage{href-ul}
 \PageIndex
 \EnableCrossrefs
@@ -83,19 +84,12 @@
 % style elegant enough both for management and technical
 % papers. To use the class you simply mention its name
 % in the preamble:
-%
-%\iffalse
-%<*verb>
-%\fi
-\begin{verbatim}
-\documentclass{huawei}
-\begin{document}
-Hello, world!
-\end{document}
-\end{verbatim}
-%\iffalse
-%</verb>
-%\fi
+% \begin{docshot}
+% \documentclass{huawei}
+% \begin{document}
+% Hello, world!
+% \end{document}
+% \end{docshot}
 
 % We recommend you to use
 % |latexmk| to compile your |.tex| files to |.pdf|.
@@ -132,7 +126,6 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 % by |pdflatex| during the compilation. You don't need to commit
 % them to your repository, since they are temporary and will
 % be generated again when you compile your document.
-
 % In order to compile the document, just say |latexmk| on the command line.
 
 % \section{Class Options}
@@ -187,23 +180,19 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 
 % In the preamble you can specify meta information about the document,
 % such as its title or author's name, here is how:
-
-%\iffalse
-%<*verb>
-%\fi
-\begin{verbatim}
-\documentclass{huawei}
-\renewcommand*\thetitle{Making Compression 15\% Faster}
-\renewcommand*\thesubtitle{Technical Report}
-\renewcommand*\theauthor{Yegor Bugayenko}
-\begin{document}
-\maketitle
-Hello, world!
-\end{document}
-\end{verbatim}
-%\iffalse
-%</verb>
-%\fi
+% \begin{docshot}
+% \documentclass{huawei}
+% \renewcommand*
+%   \thetitle{15\% Faster Algorithm}
+% \renewcommand*
+%   \thesubtitle{Technical Report}
+% \renewcommand*
+%   \theauthor{Yegor Bugayenko}
+% \begin{document}
+% \maketitle
+% Hello, world!
+% \end{document}
+% \end{docshot}
 
 % It's recommended to use |\renewcommand*| instead of
 % |\renewcommand| in order to let \LaTeX{} catch you
