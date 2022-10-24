@@ -1,6 +1,6 @@
 module = "huawei"
-typesetopts = "--interaction=batchmode --shell-escape"
-checkopts = "--interaction=batchmode --shell-escape"
+typesetopts = "-interaction=batchmode -shell-escape -halt-on-error"
+checkopts = "-interaction=batchmode -shell-escape -halt-on-error"
 tagfiles = {"build.lua", "huawei.dtx"}
 typesetexe  = "pdflatex"
 docfiles = {"huawei-cover-picture.pdf"}

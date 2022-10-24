@@ -57,7 +57,8 @@
 \usepackage[tt=false, type1=true]{libertine}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[dtx,margin=0]{docshots}
+\usepackage[dtx,margin=0,log]{docshots}
+\docshotPrerequisite{huawei-cover-picture.pdf}
 \usepackage{href-ul}
 \PageIndex
 \EnableCrossrefs
@@ -230,11 +231,22 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 % Inside the document body you can use these commands:
 
 % \DescribeMacro{\PrintFirstPage}
-% |\PrintFirstPage|
-%   prints the first page of a project charter or a similar landscape documents,
-%   placing the image |front-image.pdf| on the front (the file should be present
-%   in the current dir. If you don't have the front image file, just leave
-%   the first argument empty.
+% It is recommended to use |\PrintFirstPage| for rendering the first
+% page in landscape document, for example a project charter.
+% The only argument of the commmand is the name of an image to render at the
+% right bottom corner. You can omit the name and just call the command with
+% an empty argument. In this case the default image will be rendered, a pretty
+% good looking one:
+% \begin{docshot}
+% \documentclass{huawei}
+% \renewcommand*
+%   \thetitle{Perpetum Mobile}
+% \renewcommand*
+%   \theauthor{Yegor Bugayenko}
+% \begin{document}
+% \PrintFirstPage
+% \end{document}
+% \end{docshot}
 
 % \DescribeMacro{\PrintLastPage}
 % |\PrintLastPage|
