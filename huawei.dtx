@@ -57,7 +57,7 @@
 \usepackage[tt=false, type1=true]{libertine}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[dtx,margin=0,log]{docshots}
+\usepackage[dtx,margin=0,log,nocrop]{docshots}
 \docshotPrerequisite{huawei-cover-picture.pdf}
 \usepackage{href-ul}
 \PageIndex
@@ -136,46 +136,46 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 % the layout of your document:
 
 % \DescribeMacro{landscape}
-%   makes the document in landscape format, also changing the size
-%   of the paper to 16x9 inches (the default page size is
-%   \href{https://en.wikipedia.org/wiki/Paper_size}{A4}),
-%   making it perfect for presentations.
+% The option |landscape| makes the document in landscape format, also changing the size
+% of the paper to 16x9 inches (the default page size is
+% \href{https://en.wikipedia.org/wiki/Paper_size}{A4}),
+% making it perfect for presentations.
 
 % \DescribeMacro{dark}
-% Turns on a dark layout, where the page color is black and the text
+% The option |dark| turns on a dark layout, where the page color is black and the text
 % is white.
 
 % \DescribeMacro{slides}
-%   makes all headers a bit larger, assuming that the document
-%   is in the landscape mode and being presented as a slide deck.
+% The option |slides| makes all headers a bit larger, assuming that the document
+% is in the landscape mode and being presented as a slide deck.
 
 % \DescribeMacro{nocover}
-%   avoid printing the cover images on the first page by the
-%   |\PrintTitlePage| command.
+% The option |nocover|, if it's present, avoids printing the cover images on the first page by the
+% |\PrintTitlePage| command.
 
 % \DescribeMacro{anonymous}
-%   removes the name of the author everywhere, including the bottom
-%   of the page, where the author's name stays next to the name of the
-%   company.
+% The |anonymous| removes the name of the author everywhere, including the bottom
+% of the page, where the author's name stays next to the name of the
+% company.
 
 % \DescribeMacro{nobrand}
-%   avoid mentioning the brand of Huawei anywhere
-%   in the document and removes the logo too.
+% The option |nobrand| avoids mentioning the brand of Huawei anywhere
+% in the document and removes the logo too.
 
 % \DescribeMacro{nosecurity}
-%   avoids mentioning the level of security at the right top
-%   corner of the document and also avoids showing the ID of the author
-%   where it usually is visible.
+% The option |nosecurity| avoids mentioning the level of security at the right top
+% corner of the document and also avoids showing the ID of the author
+% where it usually is visible.
 
 % \DescribeMacro{nodate}
-%   don't show the date and time at the bottom of each page,
-%   where they usually are rendered in ISO~8601 format.
+% The option |nodate| doesn't show the date and time at the bottom of each page,
+% where they usually are rendered in ISO~8601 format.
 
 % \DescribeMacro{nopaging}
-%   avoids page numbers at the bottom of each page.
+% The option |nopaging| avoids page numbers at the bottom of each page.
 
 % \DescribeMacro{authordraft}
-%   prints a big ``It's a draft'' message across each page.
+% The option |authordraft| prints a big ``It's a draft'' message across each page.
 
 % \section{Preamble}
 
@@ -238,27 +238,46 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 % an empty argument. In this case the default image will be rendered, a pretty
 % good looking one:
 % \begin{docshot}
-% \documentclass{huawei}
+% \documentclass[landscape]{huawei}
 % \renewcommand*
 %   \thetitle{Perpetum Mobile}
 % \renewcommand*
 %   \theauthor{Yegor Bugayenko}
 % \begin{document}
-% \PrintFirstPage
+% \PrintFirstPage{}
 % \end{document}
 % \end{docshot}
 
 % \DescribeMacro{\PrintLastPage}
-% |\PrintLastPage|
-%   prints the last page of a project charter or a similar landscape document.
+% |\PrintLastPage| prints the last page of a project charter or a similar landscape document:
+% \begin{docshot}
+% \documentclass[landscape]{huawei}
+% \begin{document}
+% \PrintLastPage{}
+% \end{document}
+% \end{docshot}
 
 % \DescribeMacro{\PrintThankYouPage}
-% |\PrintThankYouPage|
-%   prints the last page with a "Thank You" message in the center.
+% |\PrintThankYouPage| prints the last page with a "Thank You" message in the center.
+% \begin{docshot}
+% \documentclass[landscape]{huawei}
+% \begin{document}
+% \PrintThankYouPage{}
+% \end{document}
+% \end{docshot}
 
 % \DescribeMacro{\PrintDisclaimer}
-% |\PrintDisclaimer|
-%   prints a paragraph at the bottom of the page with a standard disclaimer.
+% |\PrintDisclaimer| prints a paragraph at the bottom of the page with a standard disclaimer:
+% \begin{docshot}
+% \documentclass{huawei}
+% \begin{document}
+% \section{Introduction}
+% Hello, world!
+% \subsection{More Details}
+% Hello again!
+% \PrintDisclaimer
+% \end{document}
+% \end{docshot}
 
 % \section{Best Practices}
 
@@ -276,51 +295,36 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 
 % In the landscape format it's recommended to use two columns, for better
 % readability of the text. Here is how:
-
-%\iffalse
-%<*verb>
-%\fi
-\begin{verbatim}
-\documentclass{huawei}
-\begin{document}
-\newpage
-\begin{multicols}{2}
-\section*{First}
-Here goes the first column content.
-\columnbreak
-\section*{Second}
-Here goes the second column content.
-\end{multicols}
-\end{document}
-\end{verbatim}
-%\iffalse
-%</verb>
-%\fi
+% \begin{docshot}
+% \documentclass[landscape]{huawei}
+% \begin{document}
+% \newpage
+% \begin{multicols}{2}
+% \section*{First}
+% Here goes the first column content.
+% \columnbreak
+% \section*{Second}
+% Here goes the second column content.
+% \end{multicols}
+% \end{document}
+% \end{docshot}
 
 % \subsection{Crumbs}
 
 % When you need to put many small information pieces into one page,
 % we recommend you to use ``crumbs'':
-
-%\iffalse
-%<*verb>
-%\fi
-\begin{verbatim}
-\documentclass{huawei}
-\begin{document}
-\newpage
-\section*{Project Details}
-\begin{multicols}{2}
-\raggedright
-\PrintCrumb{Budget}{\$100K}
-
-\PrintCrumb{Duration}{5 months}
-\end{multicols}
-\end{document}
-\end{verbatim}
-%\iffalse
-%</verb>
-%\fi
+% \begin{docshot}
+% \documentclass{huawei}
+% \begin{document}
+% \newpage
+% \section*{Project Details}
+% \begin{multicols}{2}
+% \raggedright
+% \PrintCrumb{Budget}{\$100K}
+% \PrintCrumb{Duration}{5 months}
+% \end{multicols}
+% \end{document}
+% \end{docshot}
 
 % \StopEventually{}
 
