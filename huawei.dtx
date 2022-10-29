@@ -57,6 +57,8 @@
 \usepackage[tt=false, type1=true]{libertine}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\AddToHook{env/verbatim/begin}{\microtypesetup{protrusion=false}}
 \usepackage[dtx,margin=0,log,nocrop]{docshots}
 \docshotPrerequisite{huawei-cover-picture.pdf}
 \usepackage{href-ul}
@@ -407,6 +409,7 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 \RequirePackage{enumitem}
   \setlist{nosep}
 \RequirePackage{microtype}
+\AddToHook{env/verbatim/begin}{\microtypesetup{protrusion=false}}
 \RequirePackage{wrapfig}
 \RequirePackage{lastpage}
 \RequirePackage{tikz}
