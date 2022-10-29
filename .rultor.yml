@@ -15,7 +15,9 @@ merge:
 release:
   script: |-
     l3build tag ${tag}
-    l3build ctan
+    l3build ctan || echo 1
+    cat build/doc/huawei.log
+    exit 1
     texsc
     texqc
     git commit -am "version set to ${tag}"
