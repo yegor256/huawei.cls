@@ -5,7 +5,7 @@ install: |-
   sudo gem install texqc:0.6.0
   sudo apt-get -y update
   sudo apt-get -y install aspell
-  sudo apt-get -y install ghostscript
+  sudo apt-get -y install ghostscript inkscape
   sudo tlmgr option repository ctan
   sudo tlmgr --verify-repo=none update --self
   sudo tlmgr --verify-repo=none update l3build docshots iexec
