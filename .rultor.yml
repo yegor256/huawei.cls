@@ -8,7 +8,7 @@ install: |-
   sudo apt-get -y install ghostscript
   sudo tlmgr option repository ctan
   sudo tlmgr --verify-repo=none update --self
-  sudo tlmgr --verify-repo=none install l3build
+  sudo tlmgr --verify-repo=none install l3build docshots
 merge:
   script: |-
     l3build check
