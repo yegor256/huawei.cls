@@ -707,12 +707,10 @@ xscale=\SCALE, inner sep=0pt, outer sep=0pt]
 %    \begin{macrocode}
 \makeatletter\renewcommand\maketitle{%
   \vspace*{18pt}
-  {\bfseries{\Huge\thetitle}}
+  {\bfseries{\Huge\thetitle\par}}
   \ifx\thesubtitle\empty\else%
-    \\[6pt]
-    {\color{gray!50!black}\large\thesubtitle}
+    {\color{gray!50!black}\large\thesubtitle\par}
   \fi
-  \\[18pt]
   \ifhuawei@nobrand\else%
     \ifhuawei@anonymous\else%
       \ifx\thecompany\empty\else%
