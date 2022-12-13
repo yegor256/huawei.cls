@@ -353,7 +353,7 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 %    \begin{macrocode}
 \makeatletter
 \DeclareOption{breaks}{
-  \def\huawei@oldsection{\section}
+  \let\huawei@oldsection\section
   \renewcommand\section{\clearpage\huawei@oldsection}
 }
 \newif\ifhuawei@dark
