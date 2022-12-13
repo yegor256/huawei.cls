@@ -477,12 +477,11 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 % \begin{macro}{\huawei@logo}
 % Then, we define |\huawei@logo|:
 %    \begin{macrocode}
-\makeatletter\newcommand\huawei@logo{
+\makeatletter\newcommand\huawei@logo[1]{
 \def\BLACK{\ifhuawei@dark white\else black\fi}
 \def\BLANK{\ifhuawei@dark black\else white\fi}
-\def\SCALE{\ifhuawei@slides 1.8\else 1\fi}
-\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-\SCALE,
-xscale=\SCALE, inner sep=0pt, outer sep=0pt]
+\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-#1,
+xscale=#1, inner sep=0pt, outer sep=0pt]
 \begin{scope}[even odd rule,line width=0.800pt]
 \begin{scope}[shift={(0,-0.00024)}]
 \path[fill=\BLACK] (10.9375,30.2240) -- (10.9375,33.6097)
@@ -641,7 +640,7 @@ xscale=\SCALE, inner sep=0pt, outer sep=0pt]
   \ifnum\value{page}=1\else%
     \ifhuawei@nobrand\else%
       \begin{textblock}{8}[0,0](1.2,0.2)%
-        \huawei@logo%
+        \huawei@logo{\ifhuawei@slides 1.8\else 1\fi}%
       \end{textblock}%
     \fi%
   \fi%
