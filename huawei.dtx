@@ -349,8 +349,13 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 %    \end{macrocode}
 
 % Then, we parse package options:
+% \changes{v0.15.0}{2022/12/13}{A new package option \texttt{breaks} introduced, which forces all sections to start from a new page.}
 %    \begin{macrocode}
 \makeatletter
+\DeclareOption{breaks}{
+  \def\huawei@oldsection{\section}
+  \renewcommand\section{\clearpage\huawei@oldsection}
+}
 \newif\ifhuawei@dark
 \DeclareOption{dark}{\huawei@darktrue}
 \newif\ifhuawei@slides
