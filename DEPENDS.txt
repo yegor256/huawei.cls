@@ -1,3 +1,4 @@
+hard pgfopts
 hard geometry
 hard anyfontsize
 hard ragged2e
