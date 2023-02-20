@@ -14,7 +14,7 @@ jobs:
       - run: sudo apt-get -y update
       - run: sudo apt-get -y install inkscape
       - run: sudo apt-get -y install ghostscript
-      - uses: teatimeguest/setup-texlive-action@v2.5.0
+      - uses: teatimeguest/setup-texlive-action@v2.5.1
         with:
           package-file: DEPENDS.txt
           packages: scheme-basic xetex libertine l3build docshots
