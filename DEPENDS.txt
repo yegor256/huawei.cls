@@ -23,10 +23,8 @@ hard paralist
 hard pgf
 hard pgfopts
 hard ragged2e
-hard scrbase
 hard setspace
 hard svg
-hard tabularx
 hard textpos
 hard titling
 hard transparent
