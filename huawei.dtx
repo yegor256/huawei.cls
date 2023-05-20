@@ -438,9 +438,10 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 %    \end{macrocode}
 
 % Then, we configure |biblatex|:
+% \changes{v0.16.0}{2023/05/20}{The \texttt{doi} tag enabled for \texttt{biblatex}.}
 %    \begin{macrocode}
 \RequirePackage[maxnames=1,minnames=1,natbib=true,
-  citestyle=numeric,bibstyle=numeric,doi=false,
+  citestyle=numeric,bibstyle=numeric,
   url=false,isbn=false,isbn=false]{biblatex}
 %    \end{macrocode}
 
