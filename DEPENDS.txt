@@ -22,6 +22,7 @@ hard makecell
 hard microtype
 hard pagecolor
 hard paralist
+hard pdfcol
 hard pgf
 hard pgfopts
 hard ragged2e
