@@ -414,20 +414,29 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 \RequirePackage[tt=false,type1=true]{libertine}
 \RequirePackage{paralist}
 \RequirePackage{makecell}
-\RequirePackage[para]{footmisc}
-  \setlength{\footnotemargin}{2pt}
-  \setlength{\footnotesep}{2pt}
 \RequirePackage{graphicx}
 \RequirePackage{array}
 \RequirePackage[abspath]{currfile}
-\RequirePackage{microtype}
-\AddToHook{env/verbatim/begin}{\microtypesetup{protrusion=false}}
 \RequirePackage{wrapfig}
 \RequirePackage{lastpage}
 \RequirePackage{tikz}
 \RequirePackage{tabularx}
 \RequirePackage{titling}
 \RequirePackage{svg}
+%    \end{macrocode}
+
+% Then, we configure |microtype|:
+%    \begin{macrocode}
+\RequirePackage{microtype}
+\AddToHook{env/verbatim/begin}{\microtypesetup{protrusion=false}}
+%    \end{macrocode}
+
+% Then, we configure |footmisc|:
+%    \begin{macrocode}
+\PassOptionsToPackage{para}{footmisc}
+\RequirePackage{footmisc}
+\setlength{\footnotemargin}{2pt}
+\setlength{\footnotesep}{2pt}
 %    \end{macrocode}
 
 % Then, we configure |enumitem|:
