@@ -497,6 +497,18 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 \RequirePackage{caption}
 %    \end{macrocode}
 
+% Then, we make sure all figures have proper inner spacing:
+% \changes{v0.17.0}{2023/08/08}{All figures are inside tcolorbox in order to keep proper inner spacing.}
+%    \begin{macrocode}
+\PassOptionsToPackage{most}{tcolorbox}
+\RequirePackage{tcolorbox}
+\makeatletter
+\renewenvironment{figure}[1][tbp]
+  {\@float{figure}[#1]\begin{tcolorbox}[boxrule=0pt, frame empty, colback=white]}
+  {\end{tcolorbox}\end@float}
+\makeatother
+%    \end{macrocode}
+
 % Then, we make sure all figures and tables are centered by default, as recommended
 % \href{https://tex.stackexchange.com/questions/2651/}{here}:
 % \changes{v0.17.0}{2023/08/08}{All figures and tables are centered by default.}
