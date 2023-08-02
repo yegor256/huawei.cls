@@ -40,3 +40,4 @@ soft libertine
 soft scheme-basic
 soft tools
 soft xetex
+soft href-ul

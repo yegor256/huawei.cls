@@ -58,9 +58,9 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{microtype}
-\AddToHook{env/verbatim/begin}{\microtypesetup{protrusion=false}}
+  \AddToHook{env/verbatim/begin}{\microtypesetup{protrusion=false}}
 \usepackage[dtx,margin=0,log,nocrop]{docshots}
-\docshotPrerequisite{huawei-cover-picture.pdf}
+  \docshotPrerequisite{huawei-cover-picture.pdf}
 \usepackage{href-ul}
 \PageIndex
 \EnableCrossrefs
@@ -421,7 +421,6 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
   \setlength{\footnotesep}{2pt}
 \RequirePackage{graphicx}
 \RequirePackage{array}
-\RequirePackage[hidelinks]{hyperref} % to enable \pageref* command
 \RequirePackage[abspath]{currfile}
 \RequirePackage{enumitem}
   \setlist{nosep}
@@ -435,6 +434,12 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 \RequirePackage{svg}
 \RequirePackage[absolute]{textpos}
   \TPGrid{16}{16}
+%    \end{macrocode}
+
+% Then, to enable |\pageref*| command, we configure |hyperref|:
+%    \begin{macrocode}
+\PassOptionsToPackage{hidelinks}{hyperref}
+\RequirePackage{hyperref}
 %    \end{macrocode}
 
 % Then, we configure |biblatex|:
