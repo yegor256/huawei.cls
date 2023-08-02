@@ -488,6 +488,15 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 \RequirePackage{caption}
 %    \end{macrocode}
 
+% Then, we make sure all figures and tables are centered by default, as recommended
+% \href{https://tex.stackexchange.com/questions/2651/}{here}:
+% \changes{v0.17.0}{2023/08/08}{All figures and tables are centered by default.}
+%    \begin{macrocode}
+\makeatletter
+\g@addto@macro\@floatboxreset\centering
+\makeatother
+%    \end{macrocode}
+
 % Then, we set spacing between lines:
 %    \begin{macrocode}
 \RequirePackage{setspace}
