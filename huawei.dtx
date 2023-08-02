@@ -402,10 +402,14 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 \fi\makeatother
 %    \end{macrocode}
 
-% Then, we include a few important packages:
+% Then, we configure the encodings:
 %    \begin{macrocode}
 \RequirePackage[T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
+%    \end{macrocode}
+
+% Then, we include a few important packages:
+%    \begin{macrocode}
 \RequirePackage{tabularx}
 \RequirePackage{anyfontsize}
 \RequirePackage{multicol}
