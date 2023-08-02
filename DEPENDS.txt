@@ -31,3 +31,11 @@ hard transparent
 hard trimspaces
 hard wrapfig
 hard xcolor
+hard scrbase
+soft docshots
+soft libertine
+soft xetex
+soft l3build
+soft tools
+soft scheme-basic
+soft iexec

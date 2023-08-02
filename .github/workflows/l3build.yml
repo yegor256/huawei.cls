@@ -17,5 +17,4 @@ jobs:
       - uses: teatimeguest/setup-texlive-action@v2.6.2
         with:
           package-file: DEPENDS.txt
-          packages: scheme-basic xetex libertine l3build docshots tools scrbase
       - run: l3build check -q --show-log-on-error

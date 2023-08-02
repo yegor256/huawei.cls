@@ -402,7 +402,7 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 \fi\makeatother
 %    \end{macrocode}
 
-% Then, we include a important packages:
+% Then, we include a few important packages:
 %    \begin{macrocode}
 \RequirePackage[T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
@@ -443,6 +443,13 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 \RequirePackage[maxnames=1,minnames=1,natbib=true,
   citestyle=numeric,bibstyle=numeric,
   url=false,isbn=false,isbn=false]{biblatex}
+%    \end{macrocode}
+
+% Then, we make figure captions smaller and in |sf| font:
+% \changes{v0.17.0}{2023/08/08}{Smaller and sans-serif font for captions of figures.}
+%    \begin{macrocode}
+\PassOptionsToPackage{font={small,sf}}{caption}
+\RequirePackage{caption}
 %    \end{macrocode}
 
 % Then, we set spacing between lines:
