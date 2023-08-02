@@ -19,6 +19,7 @@ hard hyperref
 hard lastpage
 hard libertine
 hard listings
+hard listingsutf8
 hard makecell
 hard microtype
 hard pagecolor
