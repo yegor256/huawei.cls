@@ -411,8 +411,6 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 \RequirePackage{multicol}
 \RequirePackage{ragged2e}
 \RequirePackage{multicol}
-\RequirePackage[mmddyyyy,iso]{datetime}
-  \newtimeformat{daytime}{\twodigit{\THEHOUR}:\twodigit{\THEMINUTE}}
 \RequirePackage[tt=false,type1=true]{libertine}
 \RequirePackage{paralist}
 \RequirePackage{makecell}
@@ -422,8 +420,6 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 \RequirePackage{graphicx}
 \RequirePackage{array}
 \RequirePackage[abspath]{currfile}
-\RequirePackage{enumitem}
-  \setlist{nosep}
 \RequirePackage{microtype}
 \AddToHook{env/verbatim/begin}{\microtypesetup{protrusion=false}}
 \RequirePackage{wrapfig}
@@ -432,8 +428,25 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 \RequirePackage{tabularx}
 \RequirePackage{titling}
 \RequirePackage{svg}
+%    \end{macrocode}
+
+% Then, we configure |enumitem|:
+%    \begin{macrocode}
+\RequirePackage{enumitem}
+\setlist{nosep}
+%    \end{macrocode}
+
+% Then, we configure |textpos|:
+%    \begin{macrocode}
 \RequirePackage[absolute]{textpos}
-  \TPGrid{16}{16}
+\TPGrid{16}{16}
+%    \end{macrocode}
+
+% Then, we configure |datetime|:
+%    \begin{macrocode}
+\PassOptionsToPackage{mmddyyyy,iso}{datetime}
+\RequirePackage{datetime}
+\newtimeformat{daytime}{\twodigit{\THEHOUR}:\twodigit{\THEMINUTE}}
 %    \end{macrocode}
 
 % Then, to enable |\pageref*| command, we configure |hyperref|:
