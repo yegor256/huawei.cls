@@ -481,15 +481,6 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
   url=false,isbn=false,isbn=false]{biblatex}
 %    \end{macrocode}
 
-% Then, we make all figures and tables bordered by default, with the help of the |float| package:
-% \changes{v0.17.0}{2023/08/08}{All figures and tables are bordered by default.}
-%    \begin{macrocode}
-\RequirePackage{float}
-\floatstyle{boxed}
-\restylefloat{table}
-\restylefloat{figure}
-%    \end{macrocode}
-
 % Then, we make figure captions smaller and in |sf| font:
 % \changes{v0.17.0}{2023/08/08}{Smaller and sans-serif font for captions of figures.}
 %    \begin{macrocode}
@@ -507,6 +498,15 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
   {\@float{figure}[#1]\begin{tcolorbox}[boxrule=0pt, frame empty, colback=white]}
   {\end{tcolorbox}\end@float}
 \makeatother
+%    \end{macrocode}
+
+% Then, we make all figures and tables bordered by default, with the help of the |float| package:
+% \changes{v0.17.0}{2023/08/08}{All figures and tables are bordered by default.}
+%    \begin{macrocode}
+\RequirePackage{float}
+\floatstyle{boxed}
+\restylefloat{table}
+\restylefloat{figure}
 %    \end{macrocode}
 
 % Then, we make sure all figures and tables are centered by default, as recommended
