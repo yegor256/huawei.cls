@@ -28,6 +28,7 @@ hard ragged2e
 hard scrbase
 hard setspace
 hard svg
+hard tcolorbox
 hard textpos
 hard titling
 hard transparent
