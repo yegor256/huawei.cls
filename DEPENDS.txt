@@ -1,5 +1,6 @@
 hard anyfontsize
 hard biblatex
+hard caption
 hard catchfile
 hard changepage
 hard currfile
@@ -23,6 +24,7 @@ hard paralist
 hard pgf
 hard pgfopts
 hard ragged2e
+hard scrbase
 hard setspace
 hard svg
 hard textpos
@@ -31,11 +33,10 @@ hard transparent
 hard trimspaces
 hard wrapfig
 hard xcolor
-hard scrbase
 soft docshots
-soft libertine
-soft xetex
-soft l3build
-soft tools
-soft scheme-basic
 soft iexec
+soft l3build
+soft libertine
+soft scheme-basic
+soft tools
+soft xetex
