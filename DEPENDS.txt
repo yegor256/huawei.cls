@@ -10,6 +10,7 @@ hard environ
 hard fancyhdr
 hard ffcode
 hard filehook
+hard float
 hard fmtcount
 hard fontsize
 hard footmisc
@@ -34,10 +35,10 @@ hard trimspaces
 hard wrapfig
 hard xcolor
 soft docshots
+soft href-ul
 soft iexec
 soft l3build
 soft libertine
 soft scheme-basic
 soft tools
 soft xetex
-soft href-ul
