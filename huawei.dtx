@@ -411,7 +411,6 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 \RequirePackage{multicol}
 \RequirePackage{ragged2e}
 \RequirePackage{multicol}
-\RequirePackage[tt=false,type1=true]{libertine}
 \RequirePackage{paralist}
 \RequirePackage{makecell}
 \RequirePackage{graphicx}
@@ -423,6 +422,12 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 \RequirePackage{tabularx}
 \RequirePackage{titling}
 \RequirePackage{svg}
+%    \end{macrocode}
+
+% Then, we configure |libertine| font:
+%    \begin{macrocode}
+\PassOptionsToPackage{tt=false,type1=true}{libertine}
+\RequirePackage{libertine}
 %    \end{macrocode}
 
 % Then, we configure |microtype|:
