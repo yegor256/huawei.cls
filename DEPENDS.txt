@@ -27,7 +27,6 @@ hard pdfcol
 hard pgf
 hard pgfopts
 hard ragged2e
-hard scrbase
 hard setspace
 hard svg
 hard tcolorbox
