@@ -10,7 +10,6 @@ hard environ
 hard fancyhdr
 hard ffcode
 hard filehook
-hard float
 hard fmtcount
 hard fontsize
 hard footmisc
