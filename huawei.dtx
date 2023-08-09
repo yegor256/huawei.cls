@@ -351,36 +351,33 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 \LoadClass[12pt]{article}
 %    \end{macrocode}
 
-% Then, we parse package options:
+% Then, we parse class options:
 % \changes{v0.15.0}{2022/12/13}{A new package option \texttt{breaks} introduced, which forces all sections to start from a new page.}
+% \changes{v0.18.0}{2023/08/09}{Now we use \texttt{pfgopts} for parsing class options.}
 %    \begin{macrocode}
-\makeatletter
-\DeclareOption{breaks}{
-  \let\huawei@oldsection\section
-  \renewcommand\section{\clearpage\huawei@oldsection}
+\RequirePackage{pgfopts}
+\pgfkeys{
+  /huawei/.cd,
+  breaks/.store in=\huawei@breaks,
+  slides/.store in=\huawei@slides,
+  nosecurity/.store in=\huawei@nosecurity,
+  authordraft/.store in=\huawei@authordraft,
+  nobrand/.store in=\huawei@nobrand,
+  nodate/.store in=\huawei@nodate,
+  nocover/.store in=\huawei@nocover,
+  nopaging/.store in=\huawei@nopaging,
+  landscape/.store in=\huawei@landscape,
+  anonymous/.store in=\huawei@anonymous,
 }
-\newif\ifhuawei@dark
-\DeclareOption{dark}{\huawei@darktrue}
-\newif\ifhuawei@slides
-\DeclareOption{slides}{\huawei@slidestrue}
-\newif\ifhuawei@nosecurity
-\DeclareOption{nosecurity}{\huawei@nosecuritytrue}
-\newif\ifhuawei@authordraft
-\DeclareOption{authordraft}{\huawei@authordrafttrue}
-\newif\ifhuawei@nobrand
-\DeclareOption{nobrand}{\huawei@nobrandtrue}
-\newif\ifhuawei@nodate
-\DeclareOption{nodate}{\huawei@nodatetrue}
-\newif\ifhuawei@nocover
-\DeclareOption{nocover}{\huawei@nocovertrue}
-\newif\ifhuawei@nopaging
-\DeclareOption{nopaging}{\huawei@nopagingtrue}
-\newif\ifhuawei@landscape
-\DeclareOption{landscape}{\huawei@landscapetrue}
-\newif\ifhuawei@anonymous
-\DeclareOption{anonymous}{\huawei@anonymoustrue}
-\ProcessOptions\relax
-\makeatother
+\ProcessPgfPackageOptions{/huawei}
+%    \end{macrocode}
+
+% Then, we redefine |\section| command in order to break pages for each section:
+%    \begin{macrocode}
+\makeatletter\ifdefined\huawei@breaks
+\let\huawei@oldsection\section
+\renewcommand\section{\clearpage\huawei@oldsection}
+\fi\makeatother
 %    \end{macrocode}
 
 % Then, we set the size of the page:
