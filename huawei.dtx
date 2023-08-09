@@ -961,7 +961,11 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
   \ifdefined\huawei@landscape
     \begin{multicols}{3}\setstretch{0.95}\printbibliography\end{multicols}
   \else
-    \begin{multicols}{2}\setstretch{0.95}\printbibliography\end{multicols}
+    \ifdefined\huawei@breaks\newpage\fi
+      \begin{multicols}{2}\setstretch{0.95}\printbibliography\end{multicols}
+    \else
+      \begingroup\setstretch{0.95}\printbibliography\endgroup
+    \fi
   \fi
 }\makeatother
 %    \end{macrocode}
