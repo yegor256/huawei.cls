@@ -383,7 +383,7 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 % Then, we set the size of the page:
 %    \begin{macrocode}
 \RequirePackage{geometry}
-\makeatletter\ifhuawei@landscape
+\makeatletter\ifdefined\huawei@landscape
   \geometry{paperwidth=16in, paperheight=9in,
     left=4in, right=2in, top=1.5in, bottom=1.5in}
 \else
@@ -394,7 +394,7 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 
 % Then, we set the size of the font:
 %    \begin{macrocode}
-\makeatletter\ifhuawei@slides
+\makeatletter\ifdefined\huawei@slides
   \usepackage[fontsize=24pt]{fontsize}
 \fi\makeatother
 %    \end{macrocode}
@@ -526,7 +526,7 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 % Then, we define |\huawei@header|:
 %    \begin{macrocode}
 \makeatletter\newcommand\huawei@header[1]{{%
-  \ifhuawei@slides%
+  \ifdefined\huawei@slides%
     \setstretch{0.8}%
     \fontsize{19pt}{24pt}\selectfont%
   \else%
@@ -554,8 +554,8 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 % Then, we define |\huawei@logo|:
 %    \begin{macrocode}
 \makeatletter\newcommand\huawei@logo[1]{
-\def\BLACK{\ifhuawei@dark white\else black\fi}
-\def\BLANK{\ifhuawei@dark black\else white\fi}
+\def\BLACK{\ifdefined\huawei@dark white\else black\fi}
+\def\BLANK{\ifdefined\huawei@dark black\else white\fi}
 \begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-#1,
 xscale=#1, inner sep=0pt, outer sep=0pt]
 \begin{scope}[even odd rule,line width=0.800pt]
@@ -703,7 +703,7 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
 \fancyhf{}
 \makeatletter\fancyfoot[L]{
   \huawei@bar
-  \ifhuawei@authordraft%
+  \ifdefined\huawei@authordraft%
     \begin{textblock}{14}[0.5,0.5](8,8)%
       \tikz \node[minimum width=14\TPHorizModule] {%
         \fontsize{64}{64}\selectfont\sffamily\scshape%
@@ -714,9 +714,9 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
 }\makeatother
 \makeatletter\fancyhead[L]{
   \ifnum\value{page}=1\else%
-    \ifhuawei@nobrand\else%
+    \ifdefined\huawei@nobrand\else%
       \begin{textblock}{8}[0,0](1.2,0.2)%
-        \huawei@logo{\ifhuawei@slides 1.8\else 1\fi}%
+        \huawei@logo{\ifdefined\huawei@slides 1.8\else 1\fi}%
       \end{textblock}%
     \fi%
   \fi%
@@ -724,7 +724,7 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
 \makeatletter\fancyhead[R]{
   \begin{textblock}{8}[1,0](15.8,0.2)%
     \raggedleft\huawei@header{%
-      \ifhuawei@nosecurity\else%
+      \ifdefined\huawei@nosecurity\else%
         \thesecurity
       \fi%
     }%
@@ -734,16 +734,16 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
   \begin{textblock}{8}[0,1](1.2,15.8)%
     \ifnum\value{page}=1\else%
       \huawei@header{\raggedright%
-        \ifhuawei@anonymous\else%
+        \ifdefined\huawei@anonymous\else%
           \theauthor%
-          \ifhuawei@nosecurity\else%
+          \ifdefined\huawei@nosecurity\else%
             \ifx\theid\empty\else, \theid\fi
           \fi%
-          \ifhuawei@nobrand\else%
+          \ifdefined\huawei@nobrand\else%
             \newline
           \fi%
         \fi%
-        \ifhuawei@nobrand\else%
+        \ifdefined\huawei@nobrand\else%
           \thecompany{}
         \fi%
       }%
@@ -752,14 +752,14 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
   \begin{textblock}{8}[1,1](15.8,15.8)%
     \raggedleft\huawei@header{%
       \ifnum\value{page}=1\else%
-        \ifhuawei@nopaging\else%
+        \ifdefined\huawei@nopaging\else%
           Page \#\thepage{} of \pageref*{LastPage}%
-          \ifhuawei@nodate\else%
+          \ifdefined\huawei@nodate\else%
             \\
           \fi%
         \fi%
       \fi%
-      \ifhuawei@nodate\else%
+      \ifdefined\huawei@nodate\else%
         \today{} \settimeformat{daytime}\currenttime{}%
       \fi%
     }%
@@ -786,23 +786,23 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
   \ifx\thesubtitle\empty\else%
     {\color{gray!50!black}\large\thesubtitle\par}
   \fi
-  \ifhuawei@nobrand\else%
-    \ifhuawei@anonymous\else%
+  \ifdefined\huawei@nobrand\else%
+    \ifdefined\huawei@anonymous\else%
       \ifx\thecompany\empty\else%
         \thecompany\newline
       \fi
     \fi
   \fi
   \ifx\theauthor\empty\else%
-    {\scshape\ifhuawei@anonymous
+    {\scshape\ifdefined\huawei@anonymous
       Anonymous Authors
     \else%
       \theauthor
     \fi}%
   \fi%
-  \ifhuawei@anonymous\else%
+  \ifdefined\huawei@anonymous\else%
     \ifx\theauthor\empty\else
-      \ifhuawei@nobrand\else%
+      \ifdefined\huawei@nobrand\else%
         \ifx\theid\empty\else
           $\;$/ {\theid}
         \fi
@@ -851,7 +851,7 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
   \textbf{Disclaimer}: The opinions expressed in
   this document are in good faith and
   while every care has been taken in preparing it,
-  \ifhuawei@nobrand%
+  \ifdefined\huawei@nobrand%
     the author%
   \else%
     \thecompany{}%
@@ -860,7 +860,7 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
   of whatever nature in respect of these documents,
   including but not limited to the accuracy or completeness
   of any information, facts and/or opinions contained therein.
-  \ifhuawei@nobrand%
+  \ifdefined\huawei@nobrand%
     The author%
   \else%
     \thecompany{}%
@@ -879,7 +879,7 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
 % Then, we define |\PrintFirstPage|:
 %    \begin{macrocode}
 \makeatletter\newcommand\PrintFirstPage[1]{
-  \ifhuawei@landscape\else
+  \ifdefined\huawei@landscape\else
     \PackageError{huawei}{It's allowed to use
     PrintFirstPage only in landscape mode}{Read huawei.pdf
     for more information}
@@ -892,7 +892,7 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
   \fi
   \vspace*{0.5in}
   \maketitle
-  \ifhuawei@nocover\else
+  \ifdefined\huawei@nocover\else
     \begin{textblock}{14}[1,1](14,14)
       \raggedleft\includegraphics[height=3.6in]{huawei-cover-picture.pdf}
     \end{textblock}
@@ -905,7 +905,7 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
 % Then, we define |\PrintLastPage|:
 %    \begin{macrocode}
 \makeatletter\newcommand\PrintLastPage{
-  \ifhuawei@landscape\else
+  \ifdefined\huawei@landscape\else
     \PackageError{huawei}{It's allowed to use
     PrintLastPage only in landscape mode}{Read huawei.pdf
     for more information}
@@ -938,7 +938,7 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
       from those expressed or implied in the predictive statements.
       Therefore, such information is provided for reference purpose
       only and constitutes neither an offer nor an acceptance.
-      \ifhuawei@nobrand%
+      \ifdefined\huawei@nobrand%
         The author%
       \else%
         \thecompany{}%
@@ -956,9 +956,9 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
 \makeatletter\newcommand\PrintBibliography{
   \setlength\bibitemsep{3pt}
   \AtNextBibliography{\small}
-  \newpage
+  \ifdefined\huawei@breaks\newpage\fi
   \raggedright
-  \ifhuawei@landscape
+  \ifdefined\huawei@landscape
     \begin{multicols}{3}\setstretch{0.95}\printbibliography\end{multicols}
   \else
     \begin{multicols}{2}\setstretch{0.95}\printbibliography\end{multicols}
@@ -969,7 +969,7 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
 
 % Then, we set the background color of the document:
 %    \begin{macrocode}
-\makeatletter\ifhuawei@dark
+\makeatletter\ifdefined\huawei@dark
   \RequirePackage{pagecolor}
   \pagecolor{black}
   \color{white}
