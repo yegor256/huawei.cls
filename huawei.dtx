@@ -952,35 +952,38 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
 
 % \begin{macro}{\PrintBibliography}
 % Then, we define |\PrintBibliography|:
+% \changes{v0.18.0}{2023/08/09}{The bibliography prints in one column unless \texttt{breaks} class option is specified.}
 %    \begin{macrocode}
-\makeatletter\newcommand\PrintBibliography{
-  \setlength\bibitemsep{3pt}
-  \AtNextBibliography{\small}
-  \ifdefined\huawei@breaks\newpage\fi
-  \raggedright
-  \ifdefined\huawei@landscape
-    \begin{multicols}{3}\setstretch{0.95}\printbibliography\end{multicols}
-  \else
-    \ifdefined\huawei@breaks
-      \begin{multicols}{2}\setstretch{0.95}\printbibliography\end{multicols}
+\makeatletter\newcommand\PrintBibliography{%
+  \setlength\bibitemsep{3pt}%
+  \AtNextBibliography{\small}%
+  \ifdefined\huawei@breaks\newpage\fi%
+  \begingroup%
+  \raggedright%
+  \setstretch{0.95}%
+  \ifdefined\huawei@landscape%
+    \begin{multicols}{3}\printbibliography\end{multicols}%
+  \else%
+    \ifdefined\huawei@breaks%
+      \begin{multicols}{2}\printbibliography\end{multicols}%
     \else
-      \begingroup\setstretch{0.95}\printbibliography\endgroup
-    \fi
-  \fi
+      \printbibliography%
+    \fi%
+  \fi%
 }\makeatother
 %    \end{macrocode}
 % \end{macro}
 
-% Then, we set the background color of the document:
+% Then, we set the background color of the document, if required by the |dark| class option:
 %    \begin{macrocode}
 \makeatletter\ifdefined\huawei@dark
-  \RequirePackage{pagecolor}
-  \pagecolor{black}
-  \color{white}
+  \RequirePackage{pagecolor}%
+  \pagecolor{black}%
+  \color{white}%
 \fi
 %    \end{macrocode}
 
-% Then, we configure layout:
+% Then, we configure the layout:
 %    \begin{macrocode}
 \AtBeginDocument{%
 \raggedbottom%
