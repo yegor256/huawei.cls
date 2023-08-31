@@ -15,6 +15,7 @@ hard fontsize
 hard footmisc
 hard geometry
 hard hyperref
+hard koma-script
 hard lastpage
 hard libertine
 hard listings
