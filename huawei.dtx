@@ -707,7 +707,7 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
     \begin{textblock}{14}[0.5,0.5](8,8)%
       \tikz \node[minimum width=14\TPHorizModule] {%
         \fontsize{64}{64}\selectfont\sffamily\scshape%
-        \color{gray!20}\rotatebox{30}{it is a draft}
+        \color{gray!20}\rotatebox{30}{it is a draft}%
       };%
     \end{textblock}%
   \else\fi%
@@ -725,7 +725,7 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
   \begin{textblock}{8}[1,0](15.8,0.2)%
     \raggedleft\huawei@header{%
       \ifdefined\huawei@nosecurity\else%
-        \thesecurity
+        \thesecurity%
       \fi%
     }%
   \end{textblock}%
@@ -737,14 +737,14 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
         \ifdefined\huawei@anonymous\else%
           \theauthor%
           \ifdefined\huawei@nosecurity\else%
-            \ifx\theid\empty\else, \theid\fi
+            \ifx\theid\empty\else, \theid\fi%
           \fi%
           \ifdefined\huawei@nobrand\else%
             \newline
           \fi%
         \fi%
         \ifdefined\huawei@nobrand\else%
-          \thecompany{}
+          \thecompany{}%
         \fi%
       }%
     \fi%
@@ -781,35 +781,38 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
 % Then, we redefine |\maketitle|:
 %    \begin{macrocode}
 \makeatletter\renewcommand\maketitle{%
-  \vspace*{18pt}
-  {\bfseries{\Huge\raggedright\thetitle\par}}
+  \vspace*{18pt}%
+  {\bfseries{\Huge\raggedright\thetitle\par}}%
   \ifx\thesubtitle\empty\else%
-    {\color{gray!50!black}\large\raggedright\thesubtitle\par}
-  \fi
+    {\color{gray!50!black}\large\raggedright\thesubtitle\par}%
+  \fi%
   \ifdefined\huawei@nobrand\else%
     \ifdefined\huawei@anonymous\else%
       \ifx\thecompany\empty\else%
-        \thecompany\newline
-      \fi
-    \fi
-  \fi
-  \ifx\theauthor\empty\else%
-    {\scshape\ifdefined\huawei@anonymous
-      Anonymous Authors
-    \else%
-      \parbox{.75\textwidth}{\theauthor}
-    \fi}%
+        \thecompany\newline%
+      \fi%
+    \fi%
   \fi%
-  \ifdefined\huawei@anonymous\else%
-    \ifx\theauthor\empty\else
-      \ifdefined\huawei@nobrand\else%
-        \ifx\theid\empty\else
-          $\;$/ {\theid}
-        \fi
-      \fi
-    \fi
-  \fi
-  \vspace{2em}
+  \parbox{.75\textwidth}{%
+    \ifx\theauthor\empty\else%
+      {\scshape\ifdefined\huawei@anonymous%
+        Anonymous Authors%
+      \else%
+        \theauthor%
+      \fi}%
+    \fi%
+    \ifdefined\huawei@anonymous\else%
+      \ifx\theauthor\empty\else%
+        \ifdefined\huawei@nobrand\else%
+          \ifx\theid\empty\else%
+            $\;$/ {\theid}%
+          \fi%
+        \fi%
+      \fi%
+    \fi%
+    \par%
+  }%
+  \vspace{2em}%
 }\makeatother
 %    \end{macrocode}
 % \end{macro}
