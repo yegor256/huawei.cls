@@ -872,7 +872,7 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
   cannot be held liable for the use of and reliance of
   the opinions, estimates, forecasts and findings in
   these documents.
-  \par
+  \par%
   \endgroup%
 }\makeatother
 %    \end{macrocode}
@@ -881,25 +881,25 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
 % \begin{macro}{\PrintFirstPage}
 % Then, we define |\PrintFirstPage|:
 %    \begin{macrocode}
-\makeatletter\newcommand\PrintFirstPage[1]{
-  \ifdefined\huawei@landscape\else
+\makeatletter\newcommand\PrintFirstPage[1]{%
+  \ifdefined\huawei@landscape\else%
     \PackageError{huawei}{It's allowed to use
     PrintFirstPage only in landscape mode}{Read huawei.pdf
     for more information}
-  \fi
-  \huawei@bar
+  \fi%
+  \huawei@bar%
   \def\param{#1}%
-  \ifx\param\empty\else
-    \includegraphics[height=2in]{#1}
-    \newline
-  \fi
-  \vspace*{0.5in}
-  \maketitle
-  \ifdefined\huawei@nocover\else
-    \begin{textblock}{14}[1,1](14,14)
-      \raggedleft\includegraphics[height=3.6in]{huawei-cover-picture.pdf}
-    \end{textblock}
-  \fi
+  \ifx\param\empty\else%
+    \includegraphics[height=2in]{#1}%
+    \newline%
+  \fi%
+  \vspace*{0.5in}%
+  \maketitle%
+  \ifdefined\huawei@nocover\else%
+    \begin{textblock}{14}[1,1](14,14)%
+      \raggedleft\includegraphics[height=3.6in]{huawei-cover-picture.pdf}%
+    \end{textblock}%
+  \fi%
 }\makeatother
 %    \end{macrocode}
 % \end{macro}
@@ -907,32 +907,32 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
 % \begin{macro}{\PrintLastPage}
 % Then, we define |\PrintLastPage|:
 %    \begin{macrocode}
-\makeatletter\newcommand\PrintLastPage{
-  \ifdefined\huawei@landscape\else
+\makeatletter\newcommand\PrintLastPage{%
+  \ifdefined\huawei@landscape\else%
     \PackageError{huawei}{It's allowed to use
     PrintLastPage only in landscape mode}{Read huawei.pdf
     for more information}
-  \fi
-  \newpage
-  \vspace*{1in}
-  \begin{center}
-    \begin{minipage}{0.6\columnwidth}\raggedright
-      \normalsize
-      \setlength{\parskip}{6pt}
-      {\Huge\color{red}\textbf{Thank you!}}
-
-      \vspace{0.5in}
-
+  \fi%
+  \newpage%
+  \vspace*{1in}%
+  \begin{center}%
+    \begin{minipage}{0.6\columnwidth}\raggedright%
+      \normalsize%
+      \setlength{\parskip}{6pt}%
+      {\Huge\color{red}\textbf{Thank you!}}%
+      \par%
+      \vspace{0.5in}%
+      \par%
       Bring digital to every person, home and organization
-      \newline
+      \newline%
       for a fully connected, intelligent world.
-
+      \par%
       \textbf{%
         Copyright \copyright{} \the\year{} \thecompany{}
         \newline
         All Rights Reserved.%
       }
-
+      \par%
       The information in this document may contain predictive
       statements including, without limitation, statements regarding
       the future financial and operating results, future product
@@ -945,7 +945,7 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
         The author%
       \else%
         \thecompany{}%
-      \fi
+      \fi%
       may change the information at any time without notice.
     \end{minipage}
   \end{center}%
@@ -979,7 +979,7 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
 
 % Then, we set the background color of the document, if required by the |dark| class option:
 %    \begin{macrocode}
-\makeatletter\ifdefined\huawei@dark
+\makeatletter\ifdefined\huawei@dark%
   \RequirePackage{pagecolor}%
   \pagecolor{black}%
   \color{white}%
