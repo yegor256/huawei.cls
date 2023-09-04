@@ -10,7 +10,7 @@ jobs:
     env:
       TERM: linux
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - run: sudo apt-get -y update
       - run: sudo apt-get -y install inkscape
       - run: sudo apt-get -y install ghostscript
