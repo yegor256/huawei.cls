@@ -15,8 +15,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: sudo apt-get -y update
+        if: matrix.os == 'ubuntu-22.04'
       - run: sudo apt-get -y install inkscape
+        if: matrix.os == 'ubuntu-22.04'
       - run: sudo apt-get -y install ghostscript
+        if: matrix.os == 'ubuntu-22.04'
       - uses: teatimeguest/setup-texlive-action@v3.0.2
         with:
           package-file: DEPENDS.txt
