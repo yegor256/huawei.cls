@@ -21,7 +21,7 @@ Hello, world!
 \end{document}
 ```
 
-Otherwise, you can download [`huawei.cls`](https://yegor256.github.io/huawei.cls/huawei.sty) and add to your project.
+Otherwise, you can download [`huawei.cls`](https://yegor256.github.io/huawei.cls/huawei.cls) and add to your project.
 
 Read the detailed documentation [in PDF](http://mirrors.ctan.org/macros/latex/contrib/huawei/huawei.pdf).
 
