@@ -23,10 +23,9 @@ jobs:
       - uses: teatimeguest/setup-texlive-action@v3.0.2
         with:
           package-file: DEPENDS.txt
-      - run: l3build check -q --show-log-on-error
+      - run: l3build ctan --show-log-on-error --halt-on-error
       - run: |
           mkdir build/gh-pages
-          tree
           cp build/distrib/tds/tex/latex/huawei/huawei.cls build/gh-pages
           sed -i "s/0\.0\.0/$(date +%H.%M.%S)/g" build/gh-pages/huawei.cls
           sed -i "s/0000-00-00/$(date +%Y-%m-%d)/g" build/gh-pages/huawei.cls
