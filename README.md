@@ -1,3 +1,5 @@
+# LaTeX Document Class
+
 [![make](https://github.com/yegor256/huawei.cls/actions/workflows/l3build.yml/badge.svg)](https://github.com/yegor256/huawei.cls/actions/workflows/l3build.yml)
 [![CTAN](https://img.shields.io/ctan/v/huawei)](https://ctan.org/pkg/huawei)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/yegor256/huawei.cls/blob/master/LICENSE.txt)
@@ -7,7 +9,8 @@ This package is created in order to help some people working
 with Huawei or inside Huawei to render some documents in LaTeX format.
 You are welcome to use it at your own risk.
 
-First, [install it](https://en.wikibooks.org/wiki/LaTeX/Installing_Extra_Packages)
+First,
+[install it](https://en.wikibooks.org/wiki/LaTeX/Installing_Extra_Packages)
 from [CTAN](https://ctan.org/pkg/huawei) 
 and then use in the preamble:
 
@@ -21,9 +24,12 @@ Hello, world!
 \end{document}
 ```
 
-Otherwise, you can download [`huawei.cls`](https://yegor256.github.io/huawei.cls/huawei.cls) and add to your project.
+Otherwise, you can download
+[`huawei.cls`](https://yegor256.github.io/huawei.cls/huawei.cls)
+and add to your project.
 
-Read the detailed documentation [in PDF](http://mirrors.ctan.org/macros/latex/contrib/huawei/huawei.pdf).
+Read the detailed documentation
+[in PDF](http://mirrors.ctan.org/macros/latex/contrib/huawei/huawei.pdf).
 
 If you need more formatting options, 
 [submit an issue](https://github.com/yegor256/huawei.cls/issues), 
