@@ -11,7 +11,7 @@ You are welcome to use it at your own risk.
 
 First,
 [install it](https://en.wikibooks.org/wiki/LaTeX/Installing_Extra_Packages)
-from [CTAN](https://ctan.org/pkg/huawei) 
+from [CTAN](https://ctan.org/pkg/huawei)
 and then use in the preamble:
 
 ```tex
@@ -31,11 +31,11 @@ and add to your project.
 Read the detailed documentation
 [in PDF](http://mirrors.ctan.org/macros/latex/contrib/huawei/huawei.pdf).
 
-If you need more formatting options, 
-[submit an issue](https://github.com/yegor256/huawei.cls/issues), 
+If you need more formatting options,
+[submit an issue](https://github.com/yegor256/huawei.cls/issues),
 I'll implement them.
 
-If you want to contribute yourself, make a fork, then create a branch, 
+If you want to contribute yourself, make a fork, then create a branch,
 then run `make` in the root directory.
 It should compile everything without errors. If not, submit an issue and wait.
 Otherwise, make your changes and then run `make` again. If the build is
