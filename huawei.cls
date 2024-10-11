@@ -32,7 +32,7 @@
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{huawei}
-[2024-09-15 11.19.00 Template for Huawei Documents]
+[2024-10-11 08.01.51 Template for Huawei Documents]
 
 
 
