@@ -20,41 +20,13 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 ---
-name: l3build
-on:
+name: copyrights
+'on':
   push:
-    branches: master
   pull_request:
-    branches: master
 jobs:
-  l3build:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-24.04, macos-12]
-    env:
-      TERM: linux
+  copyrights:
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
-      - run: sudo apt-get -y update
-        if: matrix.os == 'ubuntu-24.04'
-      - run: sudo apt-get -y install inkscape
-        if: matrix.os == 'ubuntu-24.04'
-      - run: sudo apt-get -y install ghostscript
-        if: matrix.os == 'ubuntu-24.04'
-      - uses: teatimeguest/setup-texlive-action@v3.3.0
-        with:
-          package-file: DEPENDS.txt
-      - run: l3build ctan --show-log-on-error --halt-on-error
-      - run: |
-          mkdir build/gh-pages
-          cp build/distrib/tds/tex/latex/huawei/huawei.cls build/gh-pages
-          sed -i "s/0\.0\.0/$(date +%H.%M.%S)/g" build/gh-pages/huawei.cls
-          sed -i "s/0000-00-00/$(date +%Y-%m-%d)/g" build/gh-pages/huawei.cls
-        if: github.ref == 'refs/heads/master' && matrix.os == 'ubuntu-22.04'
-      - uses: JamesIves/github-pages-deploy-action@v4.6.4
-        with:
-          branch: gh-pages
-          folder: build/gh-pages
-          clean: true
-        if: github.ref == 'refs/heads/master' && matrix.os == 'ubuntu-22.04'
+      - uses: yegor256/copyrights-action@0.0.4
