@@ -587,22 +587,25 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
     \begin{textblock}{8}[1,0.5](15,15.25)%
       \raggedleft\huawei@logo{1.4}
     \end{textblock}%
-    \ifdefined\huawei@nopaging\else%
-      \begin{textblock}{8}[1,0.5](13,15.25)%
-        \raggedleft\large%
-        Page \#\thepage{} of \pageref*{LastPage}%
-      \end{textblock}%
-    \fi%
     \ifdefined\huawei@nobrand\else%
       \begin{textblock}{8}[0,0.5](1,15.25)%
         \large\thecompany{}%
       \end{textblock}%
     \fi%
     \ifdefined\huawei@nosecurity\else%
-      \begin{textblock}{8}[0.5,0.5](8,15.25)%
+      \begin{textblock}{8}[0.5,0.5](5.5,15.25)%
         \large\centering\thesecurity%
       \end{textblock}%
     \fi%
+    \ifdefined\huawei@nopaging\else%
+      \begin{textblock}{8}[1,0.5](10,15.25)%
+        \raggedleft\large%
+        Page \#\thepage{} of \pageref*{LastPage}%
+      \end{textblock}%
+    \fi%
+    \begin{textblock}{2}[1,0.5](14,15.25)%
+      \tikz \path[scale=0.3, draw=none, rotate=45, fill=white] (0,0) .. controls (3,1) .. (16,0) -- (16,3) .. controls (8, 2) .. (0, 3) -- (0,0);
+    \end{textblock}%
   \else%
     \begin{textblock}{1}[0,0](0,0)%
       \tikz \node[fill=red,minimum width=\TPHorizModule,
