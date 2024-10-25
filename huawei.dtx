@@ -376,10 +376,14 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 
 % Then, we redefine |\section| command in order to break pages for each section:
 %    \begin{macrocode}
-\makeatletter\ifdefined\huawei@breaks
+\makeatletter
 \let\huawei@oldsection\section
-\renewcommand\section{\clearpage\huawei@oldsection}
-\fi\makeatother
+\renewcommand\section{%
+  \ifdefined\huawei@breaks\clearpage\fi%
+  {\ifdefined\huawei@boring\color{red}\fi\huawei@oldsection}%
+}
+\fi
+\makeatother
 %    \end{macrocode}
 
 % Then, we set the size of the page:
