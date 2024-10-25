@@ -374,15 +374,19 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 \ProcessPgfPackageOptions{/huawei}
 %    \end{macrocode}
 
-% Then, we redefine |\section| command in order to break pages for each section:
+% Then, we redefine |\section| command in order to break pages for each section, with the help of |titlesec| package:
 %    \begin{macrocode}
-\makeatletter
-\let\huawei@oldsection\section
-\renewcommand\section{%
-  \ifdefined\huawei@breaks\clearpage\fi%
-  {\ifdefined\huawei@boring\color{red}\fi\huawei@oldsection}%
-}
+\RequirePackage{titlesec}
+\ifdefined\huawei@boring
+  \def\huawei@sectioncolor{red}
+\else
+  \def\huawei@sectioncolor{black}
 \fi
+\makeatletter
+\titleformat
+  {\section}
+  {\color{\huawei@sectioncolor}\ifdefined\huawei@breaks\clearpage\fi\normalfont\Large\bfseries}
+  {\color{\huawei@sectioncolor}\thesection}{1em}{}
 \makeatother
 %    \end{macrocode}
 
