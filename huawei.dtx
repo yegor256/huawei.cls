@@ -374,6 +374,14 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 \ProcessPgfPackageOptions{/huawei}
 %    \end{macrocode}
 
+% Then, we set Helvetica as the default font for the entire document, if the |boring| document option is used:
+%    \begin{macrocode}
+\ifdefined\huawei@boring
+  \RequirePackage{helvet}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+%    \end{macrocode}
+
 % Then, we redefine |\section| command in order to break pages for each section, with the help of |titlesec| package:
 %    \begin{macrocode}
 \RequirePackage{titlesec}
