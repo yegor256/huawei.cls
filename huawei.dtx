@@ -589,18 +589,18 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
     \end{textblock}%
     \ifdefined\huawei@nobrand\else%
       \begin{textblock}{8}[0,0.5](1,15.25)%
-        \large\thecompany{}%
+        \large\textcolor{gray}{\thecompany{}}%
       \end{textblock}%
     \fi%
     \ifdefined\huawei@nosecurity\else%
       \begin{textblock}{8}[0.5,0.5](7,15.25)%
-        \large\centering\thesecurity%
+        \large\centering\textcolor{gray}{\thesecurity}%
       \end{textblock}%
     \fi%
     \ifdefined\huawei@nopaging\else%
       \begin{textblock}{8}[1,0.5](12,15.25)%
         \raggedleft\large%
-        Page \#\thepage{} of \pageref*{LastPage}%
+        \textcolor{gray}{Page \#\thepage{} of \pageref*{LastPage}}%
       \end{textblock}%
     \fi%
     \begin{textblock}{2}[1,0.5](14,15.25)%
