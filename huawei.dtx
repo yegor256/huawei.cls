@@ -852,7 +852,13 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
 %    \begin{macrocode}
 \makeatletter\renewcommand\maketitle{%
   \vspace*{18pt}%
-  {\bfseries{\begin{spacing}{.9}\Huge\raggedright\thetitle\par\end{spacing}}}%
+  {%
+    \bfseries{\begin{spacing}{.9}\Huge\raggedright%
+    \ifdefined\huawei@boring\else%
+      \color{red}%
+    \fi%
+    \thetitle\par\end{spacing}}%
+  }%
   \ifx\thesubtitle\empty\else%
     {\color{gray!50!black}\large\raggedright\thesubtitle\par}%
   \fi%
