@@ -33,6 +33,7 @@ hard svg
 hard tcolorbox
 hard textpos
 hard tikzfill
+hard titlesec
 hard titling
 hard transparent
 hard trimspaces
