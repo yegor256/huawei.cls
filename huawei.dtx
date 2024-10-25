@@ -377,8 +377,8 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 % Then, we set Helvetica as the default font for the entire document, if the |boring| document option is used:
 %    \begin{macrocode}
 \ifdefined\huawei@boring
-  \RequirePackage{helvet}
-  \renewcommand{\familydefault}{\sfdefault}
+  \usepackage[scaled]{helvet}
+  \renewcommand\familydefault{\sfdefault}
 \fi
 %    \end{macrocode}
 
