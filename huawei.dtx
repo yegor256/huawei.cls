@@ -441,11 +441,15 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 \RequirePackage{array}
 \RequirePackage[abspath]{currfile}
 \RequirePackage{wrapfig}
-\RequirePackage{lastpage}
 \RequirePackage{tikz}
 \RequirePackage{tabularx}
 \RequirePackage{titling}
 \RequirePackage{svg}
+%    \end{macrocode}
+
+% Then, we include |lastpage| package to enable total counting of pages:
+%    \begin{macrocode}
+\RequirePackage{lastpage}
 %    \end{macrocode}
 
 % Then, we configure |libertine| font:
@@ -589,17 +593,19 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
     \end{textblock}%
     \ifdefined\huawei@nobrand\else%
       \begin{textblock}{8}[0,0.5](1,15.25)%
-        \large\textcolor{gray}{\thecompany{}}%
+        \fontsize{16}{16}\selectfont%
+        \textcolor{gray}{\thecompany{}}%
       \end{textblock}%
     \fi%
     \ifdefined\huawei@nosecurity\else%
       \begin{textblock}{8}[0.5,0.5](7,15.25)%
-        \large\centering\textcolor{gray}{\thesecurity}%
+        \fontsize{16}{16}\selectfont%
+        \centering\textcolor{gray}{\thesecurity}%
       \end{textblock}%
     \fi%
     \ifdefined\huawei@nopaging\else%
       \begin{textblock}{8}[1,0.5](12,15.25)%
-        \raggedleft\large%
+        \raggedleft\fontsize{16}{16}\selectfont%
         \textcolor{gray}{Page \#\thepage{} of \pageref*{LastPage}}%
       \end{textblock}%
     \fi%
