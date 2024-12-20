@@ -52,7 +52,7 @@ jobs:
           mkdir build/gh-pages
           cp build/distrib/tds/tex/latex/huawei/huawei.cls build/gh-pages
           sed -i "s/0\.0\.0/$(date +%H.%M.%S)/g" build/gh-pages/huawei.cls
-          sed -i "s/0000-00-00/$(date +%Y-%m-%d)/g" build/gh-pages/huawei.cls
+          sed -i "s|0000/00/00|$(date +%Y/%m/%d)|g" build/gh-pages/huawei.cls
         if: github.ref == 'refs/heads/master' && matrix.os == 'ubuntu-22.04'
       - uses: JamesIves/github-pages-deploy-action@v4.7.2
         with:
