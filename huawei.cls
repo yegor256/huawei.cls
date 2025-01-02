@@ -7,7 +7,7 @@
 %% huawei.dtx  (with options: `class')
 %% (The MIT License)
 %% 
-%% Copyright (c) 2021-2024 Yegor Bugayenko
+%% Copyright (c) 2021-2025 Yegor Bugayenko
 %% 
 %% Permission is hereby granted, free of charge, to any person obtaining a copy
 %% of this software and associated documentation files (the 'Software'), to deal
@@ -32,7 +32,7 @@
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{huawei}
-[2024-10-11 08.01.51 Template for Huawei Documents]
+[2025/01/02 11.07.19 Template for Huawei Documents]
 
 
 
@@ -84,6 +84,7 @@
 \RequirePackage{pgfopts}
 \pgfkeys{
   /huawei/.cd,
+  boring/.store in=\huawei@boring,
   breaks/.store in=\huawei@breaks,
   slides/.store in=\huawei@slides,
   nosecurity/.store in=\huawei@nosecurity,
@@ -97,15 +98,33 @@
 }
 \ProcessPgfPackageOptions{/huawei}
 
-\makeatletter\ifdefined\huawei@breaks
-\let\huawei@oldsection\section
-\renewcommand\section{\clearpage\huawei@oldsection}
-\fi\makeatother
+\ifdefined\huawei@boring
+  \usepackage[scaled]{helvet}
+  \renewcommand\familydefault{\sfdefault}
+\fi
+
+\RequirePackage{titlesec}
+\ifdefined\huawei@boring
+  \def\huawei@sectioncolor{red}
+\else
+  \def\huawei@sectioncolor{black}
+\fi
+\makeatletter
+\titleformat
+  {\section}
+  {\color{\huawei@sectioncolor}\ifdefined\huawei@breaks\clearpage\fi\normalfont\Large\bfseries}
+  {\color{\huawei@sectioncolor}\thesection}{1em}{}
+\makeatother
 
 \RequirePackage{geometry}
 \makeatletter\ifdefined\huawei@landscape
-  \geometry{paperwidth=16in, paperheight=9in,
-    left=4in, right=2in, top=1.5in, bottom=1.5in}
+  \ifdefined\huawei@boring
+    \geometry{paperwidth=16in, paperheight=9in,
+      left=3in, right=2.5in, top=1in, bottom=1.8in}
+  \else
+    \geometry{paperwidth=16in, paperheight=9in,
+      left=4in, right=2in, top=1.5in, bottom=1.5in}
+  \fi
 \else
   \geometry{a4paper, left=1.5in, right=1in,
     top=1.2in, bottom=1.2in}
@@ -129,11 +148,12 @@
 \RequirePackage{array}
 \RequirePackage[abspath]{currfile}
 \RequirePackage{wrapfig}
-\RequirePackage{lastpage}
 \RequirePackage{tikz}
 \RequirePackage{tabularx}
 \RequirePackage{titling}
 \RequirePackage{svg}
+
+\RequirePackage{lastpage}
 
 \PassOptionsToPackage{tt=false,type1=true}{libertine}
 \RequirePackage{libertine}
@@ -180,13 +200,27 @@
 
 \PassOptionsToPackage{table}{xcolor}
 \RequirePackage{xcolor}
-\definecolor{red}{HTML}{CF0A2C}
-\definecolor{black}{HTML}{232527}
-\definecolor{gray}{HTML}{878C8F}
-\definecolor{yellow}{HTML}{F2DC5D}
-\definecolor{blue}{HTML}{2274A5}
-\definecolor{green}{HTML}{499167}
-\definecolor{orange}{HTML}{F06543}
+\makeatletter
+\ifdefined\huawei@boring
+  \definecolor{red}{HTML}{8C1A11}
+  \definecolor{black}{HTML}{000000}
+  \definecolor{gray}{HTML}{878C8F}
+  \definecolor{lightgray}{HTML}{DCDDDF}
+  \definecolor{yellow}{HTML}{F6C342}
+  \definecolor{blue}{HTML}{2B62BA}
+  \definecolor{green}{HTML}{499167}
+  \definecolor{orange}{HTML}{F7CEA1}
+\else
+  \definecolor{red}{HTML}{CF0A2C}
+  \definecolor{black}{HTML}{232527}
+  \definecolor{gray}{HTML}{878C8F}
+  \definecolor{lightgray}{HTML}{DCDDDF}
+  \definecolor{yellow}{HTML}{F2DC5D}
+  \definecolor{blue}{HTML}{2274A5}
+  \definecolor{green}{HTML}{499167}
+  \definecolor{orange}{HTML}{F06543}
+\fi
+\makeatother
 
 \makeatletter\newcommand\huawei@header[1]{{%
   \ifdefined\huawei@slides%
@@ -200,15 +234,47 @@
 }}\makeatother
 
 \makeatletter\newcommand\huawei@bar{%
-  \begin{textblock}{1}[0,0](0,0)%
-    \tikz \node[fill=red,minimum width=\TPHorizModule,
-      minimum height=16\TPVertModule] {};%
-  \end{textblock}%
+  \ifdefined\huawei@boring%
+    \begin{textblock}{16}[0,1](0,16)%
+      \tikz \node[fill=lightgray,minimum width=16\TPHorizModule,
+        minimum height=1.5\TPVertModule] {};%
+    \end{textblock}%
+    \begin{textblock}{8}[1,0.5](15,15.25)%
+      \raggedleft\huawei@logo{1.4}
+    \end{textblock}%
+    \ifdefined\huawei@nobrand\else%
+      \begin{textblock}{8}[0,0.5](1,15.25)%
+        \fontsize{16}{16}\selectfont%
+        \textcolor{gray}{\thecompany{}}%
+      \end{textblock}%
+    \fi%
+    \ifdefined\huawei@nosecurity\else%
+      \begin{textblock}{8}[0.5,0.5](7,15.25)%
+        \fontsize{16}{16}\selectfont%
+        \centering\textcolor{gray}{\thesecurity}%
+      \end{textblock}%
+    \fi%
+    \ifdefined\huawei@nopaging\else%
+      \begin{textblock}{8}[1,0.5](12,15.25)%
+        \raggedleft\fontsize{16}{16}\selectfont%
+        \textcolor{gray}{Page \#\thepage{} of \pageref*{LastPage}}%
+      \end{textblock}%
+    \fi%
+    \begin{textblock}{2}[1,0.5](14,15.25)%
+      \tikz \path[scale=0.3, draw=none, rotate=40, fill=white] (0,0) .. controls (3,1) .. (16,0) -- (16,3) .. controls (8, 2) .. (0, 3) -- (0,0);
+    \end{textblock}%
+  \else%
+    \begin{textblock}{1}[0,0](0,0)%
+      \tikz \node[fill=red,minimum width=\TPHorizModule,
+        minimum height=16\TPVertModule] {};%
+    \end{textblock}%
+  \fi%
 }\makeatother
 
 \makeatletter\newcommand\huawei@logo[1]{
 \def\BLACK{\ifdefined\huawei@dark white\else black\fi}
 \def\BLANK{\ifdefined\huawei@dark black\else white\fi}
+\definecolor{logo-red}{HTML}{CF0A2C}
 \begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-#1,
 xscale=#1, inner sep=0pt, outer sep=0pt]
 \begin{scope}[even odd rule,line width=0.800pt]
@@ -247,7 +313,7 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
 \path[fill=\BLANK] (15.8594,31.7207) -- (16.7149,33.7008) --
  (16.7119,33.7008) -- (16.7701,33.8374) -- (14.9552,33.8374) --
  (15.0127,33.7008) -- (15.0117,33.7008) -- cycle;
-\path[fill=red] (15.2113,0.0001) .. controls (14.7353,0.0422) and
+\path[fill=logo-red] (15.2113,0.0001) .. controls (14.7353,0.0422) and
  (13.4491,0.3349) .. (13.4491,0.3349) -- (13.4486,0.3349) .. controls
  (10.5495,1.0843) and (9.8643,3.7151) .. (9.8643,3.7151) .. controls
  (9.7227,4.1575) and (9.6584,4.6109) .. (9.6395,5.0380) --
@@ -259,7 +325,7 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
  (16.8633,19.9296) .. (16.8633,19.9296) --
  (16.8654,19.9301) .. controls (18.4416,4.1760) and
  (15.2113,0.0001) .. (15.2113,0.0001) -- (15.2113,0.0001) -- cycle;
-\path[fill=red] (20.4192,0.0000) .. controls (20.4192,0.0000) and
+\path[fill=logo-red] (20.4192,0.0000) .. controls (20.4192,0.0000) and
  (17.1748,4.1782) .. (18.7521,19.9415) --
  (18.7542,19.9415) .. controls (18.7664,20.0416) and
  (18.8374,20.0624) ..(18.8374,20.0624) .. controls
@@ -270,7 +336,7 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
  (25.7636,3.7150) and (25.0470,1.0434) ..(22.1442,0.3375) .. controls
  (22.1442,0.3375) and (21.3077,0.1251) .. (20.4193,0.0000) --
  (20.4192,0.0000) -- cycle;
-\path[fill=red] (5.4542,4.7294) .. controls (5.4542,4.7294) and
+\path[fill=logo-red] (5.4542,4.7294) .. controls (5.4542,4.7294) and
  (2.6920,7.3513) .. (2.5547,10.1307) -- (2.5558,10.1307) --
  (2.5558,10.5519) .. controls (2.5579,10.5836) and
  (2.5595,10.6157) .. (2.5615,10.6480) .. controls
@@ -284,7 +350,7 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
  (15.3683,20.8109) .. (15.3663,20.8065) --
  (15.3669,20.8065) .. controls (11.1809,11.6620) and
  (5.4543,4.7294) .. (5.4543,4.7294) -- (5.4542,4.7294) -- cycle;
-\path[fill=red] (30.1695,4.7294) .. controls (30.1695,4.7294) and
+\path[fill=logo-red] (30.1695,4.7294) .. controls (30.1695,4.7294) and
  (24.4602,11.6403) .. (20.2761,20.7662) --
  (20.2777,20.7657) .. controls (20.2777,20.7657) and
  (20.2283,20.8715) .. (20.3082,20.9399) .. controls
@@ -296,7 +362,7 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
  (31.2563,14.2162) and (32.9686,12.8412) ..
  (33.0583,10.6334) .. controls (33.2560,7.5672) and
  (30.1696,4.7294) .. (30.1696,4.7294) -- (30.1695,4.7294) -- cycle;
-\path[fill=red] (35.3082,13.8080) .. controls (35.3082,13.8080) and
+\path[fill=logo-red] (35.3082,13.8080) .. controls (35.3082,13.8080) and
  (26.0003,18.8031) .. (21.1876,22.0494) -- (21.1882,22.0499) --
  (21.1893,22.0509) .. controls (21.1893,22.0509) and
  (21.1019,22.1081) .. (21.1324,22.2106) .. controls
@@ -310,7 +376,7 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
  (35.6246,15.7531) .. controls (35.6206,15.1563) and
  (35.5365,14.4957) .. (35.3083,13.8080) --
  (35.3082,13.8080) -- cycle;
-\path[fill=red] (0.3129,13.8313) .. controls (-0.5339,16.4531) and
+\path[fill=logo-red] (0.3129,13.8313) .. controls (-0.5339,16.4531) and
  (0.6062,18.5656) .. (0.6080,18.5690) .. controls
  (1.7962,21.0795) and (4.0641,21.8401) ..
  (4.0641,21.8401) .. controls (5.1112,22.2703) and
@@ -323,7 +389,7 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
  (14.4439,22.0584) .. (14.4439,22.0584) --
  (14.4450,22.0578) .. controls (9.6347,18.8126) and
  (0.3130,13.8315) .. (0.3130,13.8315) -- (0.3129,13.8313) -- cycle;
-\path[fill=red] (14.1782,23.1010) -- (3.2285,23.4850) .. controls
+\path[fill=logo-red] (14.1782,23.1010) -- (3.2285,23.4850) .. controls
  (4.4160,25.6018) and (6.4158,27.2469) ..
  (8.4990,26.7416) .. controls (9.9366,26.3822) and
  (13.1935,24.1105) .. (14.2687,23.3429) --
@@ -331,7 +397,7 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
  (14.3188,23.2045) .. (14.3188,23.2045) .. controls
  (14.2913,23.1062) and (14.1783,23.1063) .. (14.1783,23.1063) --
  (14.1782,23.1010) -- cycle;
-\path[fill=red] (21.4305,23.1090) -- (21.4294,23.1130) .. controls
+\path[fill=logo-red] (21.4305,23.1090) -- (21.4294,23.1130) .. controls
  (21.4294,23.1130) and (21.3333,23.1252) ..
  (21.3064,23.1972) .. controls (21.3064,23.1972) and
  (21.2831,23.2956) .. (21.3478,23.3445) --
@@ -364,55 +430,61 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
 \makeatletter\fancyhead[L]{
   \ifnum\value{page}=1\else%
     \ifdefined\huawei@nobrand\else%
-      \begin{textblock}{8}[0,0](1.2,0.2)%
-        \huawei@logo{\ifdefined\huawei@slides 1.8\else 1\fi}%
-      \end{textblock}%
+      \ifdefined\huawei@boring\else%
+        \begin{textblock}{8}[0,0](1.2,0.2)%
+          \huawei@logo{\ifdefined\huawei@slides 1.8\else 1\fi}%
+        \end{textblock}%
+      \fi
     \fi%
   \fi%
 }\makeatother
 \makeatletter\fancyhead[R]{
-  \begin{textblock}{8}[1,0](15.8,0.2)%
-    \raggedleft\huawei@header{%
-      \ifdefined\huawei@nosecurity\else%
-        \thesecurity%
-      \fi%
-    }%
-  \end{textblock}%
-}\makeatother
-\makeatletter\fancyfoot[R]{
-  \begin{textblock}{8}[0,1](1.2,15.8)%
-    \ifnum\value{page}=1\else%
-      \huawei@header{\raggedright%
-        \ifdefined\huawei@anonymous\else%
-          \theauthor%
-          \ifdefined\huawei@nosecurity\else%
-            \ifx\theid\empty\else, \theid\fi%
-          \fi%
-          \ifdefined\huawei@nobrand\else%
-            \newline
-          \fi%
-        \fi%
-        \ifdefined\huawei@nobrand\else%
-          \thecompany{}%
+  \ifdefined\huawei@boring\else%
+    \begin{textblock}{8}[1,0](15.8,0.2)%
+      \raggedleft\huawei@header{%
+        \ifdefined\huawei@nosecurity\else%
+          \thesecurity%
         \fi%
       }%
-    \fi%
-  \end{textblock}%
-  \begin{textblock}{8}[1,1](15.8,15.8)%
-    \raggedleft\huawei@header{%
+    \end{textblock}%
+  \fi%
+}\makeatother
+\makeatletter\fancyfoot[R]{
+  \ifdefined\huawei@boring\else%
+    \begin{textblock}{8}[0,1](1.2,15.8)%
       \ifnum\value{page}=1\else%
-        \ifdefined\huawei@nopaging\else%
-          Page \#\thepage{} of \pageref*{LastPage}%
-          \ifdefined\huawei@nodate\else%
-            \\
+        \huawei@header{\raggedright%
+          \ifdefined\huawei@anonymous\else%
+            \theauthor%
+            \ifdefined\huawei@nosecurity\else%
+              \ifx\theid\empty\else, \theid\fi%
+            \fi%
+            \ifdefined\huawei@nobrand\else%
+              \newline
+            \fi%
+          \fi%
+          \ifdefined\huawei@nobrand\else%
+            \thecompany{}%
+          \fi%
+        }%
+      \fi%
+    \end{textblock}%
+    \begin{textblock}{8}[1,1](15.8,15.8)%
+      \raggedleft\huawei@header{%
+        \ifnum\value{page}=1\else%
+          \ifdefined\huawei@nopaging\else%
+            Page \#\thepage{} of \pageref*{LastPage}%
+            \ifdefined\huawei@nodate\else%
+              \\
+            \fi%
           \fi%
         \fi%
-      \fi%
-      \ifdefined\huawei@nodate\else%
-        \today{} \settimeformat{daytime}\currenttime{}%
-      \fi%
-    }%
-  \end{textblock}%
+        \ifdefined\huawei@nodate\else%
+          \today{} \settimeformat{daytime}\currenttime{}%
+        \fi%
+      }%
+    \end{textblock}%
+  \fi%
 }\makeatother
 
 \RequirePackage{changepage}
@@ -422,7 +494,13 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
 
 \makeatletter\renewcommand\maketitle{%
   \vspace*{18pt}%
-  {\bfseries{\begin{spacing}{.9}\Huge\raggedright\thetitle\par\end{spacing}}}%
+  {%
+    \bfseries{\begin{spacing}{.9}\Huge\raggedright%
+    \ifdefined\huawei@boring%
+      \color{red}%
+    \fi%
+    \thetitle\par\end{spacing}}%
+  }%
   \ifx\thesubtitle\empty\else%
     {\color{gray!50!black}\large\raggedright\thesubtitle\par}%
   \fi%
@@ -531,7 +609,7 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
   \newpage%
   \vspace*{1in}%
   \begin{center}%
-    \begin{minipage}{0.6\columnwidth}\raggedright%
+    \begin{minipage}{0.8\columnwidth}\raggedright%
       \normalsize%
       \setlength{\parskip}{6pt}%
       {\Huge\color{red}\textbf{Thank you!}}%
