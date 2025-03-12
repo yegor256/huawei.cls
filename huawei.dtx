@@ -405,8 +405,10 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 
 % Then, we configure the encodings:
 %    \begin{macrocode}
-\RequirePackage[T1]{fontenc}
-\RequirePackage[utf8]{inputenc}
+\PassOptionsToPackage{T1}{fontenc}
+\RequirePackage{fontenc}
+\PassOptionsToPackage{utf8}{inputenc}
+\RequirePackage{inputenc}
 %    \end{macrocode}
 
 % Then, we include a few important packages:
@@ -420,7 +422,8 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 \RequirePackage{makecell}
 \RequirePackage{graphicx}
 \RequirePackage{array}
-\RequirePackage[abspath]{currfile}
+\PassOptionsToPackage{abspath}{currfile}
+\RequirePackage{currfile}
 \RequirePackage{wrapfig}
 \RequirePackage{tikz}
 \RequirePackage{tabularx}
@@ -455,13 +458,15 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 
 % Then, we configure |enumitem|:
 %    \begin{macrocode}
-\RequirePackage[inline]{enumitem}
+\PassOptionsToPackage{inline}{enumitem}
+\RequirePackage{enumitem}
 \setlist{nosep}
 %    \end{macrocode}
 
 % Then, we configure |textpos|:
 %    \begin{macrocode}
-\RequirePackage[absolute]{textpos}
+\PassOptionsToPackage{absolute}{textpos}
+\RequirePackage{textpos}
 \TPGrid{16}{16}
 %    \end{macrocode}
 
@@ -481,9 +486,10 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 % Then, we configure |biblatex|:
 % \changes{v0.16.0}{2023/05/20}{The \texttt{doi} tag enabled for \texttt{biblatex}.}
 %    \begin{macrocode}
-\RequirePackage[maxnames=1,minnames=1,natbib=true,
+\PassOptionsToPackage{maxnames=1,minnames=1,natbib=true,
   citestyle=numeric,bibstyle=numeric,
-  url=false,isbn=false,isbn=false]{biblatex}
+  url=false,isbn=false,isbn=false}{biblatex}
+\RequirePackage{biblatex}
 %    \end{macrocode}
 
 % Then, we make figure captions smaller and in |sf| font:
