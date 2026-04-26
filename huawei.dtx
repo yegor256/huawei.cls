@@ -35,7 +35,7 @@
 %</class>
 %<*driver>
 \documentclass{ltxdoc}
-\usepackage[tt=false, type1=true]{libertine}
+\usepackage{paratype}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{microtype}
@@ -436,10 +436,9 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 \RequirePackage{lastpage}
 %    \end{macrocode}
 
-% Then, we configure |libertine| font:
+% Then, we configure |paratype| font:
 %    \begin{macrocode}
-\PassOptionsToPackage{tt=false,type1=true}{libertine}
-\RequirePackage{libertine}
+\RequirePackage{paratype}
 %    \end{macrocode}
 
 % Then, we configure |microtype|:
