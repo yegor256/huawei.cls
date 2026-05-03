@@ -207,7 +207,7 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 % It is the level of security of
 %   the document, which is usually printed at the top right
 %   corner of it; usual values are ``Internal,''
-%   ''Confidential,'' or ``Secret.''
+%   ``Confidential,'' or ``Secret.''
 
 % Default values of all these commands are empty. If you don't
 % renew them in your document, nothing will be printed.
@@ -219,7 +219,7 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 % \DescribeMacro{\PrintFirstPage}
 % It is recommended to use |\PrintFirstPage| for rendering the first
 % page in landscape document, for example a project charter.
-% The only argument of the commmand is the name of an image to render at the
+% The only argument of the command is the name of an image to render at the
 % right bottom corner. You can omit the name and just call the command with
 % an empty argument. In this case the default image will be rendered, a pretty
 % good looking one:
@@ -244,7 +244,7 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 % \end{docshot}
 
 % \DescribeMacro{\PrintThankYouPage}
-% |\PrintThankYouPage| prints the last page with a "Thank You" message in the center.
+% |\PrintThankYouPage| prints the last page with a ``Thank You'' message in the center.
 % \begin{docshot}
 % \documentclass[landscape,dark]{huawei}
 % \begin{document}
@@ -320,7 +320,7 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 % \changes{v0.3.0}{2021/05/24}{The cover picture added for front pages.}
 % \changes{v0.4.0}{2021/05/26}{The current time is rendered without seconds.}
 % \changes{v0.5.0}{2021/05/26}{The \texttt{DEPENDS.txt} file added.}
-% \changes{v0.6.0}{2021/06/14}{The \texttt{ffcode} and \texttt{href-ul} packages created an their code removed from this class.}
+% \changes{v0.6.0}{2021/06/14}{The \texttt{ffcode} and \texttt{href-ul} packages created and their code removed from this class.}
 % \changes{v0.7.0}{2021/06/27}{The \texttt{authordraft} option is now supported.}
 % \changes{v0.10.0}{2021/09/08}{Some colors redefined.}
 % \changes{v0.11.0}{2021/09/09}{The fixed-width font is rendered correctly now, without \texttt{ffcode}.}
@@ -334,7 +334,7 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 
 % Then, we parse class options:
 % \changes{v0.15.0}{2022/12/13}{A new package option \texttt{breaks} introduced, which forces all sections to start from a new page.}
-% \changes{v0.18.0}{2023/08/09}{Now we use \texttt{pfgopts} for parsing class options.}
+% \changes{v0.18.0}{2023/08/09}{Now we use \texttt{pgfopts} for parsing class options.}
 % \changes{v0.19.0}{2024/10/25}{New option \texttt{boring} added, making the layout of the document more compliant with the expectations of Huawei.}
 %    \begin{macrocode}
 \RequirePackage{pgfopts}
