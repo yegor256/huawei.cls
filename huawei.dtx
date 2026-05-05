@@ -62,10 +62,10 @@
 %
 % \section{Introduction}
 %
-% The provided class |huawei| helps you design your work
-% documents and presentations keeping the code short and the
-% style elegant enough both for management and technical
-% papers. To use the class you simply mention its name
+% The class |huawei| facilitates the preparation of work
+% documents and presentations, while keeping the source concise
+% and the style sufficiently refined for both managerial and
+% technical papers. The class is invoked by naming it
 % in the preamble:
 % \begin{docshot}
 % \documentclass{huawei}
@@ -74,11 +74,10 @@
 % \end{document}
 % \end{docshot}
 
-% We recommend you to use
-% |latexmk| to compile your |.tex| files to |.pdf|.
-% The simplest setup will require a few files staying next to your
-% |.tex| file, in the same directory (``story'' is the name
-% of your project here):
+% The use of |latexmk| is recommended for compiling |.tex| files into |.pdf|.
+% The simplest configuration requires a small number of files alongside the
+% |.tex| file, within the same directory (``story'' here serves as the
+% project name):
 
 %\iffalse
 %<*verb>
@@ -93,7 +92,7 @@ story\
 %</verb>
 %\fi
 
-% The content of your |.latexmkrc| file would be this:
+% The contents of the |.latexmkrc| file would be as follows:
 
 %\iffalse
 %<*verb>
@@ -105,67 +104,63 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 %</verb>
 %\fi
 
-% Make sure the |.gitignore| file lists all the files generated
-% by |pdflatex| during the compilation. You don't need to commit
-% them to your repository, since they are temporary and will
-% be generated again when you compile your document.
-% In order to compile the document, just say |latexmk| on the command line.
+% The |.gitignore| file should list every file produced by |pdflatex|
+% during compilation. Such artefacts need not be committed to the
+% repository, since they are temporary and are regenerated upon each
+% compilation. To compile the document, the command |latexmk| suffices.
 
 % \section{Class Options}
 
-% There are a few class options, provided in square brackets after the
-% |\documentclass|, which can help you fine-tune
-% the layout of your document:
+% A number of class options, supplied in square brackets after
+% |\documentclass|, permit fine adjustment of the document's layout:
 
 % \DescribeMacro{landscape}
-% The option |landscape| makes the document in landscape format, also changing the size
-% of the paper to 16x9 inches (the default page size is
+% The |landscape| option sets the document in landscape orientation and
+% adjusts the paper size to 16x9 inches (the default page size being
 % \href{https://en.wikipedia.org/wiki/Paper_size}{A4}),
-% making it perfect for presentations.
+% rendering it well-suited to presentations.
 
 % \DescribeMacro{dark}
-% The option |dark| turns on a dark layout, where the page color is black and the text
-% is white.
+% The |dark| option enables a dark layout, in which the page background is black and the text white.
 
 % \DescribeMacro{slides}
-% The option |slides| makes all headers a bit larger, assuming that the document
-% is in the landscape mode and being presented as a slide deck.
+% The |slides| option enlarges all headers somewhat, on the assumption that the document
+% is in landscape orientation and is to be presented as a slide deck.
 
 % \DescribeMacro{nocover}
-% The option |nocover|, if it's present, avoids printing the cover images on the first page by the
-% |\PrintTitlePage| command.
+% The |nocover| option, when present, suppresses the printing of cover images on the first page by
+% the |\PrintTitlePage| command.
 
 % \DescribeMacro{anonymous}
-% The |anonymous| removes the name of the author everywhere, including the bottom
-% of the page, where the author's name stays next to the name of the
+% The |anonymous| option removes the author's name from every location, including the foot
+% of the page, where it would otherwise stand alongside the name of the
 % company.
 
 % \DescribeMacro{nobrand}
-% The option |nobrand| avoids mentioning the brand of Huawei anywhere
-% in the document and removes the logo too.
+% The |nobrand| option suppresses any mention of the Huawei brand within
+% the document and likewise removes the logo.
 
 % \DescribeMacro{nosecurity}
-% The option |nosecurity| avoids mentioning the level of security at the right top
-% corner of the document and also avoids showing the ID of the author
-% where it usually is visible.
+% The |nosecurity| option suppresses the security classification ordinarily printed at the upper
+% right corner of the document and likewise hides the author's ID where it would otherwise appear.
 
 % \DescribeMacro{nodate}
-% The option |nodate| doesn't show the date and time at the bottom of each page,
-% where they usually are rendered in ISO~8601 format.
+% The |nodate| option suppresses the date and time at the foot of each page,
+% where they are otherwise rendered in ISO~8601 format.
 
 % \DescribeMacro{nopaging}
-% The option |nopaging| avoids page numbers at the bottom of each page.
+% The |nopaging| option suppresses the page numbers at the foot of each page.
 
 % \DescribeMacro{authordraft}
-% The option |authordraft| prints a big ``It's a draft'' message across each page.
+% The |authordraft| option prints a large ``It's a draft'' message diagonally across each page.
 
 % \DescribeMacro{breaks}
-% The option |breaks| forces all |\section| to start from a new page.
+% The |breaks| option compels every |\section| to begin on a new page.
 
 % \section{Preamble}
 
-% In the preamble you can specify meta information about the document,
-% such as its title or author's name, here is how:
+% Within the preamble, meta-information about the document may be supplied,
+% such as the title or the author's name, in the following manner:
 % \begin{docshot}
 % \documentclass{huawei}
 % \renewcommand*
@@ -180,48 +175,44 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 % \end{document}
 % \end{docshot}
 
-% It's recommended to use |\renewcommand*| instead of
-% |\renewcommand| in order to let \LaTeX{} catch you
-% if by mistake a new line gets into the content.
+% The use of |\renewcommand*| in lieu of
+% |\renewcommand| is recommended, so that \LaTeX{} may detect
+% any inadvertent newline that should slip into the content.
 
 % The following meta commands are defined:
 
 % \DescribeMacro{\thetitle}
-% |\thetitle| is the main title of the document
-%   to be used in the text and in the properties of the PDF document.
+% |\thetitle| is the principal title of the document, employed both
+%   within the text and within the metadata of the PDF.
 
 % \DescribeMacro{\thesubtitle}
-% |\thesubtitle| is the subtitle to be
-%   printed under the title.
+% |\thesubtitle| is the subtitle, printed beneath the title.
 
 % \DescribeMacro{\theauthor}
-% |\theauthor| is the author of the document
+% |\theauthor| denotes the author of the document
 %   in ``first-name last-name'' format.
 
 % \DescribeMacro{\theid}
-% |\theid| is the internal ID of the author, if
-%   it's applicable.
+% |\theid| denotes the internal ID of the author, where applicable.
 
 % \DescribeMacro{\thesecurity}
-% It is the level of security of
-%   the document, which is usually printed at the top right
-%   corner of it; usual values are ``Internal,''
-%   ``Confidential,'' or ``Secret.''
+% This denotes the security classification of the document,
+%   ordinarily printed at the upper right corner; typical values
+%   include ``Internal,'' ``Confidential,'' or ``Secret.''
 
-% Default values of all these commands are empty. If you don't
-% renew them in your document, nothing will be printed.
+% The default values of these commands are empty; should they not
+% be renewed within the document, nothing is printed.
 
 % \section{Custom Commands}
 
-% Inside the document body you can use these commands:
+% The following commands are available within the body of the document:
 
 % \DescribeMacro{\PrintFirstPage}
-% It is recommended to use |\PrintFirstPage| for rendering the first
-% page in landscape document, for example a project charter.
-% The only argument of the command is the name of an image to render at the
-% right bottom corner. You can omit the name and just call the command with
-% an empty argument. In this case the default image will be rendered, a pretty
-% good looking one:
+% The use of |\PrintFirstPage| is recommended for rendering the first
+% page of a landscape document, for example a project charter.
+% The sole argument denotes the name of an image to be rendered at the
+% lower right corner. The argument may be left empty, whereupon a default
+% image of agreeable appearance is rendered in its stead:
 % \begin{docshot}
 % \documentclass[landscape]{huawei}
 % \renewcommand*
@@ -243,7 +234,7 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 % \end{docshot}
 
 % \DescribeMacro{\PrintThankYouPage}
-% |\PrintThankYouPage| prints the last page with a ``Thank You'' message in the center.
+% |\PrintThankYouPage| prints the final page with a ``Thank You'' message in the centre.
 % \begin{docshot}
 % \documentclass[landscape,dark]{huawei}
 % \begin{document}
@@ -266,38 +257,38 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 
 % \section{Best Practices}
 
-% You are free to design your documents any way you want. However,
-% it would be convenient for yourself and for your readers, if you follow
-% the convention we have for business and technical documents.
+% Authors are at liberty to design their documents as they see fit. Nevertheless,
+% adherence to the conventions established for business and technical documents
+% is convenient both for the author and for the reader.
 
-% The rule of thumb is simple: try \emph{not} to format your documents.
-% Instead, let the class designed by us do this work for you. Just type
-% the content without changing the layout, adding colors, changing fonts,
-% etc. The less you modify the look-and-feel, the better your documents
-% will be perceived by your readers.
+% The rule of thumb is simple: \emph{abstain} from formatting the document.
+% The class itself should be entrusted with this task. Content should merely
+% be entered, without alteration of layout, addition of colours, modification of
+% fonts, and the like. The less the look-and-feel is tampered with, the more
+% favourably the document will be received by its readers.
 
 % \subsection{Two Columns}
 
-% In the landscape format it's recommended to use two columns, for better
-% readability of the text. Here is how:
+% Within landscape format, the use of two columns is recommended in the
+% interest of readability. The following illustrates this:
 % \begin{docshot}
 % \documentclass[landscape]{huawei}
 % \begin{document}
 % \newpage
 % \begin{multicols}{2}
 % \section*{First}
-% Here goes the first column content.
+% The first column content goes here.
 % \columnbreak
 % \section*{Second}
-% Here goes the second column content.
+% The second column content goes here.
 % \end{multicols}
 % \end{document}
 % \end{docshot}
 
 % \subsection{Crumbs}
 
-% When you need to put many small information pieces into one page,
-% we recommend you to use ``crumbs'':
+% Whenever a multitude of small pieces of information must be accommodated
+% on a single page, the use of ``crumbs'' is recommended:
 % \begin{docshot}
 % \documentclass{huawei}
 % \begin{document}
