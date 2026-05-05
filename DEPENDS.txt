@@ -23,7 +23,6 @@ hard makecell
 hard microtype
 hard pagecolor
 hard paralist
-hard paratype
 hard pdfcol
 hard pgf
 hard pgfopts
@@ -44,7 +43,6 @@ soft href-ul
 soft hypdoc
 soft iexec
 soft l3build
-soft paratype
 soft scheme-basic
 soft tools
 soft xetex
