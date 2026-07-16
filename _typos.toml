@@ -1,0 +1,6 @@
+# SPDX-FileCopyrightText: Copyright (c) 2021-2026 Yegor Bugayenko
+# SPDX-License-Identifier: MIT
+
+# Ignore six-digit hex color codes so fragments are not read as words.
+[default]
+extend-ignore-re = ['\b[0-9A-Fa-f]{6}\b']
