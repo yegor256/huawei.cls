@@ -37,12 +37,16 @@
 \documentclass{ltxdoc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
+\usepackage{fail-fast}
 \usepackage[utf8]{inputenc}
 \usepackage{microtype}
   \AddToHook{env/verbatim/begin}{\microtypesetup{protrusion=false}}
 \usepackage[dtx,margin=0,log,nocrop]{docshots}
   \docshotPrerequisite{huawei-cover-picture.pdf}
+\PassOptionsToPackage{hyperindex=false}{hyperref}
 \usepackage{href-ul}
+\usepackage{bookmark}
+\renewcommand{\RerunFileCheck}[3]{\AddToHook{enddocument/info}{#2}}
 \PageIndex
 \EnableCrossrefs
 \CodelineIndex

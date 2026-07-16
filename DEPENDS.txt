@@ -38,7 +38,9 @@ hard transparent
 hard trimspaces
 hard wrapfig
 hard xcolor
+soft bookmark
 soft docshots
+soft fail-fast
 soft href-ul
 soft hypdoc
 soft iexec
