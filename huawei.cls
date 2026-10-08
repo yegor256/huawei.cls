@@ -7,7 +7,7 @@
 %% huawei.dtx  (with options: `class')
 %% (The MIT License)
 %% 
-%% Copyright (c) 2021-2025 Yegor Bugayenko
+%% Copyright (c) 2021-2026 Yegor Bugayenko
 %% 
 %% Permission is hereby granted, free of charge, to any person obtaining a copy
 %% of this software and associated documentation files (the 'Software'), to deal
@@ -32,7 +32,7 @@
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{huawei}
-[2025/01/02 11.07.19 Template for Huawei Documents]
+[2026-10-08 11.03.28 Template for Huawei Documents]
 
 
 
@@ -134,8 +134,10 @@
   \usepackage[fontsize=24pt]{fontsize}
 \fi\makeatother
 
-\RequirePackage[T1]{fontenc}
-\RequirePackage[utf8]{inputenc}
+\PassOptionsToPackage{T1}{fontenc}
+\RequirePackage{fontenc}
+\PassOptionsToPackage{utf8}{inputenc}
+\RequirePackage{inputenc}
 
 \RequirePackage{tabularx}
 \RequirePackage{anyfontsize}
@@ -146,7 +148,8 @@
 \RequirePackage{makecell}
 \RequirePackage{graphicx}
 \RequirePackage{array}
-\RequirePackage[abspath]{currfile}
+\PassOptionsToPackage{abspath}{currfile}
+\RequirePackage{currfile}
 \RequirePackage{wrapfig}
 \RequirePackage{tikz}
 \RequirePackage{tabularx}
@@ -154,9 +157,6 @@
 \RequirePackage{svg}
 
 \RequirePackage{lastpage}
-
-\PassOptionsToPackage{tt=false,type1=true}{libertine}
-\RequirePackage{libertine}
 
 \RequirePackage{microtype}
 \AddToHook{env/verbatim/begin}{\microtypesetup{protrusion=false}}
@@ -166,10 +166,12 @@
 \setlength{\footnotemargin}{2pt}
 \setlength{\footnotesep}{2pt}
 
-\RequirePackage[inline]{enumitem}
+\PassOptionsToPackage{inline}{enumitem}
+\RequirePackage{enumitem}
 \setlist{nosep}
 
-\RequirePackage[absolute]{textpos}
+\PassOptionsToPackage{absolute}{textpos}
+\RequirePackage{textpos}
 \TPGrid{16}{16}
 
 \PassOptionsToPackage{mmddyyyy,iso}{datetime}
@@ -179,9 +181,10 @@
 \PassOptionsToPackage{hidelinks}{hyperref}
 \RequirePackage{hyperref}
 
-\RequirePackage[maxnames=1,minnames=1,natbib=true,
+\PassOptionsToPackage{maxnames=1,minnames=1,natbib=true,
   citestyle=numeric,bibstyle=numeric,
-  url=false,isbn=false,isbn=false]{biblatex}
+  url=false,isbn=false,isbn=false}{biblatex}
+\RequirePackage{biblatex}
 
 \PassOptionsToPackage{font={small,sf}}{caption}
 \RequirePackage{caption}
