@@ -6,6 +6,7 @@ hard changepage
 hard currfile
 hard datetime
 hard enumitem
+hard etoolbox
 hard environ
 hard fancyhdr
 hard ffcode
@@ -38,6 +39,7 @@ hard transparent
 hard trimspaces
 hard wrapfig
 hard xcolor
+hard xkeyval
 soft bookmark
 soft docshots
 soft fail-fast
