@@ -2,6 +2,7 @@ hard anyfontsize
 hard biblatex
 hard caption
 hard catchfile
+hard cm-super
 hard changepage
 hard currfile
 hard datetime
