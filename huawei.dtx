@@ -42,7 +42,6 @@
 \usepackage{microtype}
   \AddToHook{env/verbatim/begin}{\microtypesetup{protrusion=false}}
 \usepackage[dtx,margin=0,log,nocrop]{docshots}
-  \docshotPrerequisite{huawei-cover-picture.pdf}
 \PassOptionsToPackage{hyperindex=false}{hyperref}
 \usepackage{href-ul}
 \usepackage{bookmark}
@@ -72,7 +71,7 @@
 % and the style sufficiently refined for both managerial and
 % technical papers. The class is invoked by naming it
 % in the preamble:
-% \begin{docshot}
+% \begin{docshot}[prerequisite=huawei-cover-picture.pdf]
 % \documentclass{huawei}
 % \begin{document}
 % Hello, world!
@@ -166,7 +165,7 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 
 % Within the preamble, meta-information about the document may be supplied,
 % such as the title or the author's name, in the following manner:
-% \begin{docshot}
+% \begin{docshot}[prerequisite=huawei-cover-picture.pdf]
 % \documentclass{huawei}
 % \renewcommand*
 %   \thetitle{15\% Faster Algorithm}
@@ -218,7 +217,7 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 % The sole argument denotes the name of an image to be rendered at the
 % lower right corner. The argument may be left empty, whereupon a default
 % image of agreeable appearance is rendered in its stead:
-% \begin{docshot}
+% \begin{docshot}[prerequisite=huawei-cover-picture.pdf]
 % \documentclass[landscape]{huawei}
 % \renewcommand*
 %   \thetitle{Perpetum Mobile}
@@ -231,7 +230,7 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 
 % \DescribeMacro{\PrintLastPage}
 % |\PrintLastPage| prints the last page of a project charter or a similar landscape document:
-% \begin{docshot}
+% \begin{docshot}[prerequisite=huawei-cover-picture.pdf]
 % \documentclass[landscape]{huawei}
 % \begin{document}
 % \PrintLastPage{}
@@ -240,7 +239,7 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 
 % \DescribeMacro{\PrintThankYouPage}
 % |\PrintThankYouPage| prints the final page with a ``Thank You'' message in the centre.
-% \begin{docshot}
+% \begin{docshot}[prerequisite=huawei-cover-picture.pdf]
 % \documentclass[landscape,dark]{huawei}
 % \begin{document}
 % \PrintThankYouPage{}
@@ -249,7 +248,7 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 
 % \DescribeMacro{\PrintDisclaimer}
 % |\PrintDisclaimer| prints a paragraph at the bottom of the page with a standard disclaimer:
-% \begin{docshot}
+% \begin{docshot}[prerequisite=huawei-cover-picture.pdf]
 % \documentclass{huawei}
 % \begin{document}
 % \section{Introduction}
@@ -276,7 +275,7 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 
 % Within landscape format, the use of two columns is recommended in the
 % interest of readability. The following illustrates this:
-% \begin{docshot}
+% \begin{docshot}[prerequisite=huawei-cover-picture.pdf]
 % \documentclass[landscape]{huawei}
 % \begin{document}
 % \newpage
@@ -294,7 +293,7 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 
 % Whenever a multitude of small pieces of information must be accommodated
 % on a single page, the use of ``crumbs'' is recommended:
-% \begin{docshot}
+% \begin{docshot}[prerequisite=huawei-cover-picture.pdf]
 % \documentclass{huawei}
 % \begin{document}
 % \newpage
