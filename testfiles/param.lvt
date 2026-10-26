@@ -1,0 +1,13 @@
+% SPDX-FileCopyrightText: Copyright (c) 2021-2026 Yegor Bugayenko
+% SPDX-License-Identifier: MIT
+
+\input{regression-test.tex}
+\documentclass[landscape,nocover]{huawei}
+\newcommand\param{intact}
+\begin{document}
+\START
+
+\PrintFirstPage{}
+\TYPE{The user macro param is \param}
+
+\END

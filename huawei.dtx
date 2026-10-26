@@ -634,14 +634,14 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 % Then, we define |\huawei@logo|:
 %    \begin{macrocode}
 \makeatletter\newcommand\huawei@logo[1]{
-\def\BLACK{\ifdefined\huawei@dark white\else black\fi}
-\def\BLANK{\ifdefined\huawei@dark black\else white\fi}
+\def\huawei@black{\ifdefined\huawei@dark white\else black\fi}
+\def\huawei@blank{\ifdefined\huawei@dark black\else white\fi}
 \definecolor{logo-red}{HTML}{CF0A2C}
 \begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-#1,
 xscale=#1, inner sep=0pt, outer sep=0pt]
 \begin{scope}[even odd rule,line width=0.800pt]
 \begin{scope}[shift={(0,-0.00024)}]
-\path[fill=\BLACK] (10.9375,30.2240) -- (10.9375,33.6097)
+\path[fill=\huawei@black] (10.9375,30.2240) -- (10.9375,33.6097)
 .. controls (10.9375,34.5713) and (10.4603,35.0845) ..
    (9.5932,35.0845) .. controls (8.7212,35.0845) and
    (8.2411,34.5565)
@@ -651,28 +651,28 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
    (11.2041,36.2272) and (12.1371,35.2554) .. (12.1371,33.5609) --
    (12.1371,30.2240)
 -- (10.9375,30.2240) -- cycle;
-\path[fill=\BLACK] (15.3511,30.2240) -- (12.7456,36.1351) --
+\path[fill=\huawei@black] (15.3511,30.2240) -- (12.7456,36.1351) --
  (13.9702,36.1351) -- (14.4731,34.9903) -- (14.5091,34.9045) --
  (17.2158,34.9045) -- (17.7467,36.1351) -- (19.0045,36.1351) --
  (16.4233,30.2590) -- (16.4001,30.2240) -- cycle;
-\path[fill=\BLACK] (22.4840,30.2240) -- (21.1414,34.2912) --
+\path[fill=\huawei@black] (22.4840,30.2240) -- (21.1414,34.2912) --
  (19.8344,30.2271) -- (18.5578,30.2271) -- (20.6186,36.1388) --
  (21.6120,36.1388) -- (22.9573,32.2553) -- (24.3016,36.1388) --
  (25.3034,36.1388) -- (27.3592,30.2271) -- (26.1152,30.2271) --
  (24.8055,34.2912) -- (23.4626,30.2240) -- cycle;
-\path[fill=\BLACK] (34.2236,30.2240) -- (34.2236,36.1300) --
+\path[fill=\huawei@black] (34.2236,30.2240) -- (34.2236,36.1300) --
  (35.4074,36.1300) -- (35.4074,30.2240) -- cycle;
-\path[fill=\BLACK] (0.2686,30.2244) -- (0.2686,36.1384) --
+\path[fill=\huawei@black] (0.2686,30.2244) -- (0.2686,36.1384) --
  (1.4686,36.1384) -- (1.4686,33.7365) -- (4.1780,33.7365) --
  (4.1780,36.1384) -- (5.3783,36.1384) -- (5.3783,30.2244) --
  (4.1780,30.2244) -- (4.1780,32.6102) -- (1.4686,32.6102) --
  (1.4686,30.2244) -- cycle;
-\path[fill=\BLACK] (28.3267,30.2284) -- (28.3267,36.1344) --
+\path[fill=\huawei@black] (28.3267,30.2284) -- (28.3267,36.1344) --
  (32.7928,36.1344) -- (32.7928,35.0575) -- (29.5105,35.0575) --
  (29.5105,33.5931) -- (31.6931,33.5931) -- (31.6931,32.5160) --
  (29.5105,32.5160) -- (29.5105,31.3052) -- (32.6785,31.3052) --
  (32.6785,30.2284) -- cycle;
-\path[fill=\BLANK] (15.8594,31.7207) -- (16.7149,33.7008) --
+\path[fill=\huawei@blank] (15.8594,31.7207) -- (16.7149,33.7008) --
  (16.7119,33.7008) -- (16.7701,33.8374) -- (14.9552,33.8374) --
  (15.0127,33.7008) -- (15.0117,33.7008) -- cycle;
 \path[fill=logo-red] (15.2113,0.0001) .. controls (14.7353,0.0422) and
@@ -981,8 +981,8 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
     for more information}
   \fi%
   \huawei@bar%
-  \def\param{#1}%
-  \ifx\param\empty\else%
+  \def\huawei@param{#1}%
+  \ifx\huawei@param\empty\else%
     \includegraphics[height=2in]{#1}%
     \newline%
   \fi%
