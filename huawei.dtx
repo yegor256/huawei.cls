@@ -116,7 +116,9 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 % \section{Class Options}
 
 % A number of class options, supplied in square brackets after
-% |\documentclass|, permit fine adjustment of the document's layout:
+% |\documentclass|, permit fine adjustment of the document's layout.
+% An option that neither the class nor any loaded package recognizes
+% stops the compilation with an error:
 
 % \DescribeMacro{landscape}
 % The |landscape| option sets the document in landscape orientation and
@@ -356,6 +358,17 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
   anonymous/.store in=\huawei@anonymous,
 }
 \ProcessPgfPackageOptions{/huawei}
+%    \end{macrocode}
+
+% Then, we fail if any class option remains unused by both the class and the packages
+% when the document begins, since it is most probably misspelled:
+%    \begin{macrocode}
+\makeatletter\AddToHook{begindocument/before}{%
+  \ifx\@unusedoptionlist\@empty\else%
+    \ClassError{huawei}{Unknown class option(s): \@unusedoptionlist}%
+      {Check the spelling of the options given to \string\documentclass}%
+  \fi%
+}\makeatother
 %    \end{macrocode}
 
 % Then, we set Helvetica as the default font for the entire document, if the |boring| document option is used:

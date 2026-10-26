@@ -1,0 +1,8 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+! Class huawei Error: Unknown class option(s): colour.
+See the huawei class documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+l. ...\begin{document}
+Check the spelling of the options given to \documentclass

@@ -1,0 +1,11 @@
+% SPDX-FileCopyrightText: Copyright (c) 2021-2026 Yegor Bugayenko
+% SPDX-License-Identifier: MIT
+
+\input{regression-test.tex}
+\documentclass[landscape,colour]{huawei}
+\START
+\begin{document}
+
+Hello, world!
+
+\END
