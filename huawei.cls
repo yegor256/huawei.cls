@@ -32,7 +32,7 @@
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{huawei}
-[2026-10-26 16.13.59 Template for Huawei Documents]
+[2026-10-26 16.46.30 Template for Huawei Documents]
 
 
 
@@ -180,6 +180,13 @@
 
 \PassOptionsToPackage{hidelinks}{hyperref}
 \RequirePackage{hyperref}
+
+\makeatletter\AtBeginDocument{%
+  \hypersetup{%
+    pdftitle={\thetitle},%
+    pdfauthor={\ifdefined\huawei@anonymous\else\theauthor\fi}%
+  }%
+}\makeatother
 
 \PassOptionsToPackage{maxnames=1,minnames=1,natbib=true,
   citestyle=numeric,bibstyle=numeric,
