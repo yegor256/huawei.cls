@@ -1,0 +1,12 @@
+% SPDX-FileCopyrightText: Copyright (c) 2021-2026 Yegor Bugayenko
+% SPDX-License-Identifier: MIT
+
+\input{regression-test.tex}
+\documentclass[landscape,nobrand]{huawei}
+\renewcommand*\thecompany{\TYPE{The company name leaked}}
+\begin{document}
+\START
+
+\PrintLastPage
+
+\END
