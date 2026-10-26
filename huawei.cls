@@ -32,7 +32,8 @@
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{huawei}
-[2026-10-26 03.20.42 Template for Huawei Documents]
+[2026-10-26 16.13.59 Template for Huawei Documents]
+
 
 
 
@@ -86,6 +87,7 @@
   /huawei/.cd,
   boring/.store in=\huawei@boring,
   breaks/.store in=\huawei@breaks,
+  dark/.store in=\huawei@dark,
   slides/.store in=\huawei@slides,
   nosecurity/.store in=\huawei@nosecurity,
   authordraft/.store in=\huawei@authordraft,
@@ -99,7 +101,7 @@
 \ProcessPgfPackageOptions{/huawei}
 
 \ifdefined\huawei@boring
-  \usepackage[scaled]{helvet}
+  \RequirePackage[scaled]{helvet}
   \renewcommand\familydefault{\sfdefault}
 \fi
 
@@ -131,7 +133,7 @@
 \fi\makeatother
 
 \makeatletter\ifdefined\huawei@slides
-  \usepackage[fontsize=24pt]{fontsize}
+  \RequirePackage[fontsize=24pt]{fontsize}
 \fi\makeatother
 
 \PassOptionsToPackage{T1}{fontenc}
@@ -143,7 +145,6 @@
 \RequirePackage{anyfontsize}
 \RequirePackage{multicol}
 \RequirePackage{ragged2e}
-\RequirePackage{multicol}
 \RequirePackage{paralist}
 \RequirePackage{makecell}
 \RequirePackage{graphicx}
@@ -152,7 +153,6 @@
 \RequirePackage{currfile}
 \RequirePackage{wrapfig}
 \RequirePackage{tikz}
-\RequirePackage{tabularx}
 \RequirePackage{titling}
 \RequirePackage{svg}
 
@@ -183,7 +183,7 @@
 
 \PassOptionsToPackage{maxnames=1,minnames=1,natbib=true,
   citestyle=numeric,bibstyle=numeric,
-  url=false,isbn=false,isbn=false}{biblatex}
+  url=false,isbn=false}{biblatex}
 \RequirePackage{biblatex}
 
 \PassOptionsToPackage{font={small,sf}}{caption}
@@ -242,9 +242,11 @@
       \tikz \node[fill=lightgray,minimum width=16\TPHorizModule,
         minimum height=1.5\TPVertModule] {};%
     \end{textblock}%
-    \begin{textblock}{8}[1,0.5](15,15.25)%
-      \raggedleft\huawei@logo{1.4}
-    \end{textblock}%
+    \ifdefined\huawei@nobrand\else%
+      \begin{textblock}{8}[1,0.5](15,15.25)%
+        \raggedleft\huawei@logo{1.4}
+      \end{textblock}%
+    \fi%
     \ifdefined\huawei@nobrand\else%
       \begin{textblock}{8}[0,0.5](1,15.25)%
         \fontsize{16}{16}\selectfont%
@@ -564,7 +566,7 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
     the author%
   \else%
     \thecompany{}%
-  \fi
+  \fi{}
   makes no representations and gives no warranties
   of whatever nature in respect of these documents,
   including but not limited to the accuracy or completeness
@@ -575,7 +577,7 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
     \thecompany{}%
   \fi,
   its subsidiaries, the directors, employees and agents
-  cannot be held liable for the use of and reliance of
+  cannot be held liable for the use of and reliance on
   the opinions, estimates, forecasts and findings in
   these documents.
   \par%
@@ -584,7 +586,7 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
 
 \makeatletter\newcommand\PrintFirstPage[1]{%
   \ifdefined\huawei@landscape\else%
-    \PackageError{huawei}{It's allowed to use
+    \ClassError{huawei}{It's allowed to use
     PrintFirstPage only in landscape mode}{Read huawei.pdf
     for more information}
   \fi%
@@ -605,7 +607,7 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
 
 \makeatletter\newcommand\PrintLastPage{%
   \ifdefined\huawei@landscape\else%
-    \PackageError{huawei}{It's allowed to use
+    \ClassError{huawei}{It's allowed to use
     PrintLastPage only in landscape mode}{Read huawei.pdf
     for more information}
   \fi%
@@ -619,16 +621,18 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
       \par%
       \vspace{0.5in}%
       \par%
-      Bring digital to every person, home and organization
-      \newline%
-      for a fully connected, intelligent world.
-      \par%
-      \textbf{%
-        Copyright \copyright{} \the\year{} \thecompany{}
-        \newline
-        All Rights Reserved.%
-      }
-      \par%
+      \ifdefined\huawei@nobrand\else%
+        Bring digital to every person, home and organization
+        \newline%
+        for a fully connected, intelligent world.
+        \par%
+        \textbf{%
+          Copyright \copyright{} \the\year{} \thecompany{}
+          \newline
+          All Rights Reserved.%
+        }
+        \par%
+      \fi%
       The information in this document may contain predictive
       statements including, without limitation, statements regarding
       the future financial and operating results, future product
@@ -641,7 +645,7 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
         The author%
       \else%
         \thecompany{}%
-      \fi%
+      \fi{}
       may change the information at any time without notice.
     \end{minipage}
   \end{center}%
@@ -663,6 +667,7 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
       \printbibliography%
     \fi%
   \fi%
+  \endgroup%
 }\makeatother
 
 \makeatletter\ifdefined\huawei@dark%
