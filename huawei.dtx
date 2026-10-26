@@ -363,12 +363,12 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 % Then, we fail if any class option remains unused by both the class and the packages
 % when the document begins, since it is most probably misspelled:
 %    \begin{macrocode}
-\makeatletter\AddToHook{begindocument/before}{%
+\AddToHook{begindocument/before}{%
   \ifx\@unusedoptionlist\@empty\else%
     \ClassError{huawei}{Unknown class option(s): \@unusedoptionlist}%
       {Check the spelling of the options given to \string\documentclass}%
   \fi%
-}\makeatother
+}
 %    \end{macrocode}
 
 % Then, we set Helvetica as the default font for the entire document, if the |boring| document option is used:
@@ -587,10 +587,8 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 
 % Then, we define the colors of the ink and of the page, which swap in the |dark| mode:
 %    \begin{macrocode}
-\makeatletter
 \def\huawei@black{\ifdefined\huawei@dark white\else black\fi}
 \def\huawei@blank{\ifdefined\huawei@dark black\else white\fi}
-\makeatother
 %    \end{macrocode}
 
 % \begin{macro}{\huawei@bar}

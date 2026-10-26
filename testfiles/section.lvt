@@ -1,0 +1,14 @@
+% SPDX-FileCopyrightText: Copyright (c) 2021-2026 Yegor Bugayenko
+% SPDX-License-Identifier: MIT
+
+\input{regression-test.tex}
+\documentclass[boring]{huawei}
+\begin{document}
+\START
+
+\section{Introduction}
+\makeatletter
+\TYPE{The section color is \huawei@sectioncolor}
+\makeatother
+
+\END
