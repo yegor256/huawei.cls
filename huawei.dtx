@@ -983,16 +983,18 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
       \par%
       \vspace{0.5in}%
       \par%
-      Bring digital to every person, home and organization
-      \newline%
-      for a fully connected, intelligent world.
-      \par%
-      \textbf{%
-        Copyright \copyright{} \the\year{} \thecompany{}
-        \newline
-        All Rights Reserved.%
-      }
-      \par%
+      \ifdefined\huawei@nobrand\else%
+        Bring digital to every person, home and organization
+        \newline%
+        for a fully connected, intelligent world.
+        \par%
+        \textbf{%
+          Copyright \copyright{} \the\year{} \thecompany{}
+          \newline
+          All Rights Reserved.%
+        }
+        \par%
+      \fi%
       The information in this document may contain predictive
       statements including, without limitation, statements regarding
       the future financial and operating results, future product
