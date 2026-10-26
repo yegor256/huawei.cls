@@ -478,6 +478,17 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 \RequirePackage{hyperref}
 %    \end{macrocode}
 
+% Then, we pass the title and the author to the metadata of the PDF,
+% leaving the author out if the |anonymous| class option is used:
+%    \begin{macrocode}
+\makeatletter\AtBeginDocument{%
+  \hypersetup{%
+    pdftitle={\thetitle},%
+    pdfauthor={\ifdefined\huawei@anonymous\else\theauthor\fi}%
+  }%
+}\makeatother
+%    \end{macrocode}
+
 % Then, we configure |biblatex|:
 % \changes{v0.16.0}{2023/05/20}{The \texttt{doi} tag enabled for \texttt{biblatex}.}
 %    \begin{macrocode}

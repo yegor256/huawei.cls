@@ -1,0 +1,26 @@
+% SPDX-FileCopyrightText: Copyright (c) 2021-2026 Yegor Bugayenko
+% SPDX-License-Identifier: MIT
+
+\input{regression-test.tex}
+\documentclass[anonymous]{huawei}
+\renewcommand*\thetitle{Faster Compression of Logs}
+\renewcommand*\theauthor{Jeff Lebowski}
+\begin{document}
+\START
+
+\makeatletter
+\pdfstringdef\title{Faster Compression of Logs}
+\let\author\@empty
+\ifx\@pdftitle\title
+  \TYPE{The title is in the metadata}
+\else
+  \TYPE{The title is not in the metadata}
+\fi
+\ifx\@pdfauthor\author
+  \TYPE{The author in the metadata is as expected}
+\else
+  \TYPE{The author in the metadata is not as expected}
+\fi
+\makeatother
+
+\END
