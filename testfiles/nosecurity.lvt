@@ -1,0 +1,13 @@
+% SPDX-FileCopyrightText: Copyright (c) 2021-2026 Yegor Bugayenko
+% SPDX-License-Identifier: MIT
+
+\input{regression-test.tex}
+\documentclass[nosecurity]{huawei}
+\renewcommand*\theauthor{Jeff Lebowski}
+\renewcommand*\theid{\TYPE{The ID leaked}}
+\begin{document}
+\START
+
+\maketitle
+
+\END
