@@ -156,10 +156,15 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 % The |nopaging| option suppresses the page numbers at the foot of each page.
 
 % \DescribeMacro{authordraft}
-% The |authordraft| option prints a large ``It's a draft'' message diagonally across each page.
+% The |authordraft| option prints a large ``it is a draft'' message diagonally across each page.
 
 % \DescribeMacro{breaks}
 % The |breaks| option compels every |\section| to begin on a new page.
+
+% \DescribeMacro{boring}
+% The |boring| option sets the entire document in Helvetica, paints section
+% titles in red, and draws a gray bar at the foot of each page, making the layout
+% more compliant with the expectations of Huawei.
 
 % \section{Preamble}
 
@@ -204,8 +209,10 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 %   ordinarily printed at the upper right corner; typical values
 %   include ``Internal,'' ``Confidential,'' or ``Secret.''
 
-% The default values of these commands are empty; should they not
-% be renewed within the document, nothing is printed.
+% The default values of |\thesubtitle| and |\theid| are empty; should they not
+% be renewed within the document, nothing is printed in their place.
+% The default value of |\thesecurity| is ``Confidential,'' while
+% |\thetitle| and |\theauthor| print their own names as a reminder to renew them.
 
 % \section{Custom Commands}
 
@@ -214,13 +221,14 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 % \DescribeMacro{\PrintFirstPage}
 % The use of |\PrintFirstPage| is recommended for rendering the first
 % page of a landscape document, for example a project charter.
-% The sole argument denotes the name of an image to be rendered at the
-% lower right corner. The argument may be left empty, whereupon a default
-% image of agreeable appearance is rendered in its stead:
+% The sole argument denotes the name of an image to be rendered above
+% the title. The argument may be left empty, whereupon no image is rendered there.
+% A default image of agreeable appearance is rendered at the lower right corner,
+% unless the |nocover| option is present:
 % \begin{docshot}[prerequisite=huawei-cover-picture.pdf]
 % \documentclass[landscape]{huawei}
 % \renewcommand*
-%   \thetitle{Perpetum Mobile}
+%   \thetitle{Perpetuum Mobile}
 % \renewcommand*
 %   \theauthor{Yegor Bugayenko}
 % \begin{document}
@@ -336,6 +344,7 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
   /huawei/.cd,
   boring/.store in=\huawei@boring,
   breaks/.store in=\huawei@breaks,
+  dark/.store in=\huawei@dark,
   slides/.store in=\huawei@slides,
   nosecurity/.store in=\huawei@nosecurity,
   authordraft/.store in=\huawei@authordraft,
@@ -352,7 +361,7 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 % Then, we set Helvetica as the default font for the entire document, if the |boring| document option is used:
 %    \begin{macrocode}
 \ifdefined\huawei@boring
-  \usepackage[scaled]{helvet}
+  \RequirePackage[scaled]{helvet}
   \renewcommand\familydefault{\sfdefault}
 \fi
 %    \end{macrocode}
@@ -393,7 +402,7 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 % Then, we set the size of the font:
 %    \begin{macrocode}
 \makeatletter\ifdefined\huawei@slides
-  \usepackage[fontsize=24pt]{fontsize}
+  \RequirePackage[fontsize=24pt]{fontsize}
 \fi\makeatother
 %    \end{macrocode}
 
@@ -411,7 +420,6 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 \RequirePackage{anyfontsize}
 \RequirePackage{multicol}
 \RequirePackage{ragged2e}
-\RequirePackage{multicol}
 \RequirePackage{paralist}
 \RequirePackage{makecell}
 \RequirePackage{graphicx}
@@ -420,7 +428,6 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 \RequirePackage{currfile}
 \RequirePackage{wrapfig}
 \RequirePackage{tikz}
-\RequirePackage{tabularx}
 \RequirePackage{titling}
 \RequirePackage{svg}
 %    \end{macrocode}
@@ -476,7 +483,7 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 %    \begin{macrocode}
 \PassOptionsToPackage{maxnames=1,minnames=1,natbib=true,
   citestyle=numeric,bibstyle=numeric,
-  url=false,isbn=false,isbn=false}{biblatex}
+  url=false,isbn=false}{biblatex}
 \RequirePackage{biblatex}
 %    \end{macrocode}
 
@@ -563,9 +570,11 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
       \tikz \node[fill=lightgray,minimum width=16\TPHorizModule,
         minimum height=1.5\TPVertModule] {};%
     \end{textblock}%
-    \begin{textblock}{8}[1,0.5](15,15.25)%
-      \raggedleft\huawei@logo{1.4}
-    \end{textblock}%
+    \ifdefined\huawei@nobrand\else%
+      \begin{textblock}{8}[1,0.5](15,15.25)%
+        \raggedleft\huawei@logo{1.4}
+      \end{textblock}%
+    \fi%
     \ifdefined\huawei@nobrand\else%
       \begin{textblock}{8}[0,0.5](1,15.25)%
         \fontsize{16}{16}\selectfont%
@@ -918,7 +927,7 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
     the author%
   \else%
     \thecompany{}%
-  \fi
+  \fi{}
   makes no representations and gives no warranties
   of whatever nature in respect of these documents,
   including but not limited to the accuracy or completeness
@@ -929,7 +938,7 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
     \thecompany{}%
   \fi,
   its subsidiaries, the directors, employees and agents
-  cannot be held liable for the use of and reliance of
+  cannot be held liable for the use of and reliance on
   the opinions, estimates, forecasts and findings in
   these documents.
   \par%
@@ -943,7 +952,7 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
 %    \begin{macrocode}
 \makeatletter\newcommand\PrintFirstPage[1]{%
   \ifdefined\huawei@landscape\else%
-    \PackageError{huawei}{It's allowed to use
+    \ClassError{huawei}{It's allowed to use
     PrintFirstPage only in landscape mode}{Read huawei.pdf
     for more information}
   \fi%
@@ -969,7 +978,7 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
 %    \begin{macrocode}
 \makeatletter\newcommand\PrintLastPage{%
   \ifdefined\huawei@landscape\else%
-    \PackageError{huawei}{It's allowed to use
+    \ClassError{huawei}{It's allowed to use
     PrintLastPage only in landscape mode}{Read huawei.pdf
     for more information}
   \fi%
@@ -1007,7 +1016,7 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
         The author%
       \else%
         \thecompany{}%
-      \fi%
+      \fi{}
       may change the information at any time without notice.
     \end{minipage}
   \end{center}%
@@ -1035,6 +1044,7 @@ xscale=#1, inner sep=0pt, outer sep=0pt]
       \printbibliography%
     \fi%
   \fi%
+  \endgroup%
 }\makeatother
 %    \end{macrocode}
 % \end{macro}
