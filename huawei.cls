@@ -32,7 +32,7 @@
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{huawei}
-[2026-11-03 06.48.14 Template for Huawei Documents]
+[2026-11-03 07.00.47 Template for Huawei Documents]
 
 
 
@@ -111,6 +111,9 @@
   \RequirePackage[scaled]{helvet}
   \renewcommand\familydefault{\sfdefault}
 \fi
+
+\PassOptionsToPackage{tt=false,type1=true}{libertine}
+\RequirePackage{libertine}
 
 \RequirePackage{titlesec}
 \ifdefined\huawei@boring
