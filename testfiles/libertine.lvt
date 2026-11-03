@@ -1,0 +1,13 @@
+% SPDX-FileCopyrightText: Copyright (c) 2021-2026 Yegor Bugayenko
+% SPDX-License-Identifier: MIT
+
+\input{regression-test.tex}
+\documentclass[boring]{huawei}
+\begin{document}
+\START
+
+\TYPE{The default family is \familydefault}
+\TYPE{The roman family is \rmdefault}
+\TYPE{The sans family is \sfdefault}
+
+\END
