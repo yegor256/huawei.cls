@@ -587,8 +587,10 @@ $pdflatex = 'pdflatex %O --shell-escape %S';
 
 % Then, we define the colors of the ink and of the page, which swap in the |dark| mode:
 %    \begin{macrocode}
+\makeatletter
 \def\huawei@black{\ifdefined\huawei@dark white\else black\fi}
 \def\huawei@blank{\ifdefined\huawei@dark black\else white\fi}
+\makeatother
 %    \end{macrocode}
 
 % \begin{macro}{\huawei@bar}

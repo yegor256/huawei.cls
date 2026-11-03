@@ -1,0 +1,13 @@
+% SPDX-FileCopyrightText: Copyright (c) 2021-2026 Yegor Bugayenko
+% SPDX-License-Identifier: MIT
+
+\input{regression-test.tex}
+\documentclass[landscape,boring]{huawei}
+\begin{document}
+\START
+
+\makeatletter
+\TYPE{The ink is \huawei@black, the page is \huawei@blank}
+\makeatother
+
+\END
