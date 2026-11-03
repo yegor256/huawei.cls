@@ -16,6 +16,7 @@ hard fmtcount
 hard fontsize
 hard footmisc
 hard geometry
+hard helvetic
 hard hyperref
 hard koma-script
 hard lastpage
